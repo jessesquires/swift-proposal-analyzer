@@ -21,13 +21,20 @@ public struct Proposal {
     public let fileName: String
     public let authors: [String]
     public let status: String
+    public let wordCount: Int
 
-    public init(title: String, seNumber: String, fileName: String, authors: [String], status: String) {
+    public init(title: String,
+                seNumber: String,
+                fileName: String,
+                authors: [String],
+                status: String,
+                wordCount: Int) {
         self.title = title.trimmingCharacters(in: .whitespacesAndNewlines)
         self.seNumber = seNumber.trimmingCharacters(in: .whitespacesAndNewlines)
         self.fileName = fileName.trimmingCharacters(in: .whitespacesAndNewlines)
         self.authors = authors
         self.status = status.trimmingCharacters(in: .whitespacesAndNewlines)
+        self.wordCount = wordCount
     }
 }
 
@@ -37,6 +44,7 @@ extension Proposal: CustomStringConvertible {
         return seNumber + ": " + title
             + "\nAuthor(s): " + authors.joined(separator: ", ")
             + "\nStatus: " + status
+            + "\nWord count: " + "\(wordCount)"
             + "\n"
     }
 }
