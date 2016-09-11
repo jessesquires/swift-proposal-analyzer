@@ -17,13 +17,15 @@ import UIKit
 
 let analyzer = Analyzer(directory: #fileLiteral(resourceName: "proposals"))
 let proposals = analyzer.proposals
+let authors = analyzer.authors
+
+let totalAuthors = authors.count
 
 for p in proposals {
     print(p)
 }
 
-let allAuthors = analyzer.allAuthors
-
-for a in allAuthors {
-    print(a, allAuthors.count(for: a), separator: " : ", terminator: "\n")
+let proposalsPerAuthor = analyzer.proposalsPerAuthor
+for a in authors {
+    print(a, proposalsPerAuthor.count(for: a), separator: " : ", terminator: "\n")
 }

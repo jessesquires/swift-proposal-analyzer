@@ -18,7 +18,17 @@ public final class Analyzer {
 
     public let proposals: [Proposal]
 
-    public lazy var allAuthors: NSCountedSet = {
+    public lazy var authors: [String] = {
+        var allAuthors = Set<String>()
+        for p in self.proposals {
+            for a in p.authors {
+                allAuthors.insert(a)
+            }
+        }
+        return Array<String>(allAuthors).sorted()
+    }()
+
+    public lazy var proposalsPerAuthor: NSCountedSet = {
         var allAuthors = NSCountedSet()
         for p in self.proposals {
             allAuthors.addObjects(from: p.authors)
