@@ -46,4 +46,4 @@ public struct Proposal {
 
 ## License
 
-Released under an [MIT License][mitLink]. See `LICENSE` for details.
+Released under an [MIT License](http://opensource.org/licenses/MIT). See `LICENSE` for details.
