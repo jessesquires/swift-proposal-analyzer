@@ -17,14 +17,14 @@ import Foundation
 
 public struct Proposal {
     public let title: String
-    public let number: String
+    public let seNumber: String
     public let fileName: String
     public let authors: [String]
     public let status: String
 
-    public init(title: String, number: String, fileName: String, authors: [String], status: String) {
+    public init(title: String, seNumber: String, fileName: String, authors: [String], status: String) {
         self.title = title.trimmingCharacters(in: .whitespacesAndNewlines)
-        self.number = number.trimmingCharacters(in: .whitespacesAndNewlines)
+        self.seNumber = seNumber.trimmingCharacters(in: .whitespacesAndNewlines)
         self.fileName = fileName.trimmingCharacters(in: .whitespacesAndNewlines)
         self.authors = authors
         self.status = status.trimmingCharacters(in: .whitespacesAndNewlines)
@@ -34,8 +34,8 @@ public struct Proposal {
 
 extension Proposal: CustomStringConvertible {
     public var description: String {
-        return number + ": " + title
-            + "\nBy: " + "\(authors)"
+        return seNumber + ": " + title
+            + "\nAuthor(s): " + authors.joined(separator: ", ")
             + "\nStatus: " + status
             + "\n"
     }

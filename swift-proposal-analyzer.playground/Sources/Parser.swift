@@ -18,38 +18,28 @@ import Foundation
 public func parseProposals(inDirectory directory: URL) -> [Proposal] {
     let fm = FileManager.default
     let proposalNames = try! fm.contentsOfDirectory(atPath: directory.path)
-    let fileURLs = proposalFileURLs(fromNames: proposalNames, inDirectory: directory)
-    let files = proposalFiles(fromURLs: fileURLs)
+    let files = proposalFiles(fromNames: proposalNames, inDirectory: directory)
 
     var allProposals = [Proposal]()
-    for i in 0..<files.count {
-        let fileName = proposalNames[i]
-        let fileContents = files[i]
-        let proposal = proposalFromFile(contents: fileContents, fileName: fileName)
+    for (url, fileContents) in files {
+        let proposal = proposalFromFile(contents: fileContents, fileName: url.lastPathComponent)
         allProposals.append(proposal)
     }
 
-    return allProposals
+    return allProposals.sorted { p1, p2 -> Bool in
+        p1.seNumber < p2.seNumber
+    }
 }
 
 
-func proposalFileURLs(fromNames allProposalNames: [String], inDirectory directory: URL) -> [URL] {
-    var proposalPaths = [URL]()
+func proposalFiles(fromNames allProposalNames: [String], inDirectory directory: URL) -> [URL : String] {
+    var proposals = [URL : String]()
     for eachName in allProposalNames {
         let url = directory.appendingPathComponent(eachName)
-        proposalPaths.append(url)
+        let fileContents = try! String(contentsOf: url, encoding: String.Encoding.utf8)
+        proposals[url] = fileContents
     }
-    return proposalPaths
-}
-
-
-func proposalFiles(fromURLs proposalURLs: [URL]) -> [String] {
-    var proposalFiles = [String]()
-    for eachFile in proposalURLs {
-        let fileContents = try! String(contentsOf: eachFile, encoding: String.Encoding.utf8)
-        proposalFiles.append(fileContents)
-    }
-    return proposalFiles
+    return proposals
 }
 
 
@@ -88,7 +78,7 @@ func proposalFromFile(contents: String, fileName: String) -> Proposal {
 
     let status = statusStringFromLine(statusLine)
 
-    return Proposal(title: title, number: seNumber, fileName: fileName, authors: authors, status: status)
+    return Proposal(title: title, seNumber: seNumber, fileName: fileName, authors: authors, status: status)
 }
 
 
@@ -113,7 +103,8 @@ func nameFromLine(_ line: String) -> String {
 
 
 func seNumberFromLine(_ line: String) -> String {
-    let range = line.index(line.startIndex, offsetBy: 13)..<line.index(line.startIndex, offsetBy: 20)
+    let start = line.index(line.startIndex, offsetBy: 13)
+    let range = start..<line.index(start, offsetBy: 7)
     return line.substring(with: range)
 }
 
