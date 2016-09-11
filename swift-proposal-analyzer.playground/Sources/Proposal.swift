@@ -43,9 +43,17 @@ extension Proposal: CustomStringConvertible {
 
 
 fileprivate let baseURL: URL = URL(string: "https://github.com/apple/swift-evolution/blob/master/proposals")!
-
 extension Proposal {
     public var githubURL: URL {
         return baseURL.appendingPathComponent(fileName)
+    }
+}
+
+
+extension Proposal {
+    public var number: Int {
+        let start = seNumber.index(seNumber.startIndex, offsetBy: 3)
+        let str = seNumber.substring(from: start)
+        return Int(str)!
     }
 }
