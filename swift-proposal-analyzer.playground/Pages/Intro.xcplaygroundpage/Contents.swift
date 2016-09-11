@@ -16,7 +16,7 @@ import Foundation
 import UIKit
 
 /*:
- Understanding Swift Evolution
+ ## Understanding Swift Evolution
  */
 
 let analyzer = Analyzer(directory: #fileLiteral(resourceName: "proposals"))
@@ -40,4 +40,9 @@ for a in authors {
  
  - number of line
  - word count
+ */
+
+
+/*:
+ [Previous](@previous) | [Next](@next)
  */
