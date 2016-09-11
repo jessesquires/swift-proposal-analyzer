@@ -77,8 +77,7 @@ func proposalFromFile(contents: String, fileName: String) -> Proposal {
     let authorLine: String! = singleAuthorLine ?? multipleAuthorLine
     let authors = authorsFromLine(authorLine, multiple: (singleAuthorLine == nil))
 
-    let status = statusStringFromLine(statusLine)
-
+    let status = statusFromLine(statusLine)
     let words = wordCount(fromFile: contents)
 
     return Proposal(title: title,
@@ -150,8 +149,48 @@ func authorsFromLine(_ line: String, multiple: Bool) -> [String] {
 }
 
 
-func statusStringFromLine(_ line: String) -> String {
+func statusFromLine(_ line: String) -> Status {
     let range = line.index(line.startIndex, offsetBy: 10)
-    let statusString = line.substring(from: range)
-    return statusString.trimmingCharacters(in: CharacterSet(["*"])).trimmingWhitespace()
+    let string = line.substring(from: range)
+    let characters = CharacterSet.whitespacesAndNewlines.union(CharacterSet(["*"]))
+    let statusString = string.trimmingCharacters(in: characters)
+
+    switch statusString {
+    case _ where statusString.localizedCaseInsensitiveContains("Active Review"):
+        return .inReview
+    case _ where statusString.localizedCaseInsensitiveContains("Awaiting Review"):
+        return .awaitingReview
+    case _ where statusString.localizedCaseInsensitiveContains("Accepted"):
+        return .accepted
+    case _ where statusString.localizedCaseInsensitiveContains("Implemented"):
+        let version = versionFromString(statusString)
+        return .implemented(version)
+    case _ where statusString.localizedCaseInsensitiveContains("Deferred"):
+        return .deferred
+    case _ where statusString.localizedCaseInsensitiveContains("Rejected"):
+        return .rejected
+    case _ where statusString.localizedCaseInsensitiveContains("Withdrawn"):
+        return .withdrawn
+    default:
+        fatalError("** Error: unknown status found in line: " + line)
+    }
+
+    return .accepted
 }
+
+
+func versionFromString(_ versionString: String) -> SwiftVersion {
+    switch versionString {
+    case _ where versionString.localizedCaseInsensitiveContains("Swift 2.2"):
+        return .v2_2
+    case _ where versionString.localizedCaseInsensitiveContains("Swift 2.3"):
+        return .v2_3
+    case _ where versionString.localizedCaseInsensitiveContains("Swift 3"):
+        return .v3_0
+    case _ where versionString.localizedCaseInsensitiveContains("Swift 3.1"):
+        return .v3_1
+    default:
+        fatalError("** Error: unknown version number found: " + versionString)
+    }
+}
+
