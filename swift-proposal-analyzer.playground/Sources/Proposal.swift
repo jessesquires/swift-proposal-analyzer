@@ -40,3 +40,12 @@ extension Proposal: CustomStringConvertible {
             + "\n"
     }
 }
+
+
+fileprivate let baseURL: URL = URL(string: "https://github.com/apple/swift-evolution/blob/master/proposals")!
+
+extension Proposal {
+    public var githubURL: URL {
+        return baseURL.appendingPathComponent(fileName)
+    }
+}
