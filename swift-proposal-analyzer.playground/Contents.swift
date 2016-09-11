@@ -1,4 +1,16 @@
-//: Playground - noun: a place where people can play
+//
+//  Created by Jesse Squires
+//  http://www.jessesquires.com
+//
+//
+//  GitHub
+//  https://github.com/jessesquires/swift-proposal-analyzer
+//
+//
+//  License
+//  Copyright © 2016 Jesse Squires
+//  Released under an MIT license: http://opensource.org/licenses/MIT
+//
 
 import Foundation
 import UIKit
