@@ -16,7 +16,7 @@
 
 import Foundation
 
-print("Generating playground pages for proposals...")
+print("Generating playground pages from proposals...")
 
 func proposalFiles(inDirectory directory: URL) -> [URL : String] {
     let fm = FileManager.default
@@ -52,12 +52,26 @@ if #available(OSX 10.11, *) {
         let range = path.index(path.startIndex, offsetBy: 4)
         let seNumber = "SE-" + path.substring(to: range)
 
-        let page = basePlaygroundDir
+        let pageDir = basePlaygroundDir
             .appendingPathComponent(seNumber + ".xcplaygroundpage", isDirectory: true)
+
+        try! fm.createDirectory(at: pageDir, withIntermediateDirectories: true, attributes: nil)
+
+        let pageFile = pageDir
             .appendingPathComponent("Contents", isDirectory: false)
             .appendingPathExtension("swift")
 
-        fm.createFile(atPath: page.path, contents: nil, attributes: nil)
+        let pageContents = "/*:\n"
+            + contents
+            + "\n\n"
+            + "[Previous](@previous) | [Next](@next)\n"
+            + "*/\n"
+
+        let pageData = pageContents.data(using: .utf8)
+        let success = fm.createFile(atPath: pageFile.path, contents: pageData, attributes: nil)
+        if !success {
+            print("** Error: failed to generate playground page for " + seNumber)
+        }
     }
 } else {
     print("** Error: Must use OSX 10.11 or higher.")
