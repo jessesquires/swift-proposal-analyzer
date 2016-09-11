@@ -16,7 +16,10 @@ import Foundation
 import UIKit
 
 /*:
- ## Understanding Swift Evolution
+ # Understanding Swift Evolution
+ ### What can we learn by analyzing swift-evolution proposals?
+
+ This playground includes all of the Swift Evolution proposals as resource files in `Resources/` as well playground pages in `Pages/`.
  */
 
 let analyzer = Analyzer(directory: #fileLiteral(resourceName: "proposals"))
