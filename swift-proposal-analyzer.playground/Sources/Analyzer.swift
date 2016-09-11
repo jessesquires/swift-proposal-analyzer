@@ -42,4 +42,10 @@ public final class Analyzer {
         self.directory = directory
         self.proposals = parseProposals(inDirectory: directory)
     }
+
+    public func proposalsWith(status: Status) -> [Proposal] {
+        return proposals.filter { prop -> Bool in
+            return prop.status == status
+        }
+    }
 }

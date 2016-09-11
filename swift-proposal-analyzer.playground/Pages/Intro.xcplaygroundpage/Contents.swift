@@ -37,14 +37,9 @@ for a in authors {
     print(a, proposalsPerAuthor.count(for: a), separator: " : ", terminator: "\n")
 }
 
+let accepted = analyzer.proposalsWith(status: .implemented(.v3_0))
 
-/*
- TODO:
- 
- - number of line
- - word count
- */
-
+accepted.count
 
 
 
