@@ -1,0 +1,4 @@
+[submodule "swift-evolution"]
+	path = swift-evolution
+	url = https://github.com/apple/swift-evolution
+	branch = master
