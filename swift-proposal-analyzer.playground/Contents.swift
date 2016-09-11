@@ -18,10 +18,11 @@ import UIKit
 let analyzer = Analyzer(directory: #fileLiteral(resourceName: "proposals"))
 let proposals = analyzer.proposals
 
-var allAuthors = NSCountedSet()
 for p in proposals {
-    allAuthors.addObjects(from: p.authors)
+    print(p)
 }
+
+let allAuthors = analyzer.allAuthors
 
 for a in allAuthors {
     print(a, allAuthors.count(for: a), separator: " : ", terminator: "\n")

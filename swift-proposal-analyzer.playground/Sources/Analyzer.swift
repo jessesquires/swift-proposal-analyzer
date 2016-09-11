@@ -17,6 +17,15 @@ import Foundation
 public final class Analyzer {
 
     public let proposals: [Proposal]
+
+    public lazy var allAuthors: NSCountedSet = {
+        var allAuthors = NSCountedSet()
+        for p in self.proposals {
+            allAuthors.addObjects(from: p.authors)
+        }
+        return allAuthors
+    }()
+
     private let directory: URL
 
     public init(directory: URL) {
