@@ -2,7 +2,7 @@
 
 *An analysis of Swift Evolution proposals*
 
-### Requirements
+## Requirements
 
 - Xcode 8
 - Swift 3.0
@@ -22,6 +22,8 @@ $ ./update_proposals.sh
 
 ### Updating proposals
 
+Pulls the latest from [`swift-evolution`](https://github.com/apple/swift-evolution) and adds them to the playground.
+
 ```bash
 $ ./update_proposals.sh
 ```
@@ -29,6 +31,18 @@ $ ./update_proposals.sh
 ### Usage
 
 Open `swift-proposal-analyzer.playground`.
+
+After parsing completes, you'll have an array of `Proposal` types. 
+
+```swift
+public struct Proposal {
+    public let title: String
+    public let number: String
+    public let fileName: String
+    public let authors: [String]
+    public let status: String
+}
+```
 
 ## License
 
