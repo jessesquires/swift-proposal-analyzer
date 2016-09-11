@@ -37,7 +37,7 @@ for a in authors {
     print(a, proposalsPerAuthor.count(for: a), separator: " : ", terminator: "\n")
 }
 
-let accepted = analyzer.proposalsWith(status: .implemented(.v3_0))
+let accepted = analyzer.proposalsWith(status: .implemented(.v3_1))
 
 accepted.count
 

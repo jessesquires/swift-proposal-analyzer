@@ -174,8 +174,6 @@ func statusFromLine(_ line: String) -> Status {
     default:
         fatalError("** Error: unknown status found in line: " + line)
     }
-
-    return .accepted
 }
 
 
@@ -185,10 +183,11 @@ func versionFromString(_ versionString: String) -> SwiftVersion {
         return .v2_2
     case _ where versionString.localizedCaseInsensitiveContains("Swift 2.3"):
         return .v2_3
-    case _ where versionString.localizedCaseInsensitiveContains("Swift 3"):
-        return .v3_0
     case _ where versionString.localizedCaseInsensitiveContains("Swift 3.1"):
         return .v3_1
+    case _ where versionString.localizedCaseInsensitiveContains("Swift 3.0"): fallthrough
+    case _ where versionString.localizedCaseInsensitiveContains("Swift 3"):
+        return .v3_0
     default:
         fatalError("** Error: unknown version number found: " + versionString)
     }
