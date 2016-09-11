@@ -15,6 +15,10 @@
 import Foundation
 import UIKit
 
+/*:
+ Understanding Swift Evolution
+ */
+
 let analyzer = Analyzer(directory: #fileLiteral(resourceName: "proposals"))
 let proposals = analyzer.proposals
 let authors = analyzer.authors
@@ -29,3 +33,11 @@ let proposalsPerAuthor = analyzer.proposalsPerAuthor
 for a in authors {
     print(a, proposalsPerAuthor.count(for: a), separator: " : ", terminator: "\n")
 }
+
+
+/*
+ TODO:
+ 
+ - number of line
+ - word count
+ */

@@ -16,9 +16,7 @@ import Foundation
 
 
 public func parseProposals(inDirectory directory: URL) -> [Proposal] {
-    let fm = FileManager.default
-    let proposalNames = try! fm.contentsOfDirectory(atPath: directory.path)
-    let files = proposalFiles(fromNames: proposalNames, inDirectory: directory)
+    let files = proposalFiles(inDirectory: directory)
 
     var allProposals = [Proposal]()
     for (url, fileContents) in files {
@@ -32,9 +30,12 @@ public func parseProposals(inDirectory directory: URL) -> [Proposal] {
 }
 
 
-func proposalFiles(fromNames allProposalNames: [String], inDirectory directory: URL) -> [URL : String] {
+func proposalFiles(inDirectory directory: URL) -> [URL : String] {
+    let fm = FileManager.default
+    let proposalNames = try! fm.contentsOfDirectory(atPath: directory.path)
     var proposals = [URL : String]()
-    for eachName in allProposalNames {
+
+    for eachName in proposalNames {
         let url = directory.appendingPathComponent(eachName)
         let fileContents = try! String(contentsOf: url, encoding: String.Encoding.utf8)
         proposals[url] = fileContents
