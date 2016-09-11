@@ -1639,5 +1639,7 @@ that allows the compiler to produce good error messages and emit Fix-Its.
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

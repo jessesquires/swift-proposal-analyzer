@@ -242,5 +242,7 @@ An earlier version of this proposal suggested a non-failable version of the sequ
 Alternately, the status quo could be maintained.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

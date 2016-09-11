@@ -208,5 +208,7 @@ Instead we can provide JSON output that can be parsed and executed by some
 other tooling developed outside of Apple.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

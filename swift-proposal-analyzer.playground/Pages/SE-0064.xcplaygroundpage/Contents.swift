@@ -58,5 +58,7 @@ A long term alternive could arrise from the design of lenses in Swift. But as th
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

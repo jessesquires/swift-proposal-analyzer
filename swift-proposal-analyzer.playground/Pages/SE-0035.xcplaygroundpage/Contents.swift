@@ -161,5 +161,7 @@ In discussion, we deemed this rare enough not to be worth the added complexity. 
 copy using a new `var` declaration is much clearer and doesn't require new language support.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -76,5 +76,7 @@ On [April 27, 2016](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mo
 > In contrast, there are still a number of concerns with rebranding x.dynamicType as x.Self.  This may (or may not) be the right ultimate direction to go, but it should be split out of this proposal.  There is another outstanding proposal that would eliminate the “Type.self” syntax as being necessary, and the core team would like to resolve that discussion before tackling x.dynamicType.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

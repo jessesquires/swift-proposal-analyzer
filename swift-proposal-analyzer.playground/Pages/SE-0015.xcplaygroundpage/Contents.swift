@@ -102,5 +102,7 @@ I tested building a Ninja-ReleaseAssert build for tuples up to arity 12, but
 that had a 171KiB codesize increase (5.5%). I have not tried any other arities.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

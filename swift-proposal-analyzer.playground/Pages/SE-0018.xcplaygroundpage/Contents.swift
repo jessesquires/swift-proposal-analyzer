@@ -556,5 +556,7 @@ struct Rect(var origin: Point = Point(), var size: Size = Size()) {}
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

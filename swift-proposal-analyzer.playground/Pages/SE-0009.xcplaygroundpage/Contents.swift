@@ -138,5 +138,7 @@ An alternative would be to demote from a compiler error to a warning.
 * "I'm +1 on this, for the reasons already stated by others, but not as strongly as I was a year ago. I was very worried about this with Swift 1 was first released, but since then, I haven't actually made this mistake, possibly because I'm so paranoid about it." -- Michael Buckley, michael@buckleyisms.com
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

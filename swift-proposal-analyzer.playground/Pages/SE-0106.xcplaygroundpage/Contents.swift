@@ -81,5 +81,7 @@ Charlie Monroe points out: "Since Swift 3.0 is a code-breaking change my guess i
 This proposal is narrowly focused on conditional compilation blocks. Both `@available` and `#available` are also affected by the macOS rename. Current [platform names](https://github.com/apple/swift/blob/master/include/swift/AST/PlatformKinds.def) include both `OSX` and `OSXApplicationExtension`. The obvious alternatives for these are `macOS` and `macOSApplicationExtension`. A separate bug report [SR-1887](https://bugs.swift.org/browse/SR-1887) has been filed for this.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

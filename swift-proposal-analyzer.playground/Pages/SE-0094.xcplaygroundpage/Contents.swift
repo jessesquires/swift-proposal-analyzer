@@ -110,5 +110,7 @@ utility. Correctly reimplementing this form in terms of `sequence(state:next:)`
 is non-trivial; the simple solution is more eager than it should be.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

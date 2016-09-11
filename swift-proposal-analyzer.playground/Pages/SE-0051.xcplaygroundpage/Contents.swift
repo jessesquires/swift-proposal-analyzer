@@ -149,5 +149,7 @@ Renaming two stride functions and adding a third does not change or break existi
 The only alternative at this time is "no change" to existing semantics.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

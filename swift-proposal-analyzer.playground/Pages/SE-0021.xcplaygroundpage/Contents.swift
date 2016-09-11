@@ -178,5 +178,7 @@ aGameView.insertSubview(_, aboveSubview: _)
   attribute), and we should maintain consistency.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -178,5 +178,7 @@ This second category groups together the `Convertible` and `Representable` categ
 We do not include a third category for bidirectional conversion in this update. We recognize that style of contract is rare in Swift. Lossless conversion does not appear in the standard library outside of `RawRepresentable`, which we agreed was better covered by `Representable`. If such a convention is needed or adopted, we reserve the `Isomorphic` designation for future use.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -970,5 +970,7 @@ patterns of the matching `first` and `last` methods to remain
 grammatical.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

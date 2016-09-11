@@ -292,5 +292,7 @@ However nothing stops us eventually making the support for XCTest
 work via our protocol system.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

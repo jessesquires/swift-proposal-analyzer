@@ -63,7 +63,7 @@ if #available(OSX 10.11, *) {
 
         let pageContents = "/*:\n"
             + contents
-            + "\n\n"
+            + "\n\n----------\n\n"
             + "[Previous](@previous) | [Next](@next)\n"
             + "*/\n"
 

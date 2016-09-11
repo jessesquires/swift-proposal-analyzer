@@ -158,5 +158,7 @@ accepted, with `scan(_:combine:)` rejected on grounds of low utility and
 [rationale]: <https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160502/016543.html>
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

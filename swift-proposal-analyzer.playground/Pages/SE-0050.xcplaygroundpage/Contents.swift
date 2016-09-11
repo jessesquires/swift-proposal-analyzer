@@ -272,5 +272,7 @@ public struct DoubleStrideThroughIterator : Iterator {
 While precision math for decimal numbers would be better addressed by introducing a decimal type and/or warnings for at-risk floating point numbers, those features lie outside the scope of this proposal.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

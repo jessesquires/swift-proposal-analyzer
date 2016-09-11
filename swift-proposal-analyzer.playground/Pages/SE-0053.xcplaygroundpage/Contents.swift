@@ -51,5 +51,7 @@ Leave the redundant syntax in place, but I personally don't see any merit in tha
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

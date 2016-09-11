@@ -176,5 +176,7 @@ In the end, we rejected this alternative for several reasons:
    direction was considered undesirable.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

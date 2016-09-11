@@ -197,5 +197,7 @@ The design in the original draft was suggested by Dave Abrahams, Dmitri Gribenko
 Dave Abrahams, Nate Cook, David Sweeris, Adrian Zubarev and Xiaodi Wu contributed ideas to the alternatives considered section.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

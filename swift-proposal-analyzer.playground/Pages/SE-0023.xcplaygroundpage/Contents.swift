@@ -60,5 +60,7 @@ massive impact on existing code, changing a significant number of
 APIs.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

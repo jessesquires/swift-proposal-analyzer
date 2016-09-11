@@ -813,5 +813,7 @@ types with stupendously large range.
 Everything that does not depend on [SE-0104](0104-improved-integers.md) is implemented.  Some related operations were added in [SE-0113](0113-rounding-functions-on-floatingpoint.md).
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

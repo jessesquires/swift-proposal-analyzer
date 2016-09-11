@@ -749,5 +749,7 @@ to fit to this proposal after review by Philippe Hausler.
 [swift-2_2-branch]: https://github.com/apple/swift/tree/swift-2.2-branch  "Swift 2.2 branch"
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

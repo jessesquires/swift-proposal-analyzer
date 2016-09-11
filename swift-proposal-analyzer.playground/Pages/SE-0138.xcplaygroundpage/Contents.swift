@@ -1078,5 +1078,7 @@ developers migrate their code, which they likely did not write in the
 first place, shows that this is an unreasonable expectation.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

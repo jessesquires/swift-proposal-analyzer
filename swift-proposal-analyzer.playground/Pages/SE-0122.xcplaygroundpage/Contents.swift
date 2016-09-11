@@ -91,5 +91,7 @@ button.image(for: .normal) = image
 ```
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

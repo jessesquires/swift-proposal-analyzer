@@ -322,5 +322,7 @@ The [first revision of this proposal][rev-1] used `firstFrom` as the parameter n
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

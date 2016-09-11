@@ -87,5 +87,7 @@ general.
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

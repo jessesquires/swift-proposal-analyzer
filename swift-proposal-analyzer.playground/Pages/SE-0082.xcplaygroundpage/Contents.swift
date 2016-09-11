@@ -238,5 +238,7 @@ We will revisit this default behavior if it proves problematic, and implement
 this feature with the flexibility to easily change the default.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

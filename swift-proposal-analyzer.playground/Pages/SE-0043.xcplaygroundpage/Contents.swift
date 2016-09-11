@@ -192,5 +192,7 @@ It would support multiple patterns like so:
 This is not necessary if [chainable pattern matching](#chainable-pattern-matching) was possible, but I've made sure this proposal is compatible.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

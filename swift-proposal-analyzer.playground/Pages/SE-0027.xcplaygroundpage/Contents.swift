@@ -93,5 +93,7 @@ I don't completely understand the growth strategy of `_StringCore`, but it doesn
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

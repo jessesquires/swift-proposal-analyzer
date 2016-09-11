@@ -48,5 +48,7 @@ The proposed change is purely additive and does not affect existing code.
 An alternative for the immutable slices would be to simply rename the already read-only `_base` property to `base` and make it public, but this way the change is not purely additive and might cause some damage inside the standard library code.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

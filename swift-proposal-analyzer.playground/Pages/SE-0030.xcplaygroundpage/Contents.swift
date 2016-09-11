@@ -1061,5 +1061,7 @@ could be useful to design out-of-band members as an independent feature
 independent with behaviors.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

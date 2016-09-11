@@ -116,5 +116,7 @@ outweighed by the inconsistency it would introduce with `if` and
 `while`.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -253,5 +253,7 @@ avoid imposing unnecessary restrictions, and instead simply treat it as a
 recommendation.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

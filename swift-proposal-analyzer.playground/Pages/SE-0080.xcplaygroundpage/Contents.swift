@@ -80,5 +80,7 @@ init(exact value: Float80) throws
 ```
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

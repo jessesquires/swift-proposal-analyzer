@@ -87,5 +87,7 @@ The design of a reflection API would exceed the scope of a Swift 3 bugfix.
 Thanks to Dave Abrahams and Dmitri Gribenko.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

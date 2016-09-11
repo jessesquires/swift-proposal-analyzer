@@ -100,5 +100,7 @@ complexity that the operators add to Swift.
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

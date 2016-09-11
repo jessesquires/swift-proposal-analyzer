@@ -187,5 +187,7 @@ genericFunc = battingAveragePredicate
 ```
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

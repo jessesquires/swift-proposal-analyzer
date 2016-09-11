@@ -98,5 +98,7 @@ The acceptance of SE-0084 will not affect existing code.
 
 * Vlad S suggests introducing "newlines as separators for any comma-separated list, not limited by funcs/typles but also array/dicts/generic type list etc."
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

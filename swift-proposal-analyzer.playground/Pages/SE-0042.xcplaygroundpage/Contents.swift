@@ -149,5 +149,7 @@ behavior of all unapplied method references; not only would this fix the
 undefined behavior hole, but also makes them a more generally useful feature.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

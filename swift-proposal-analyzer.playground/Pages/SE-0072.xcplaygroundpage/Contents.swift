@@ -47,5 +47,7 @@ I propose that we fully eliminate implicit bridging conversions in Swift 3. This
 Code that previously relied on implicit conversions between Swift value types and their associated bridged Objective-C type will now require a manual coercion via an ```as``` cast.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

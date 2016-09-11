@@ -90,5 +90,7 @@ The introduction of the `#keyPath` expression has no impact on existing code, an
 There does not seem to be any obvious alternatives. The only point of discussion was on the name of the expression. `#key` was proposed: it is shorter but does not seem to express that the expression accepts paths.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

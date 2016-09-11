@@ -1119,5 +1119,7 @@ All Swift code that uses libdispatch via the current C API will be affected by t
 The alternative here was to leave the libdispatch API as it is currently imported in C. This proposal aims to improve the experience of using libdispatch in Swift and we did not feel that leaving the API as-is was a viable alternative.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

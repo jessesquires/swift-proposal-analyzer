@@ -317,5 +317,7 @@ what one can express when working with parameterized Objective-C
 classes without fundamentally changing the Swift model.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

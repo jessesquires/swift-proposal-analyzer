@@ -177,5 +177,7 @@ As with many proposals, there is a tradeoff between the status quo and the propo
 An [earlier draft of this proposal](https://github.com/apple/swift-evolution/blob/18a1781d930034583ffc0325a180099f15fbb834/proposals/XXXX-remove-assoctype-inference.md) detailed a design in which types would explicitly bind their associated types using an `associatedtype` declaration. It is presented as an alternative for consideration.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -111,5 +111,7 @@ swift-evolution list, which you can view here:
 [Note on Revision of the Proposal](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160125/008145.html)
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

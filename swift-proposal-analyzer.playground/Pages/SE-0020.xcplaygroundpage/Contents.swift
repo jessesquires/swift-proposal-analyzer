@@ -79,5 +79,7 @@ We considered two other formats for the version argument:
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

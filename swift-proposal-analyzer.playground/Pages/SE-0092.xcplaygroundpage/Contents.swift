@@ -89,5 +89,7 @@ struct FooBarImpl: Foo, Bar { // error: Type ‘FooBarImpl’ does not conform t
 }
 ```
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

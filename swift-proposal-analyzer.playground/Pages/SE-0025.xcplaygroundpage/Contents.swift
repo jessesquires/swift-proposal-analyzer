@@ -154,5 +154,7 @@ The existing code will need to rename `private` to `fileprivate` to achieve the 
 [Jordan Rose]: https://github.com/jrose-apple
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

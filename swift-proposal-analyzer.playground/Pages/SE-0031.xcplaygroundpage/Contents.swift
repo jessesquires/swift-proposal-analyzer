@@ -52,5 +52,7 @@ type-annotation → inout type-annotation
 Decorations using `@inout` (either `@inout(T)` or `@inout T`) were considered and discarded
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

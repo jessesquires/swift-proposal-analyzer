@@ -589,5 +589,7 @@ precedence Multiplicative {
 ```
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

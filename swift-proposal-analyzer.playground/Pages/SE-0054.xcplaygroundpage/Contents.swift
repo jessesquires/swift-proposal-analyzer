@@ -199,5 +199,7 @@ have similar effect.
   initialization and unannotated Objective-C API in today's Swift ecosystem.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

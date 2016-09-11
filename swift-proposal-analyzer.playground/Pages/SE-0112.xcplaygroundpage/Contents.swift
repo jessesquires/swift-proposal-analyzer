@@ -805,5 +805,7 @@ and a set of codes, because a new enum type provides this information
 naturally in Swift.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

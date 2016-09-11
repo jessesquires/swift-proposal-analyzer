@@ -333,5 +333,7 @@ the `object` to be a non-@objc class and only check this precondition under
 to be non-`@objc` class.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

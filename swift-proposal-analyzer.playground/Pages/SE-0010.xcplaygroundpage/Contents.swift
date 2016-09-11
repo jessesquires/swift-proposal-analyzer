@@ -112,5 +112,7 @@ unsafe and allow users to try and trick code taking `StaticString` into
 accepting a dynamic string instead.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

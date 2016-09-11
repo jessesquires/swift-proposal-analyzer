@@ -80,5 +80,7 @@ at use sites. While not semantically interesting, this helps
 developers clean up their code.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

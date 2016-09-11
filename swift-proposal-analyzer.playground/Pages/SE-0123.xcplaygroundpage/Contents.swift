@@ -258,5 +258,7 @@ coercion for a given parameter and could be used both with operator
 functions, and non-operator functions.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

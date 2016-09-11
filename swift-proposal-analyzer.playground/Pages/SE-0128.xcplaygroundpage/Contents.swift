@@ -69,5 +69,7 @@ Leave status quo and force the users to do input checks before trying to initial
 a `UnicodeScalar`.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

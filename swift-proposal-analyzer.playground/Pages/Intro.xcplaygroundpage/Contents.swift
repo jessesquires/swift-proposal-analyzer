@@ -19,7 +19,14 @@ import UIKit
  # Understanding Swift Evolution
  ### What can we learn by analyzing swift-evolution proposals?
 
- This playground includes all of the Swift Evolution proposals as resource files in `Resources/` as well playground pages in `Pages/`.
+ **This playground includes:**
+ 
+ * All of the Swift Evolution proposals
+    * As markdown files in `/Resources/`
+    * As playground pages in `/Pages/`
+ * Code to parse and analyze the proposals
+ 
+ --------------
  */
 
 let analyzer = Analyzer(directory: #fileLiteral(resourceName: "proposals"))
@@ -45,5 +52,7 @@ accepted.count
 
 
 /*:
- [Previous](@previous) | [Next](@next)
+ ----------
+ 
+ **Continue:** [Next](@next)
  */

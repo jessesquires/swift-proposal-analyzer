@@ -611,5 +611,7 @@ The following classes were considered and rejected or deferred for the described
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

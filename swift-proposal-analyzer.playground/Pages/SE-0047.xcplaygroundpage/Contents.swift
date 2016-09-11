@@ -150,5 +150,7 @@ Changing the behavior of non-void functions to use default warnings for unused r
 for their feedback on this topic.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

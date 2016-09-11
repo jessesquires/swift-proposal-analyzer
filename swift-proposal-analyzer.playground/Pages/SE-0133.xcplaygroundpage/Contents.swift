@@ -73,5 +73,7 @@ An alternative is to leave `flatten()` and `joined(separator:)` as separate APIs
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

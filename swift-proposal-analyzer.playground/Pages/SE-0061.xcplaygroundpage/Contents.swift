@@ -143,5 +143,7 @@ function, it is better to add the safety to the standard library in the
 first place.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

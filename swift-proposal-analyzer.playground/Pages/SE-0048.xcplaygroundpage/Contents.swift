@@ -73,5 +73,7 @@ non-generic type aliases, generic type aliases cannot be "resilient".
 This is a new feature, so there is no impact on existing code.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

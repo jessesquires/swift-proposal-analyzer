@@ -331,5 +331,7 @@ system to distinguish between "buffers that may have a null base address" and
 distinction to not be a useful one anyway.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

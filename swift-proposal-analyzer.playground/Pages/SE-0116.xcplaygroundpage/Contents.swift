@@ -302,5 +302,7 @@ implementation, and scheduling concerns:
   directions. These can be done additively.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

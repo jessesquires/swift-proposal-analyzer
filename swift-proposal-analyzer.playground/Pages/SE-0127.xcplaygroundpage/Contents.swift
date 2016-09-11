@@ -107,5 +107,7 @@ getting an object address.
 - Instead of removing `ManagedProtoBuffer`, rename it to `ManagedBufferBase`.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

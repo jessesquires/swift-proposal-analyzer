@@ -1906,5 +1906,7 @@ breaking changes to `UnsafePointer`, we should try to shoot for an
 overall better design that helps programmers understand the concepts.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

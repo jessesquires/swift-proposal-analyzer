@@ -90,5 +90,7 @@ reconsideration, we think our other legacy APIs do not result in the
 same kind of lock-in for the standard library.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

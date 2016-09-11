@@ -66,5 +66,7 @@ The accepted syntax for the line control statement will be modified as follows:
 * The syntax for `#setline` was inconsistent with the other #-directives in that it didn't use parentheses.  After discussion, the core team adjusted the call to use parentheses and comma-separated colon-delimited argument and value pairs for the `file` and `line` arguments. 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

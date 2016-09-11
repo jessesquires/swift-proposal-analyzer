@@ -128,5 +128,7 @@ the sequence after `nil` is returned. This however retains most of the problems
 of the original guaranteee described in this proposal.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -98,5 +98,7 @@ This proposal is additive and does not impact existing code.
 * **Leverage implicit conversions**: The implicit conversions from `UnsafeMutablePointer` to `UnsafePointer` could be leveraged to work around the need for overloads by dropping the existing methods taking `UnsafeMutablePointer` source arguments. Adding explicit overloads seems a better solution than depending on compiler magic and is clearer from a documentation and auto-completion perspective.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

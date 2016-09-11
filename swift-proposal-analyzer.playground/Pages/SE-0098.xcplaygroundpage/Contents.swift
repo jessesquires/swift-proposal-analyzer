@@ -38,5 +38,7 @@ adopt the new convention. This is a simple substitution that should limit effect
 
 Not adopting this rule for Swift.
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -613,5 +613,7 @@ This proposal:
   library, but provides a proof-of-concept implementation.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

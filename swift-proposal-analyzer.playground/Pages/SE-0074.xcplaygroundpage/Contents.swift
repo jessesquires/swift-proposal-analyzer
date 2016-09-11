@@ -284,5 +284,7 @@ The authors considered a few alternatives to the current proposal:
 On [May 11, 2016](https://lists.swift.org/pipermail/swift-evolution-announce/2016-May/000148.html), the core team decided to **Reject** this proposal.  The feedback on the proposal was generally positive about the concept of adding binary search functionality, but  negative about the proposal as written, with feedback that it was adding too much complexity to the API.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

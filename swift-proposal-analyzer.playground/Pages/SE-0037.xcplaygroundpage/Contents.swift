@@ -166,5 +166,7 @@ comments within interpolated sequences inside of string literals, comments
 in lines which contain "#" directives, etc).
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

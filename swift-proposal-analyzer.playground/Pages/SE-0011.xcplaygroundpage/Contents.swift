@@ -110,5 +110,7 @@ could be easily automated without any risk of breaking existing code.
 - [Alternative Keywords](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20151214/003551.html)
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -340,5 +340,7 @@ In discussion, the core team decided it was preferable for ambiguous references
 to be rejected by the compiler and require explicit context.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

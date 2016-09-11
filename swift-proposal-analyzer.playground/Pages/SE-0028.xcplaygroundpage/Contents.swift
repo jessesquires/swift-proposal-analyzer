@@ -73,5 +73,7 @@ The review of SE-0028 "Modernizing Swift's Debugging Identifiers" ran from Janua
 * The core team requests that `#symbol` be split out into a separate proposal, because it needs more detailed design work, and is an additive feature.  For example, it might be appealing to provide a `#mangledname` expression that provides the current symbol as a mangled name: when fed into a demangler, a more structured form of the current symbol would be available.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

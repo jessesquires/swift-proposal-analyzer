@@ -53,5 +53,7 @@ Because it is a breaking change, the earlier, the better.
 This is a breaking change, but migration is trivial.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

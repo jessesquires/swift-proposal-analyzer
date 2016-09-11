@@ -100,5 +100,7 @@ Leave as is. The API will be inconsistent with other APIs such as the
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

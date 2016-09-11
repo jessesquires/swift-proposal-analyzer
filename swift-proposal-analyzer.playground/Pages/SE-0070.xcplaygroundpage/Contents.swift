@@ -178,5 +178,7 @@ Initially, this proposal introduce a new keyword
 Xiaodi Wu for the suggestion to require an explicit `@objc`!
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

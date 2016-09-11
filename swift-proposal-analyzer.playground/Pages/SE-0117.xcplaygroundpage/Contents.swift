@@ -409,5 +409,7 @@ The `fragile` modifier in the Swift 4 resilience design is very similar to this,
 and will follow the precedent set by these keywords.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -148,5 +148,7 @@ annotated with the attribute. However, this attribute hasn't been widely
 adopted in Apple SDKs.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -265,5 +265,7 @@ point to accept our current design as public API.
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

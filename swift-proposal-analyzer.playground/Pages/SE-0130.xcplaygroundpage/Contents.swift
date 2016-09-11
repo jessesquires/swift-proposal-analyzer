@@ -65,5 +65,7 @@ A fix-it could be provided to automate this migration.
 Not Applicable
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

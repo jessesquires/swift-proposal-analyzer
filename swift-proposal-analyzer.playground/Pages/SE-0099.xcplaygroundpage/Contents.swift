@@ -180,5 +180,7 @@ the proposal remains the same, Chris has volunteered to revise it to be in line
 with the approved decision.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

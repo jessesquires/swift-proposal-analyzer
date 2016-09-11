@@ -90,5 +90,7 @@ func anyCommonElements<T, U>(lhs: T, _ rhs: U) -> Bool where
 ```
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

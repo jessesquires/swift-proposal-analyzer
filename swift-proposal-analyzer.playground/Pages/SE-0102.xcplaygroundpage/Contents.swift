@@ -217,5 +217,7 @@ in void context, will still work by the existing `(T...) -> U` to
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

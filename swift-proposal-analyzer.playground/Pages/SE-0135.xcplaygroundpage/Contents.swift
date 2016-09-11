@@ -249,5 +249,7 @@ adds on top of existing functionality.
     version of Swift).
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

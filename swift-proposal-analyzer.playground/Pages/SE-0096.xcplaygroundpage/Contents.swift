@@ -50,5 +50,7 @@ Javascript also includes `typeof(x)` but Javascript does not support static type
 
 Thank you, Nate Cook
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

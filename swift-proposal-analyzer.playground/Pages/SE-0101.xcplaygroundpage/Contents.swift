@@ -170,5 +170,7 @@ These functions offered human factor advantages over the current proposal but di
 Thank you, Xiaodi Wu, Matthew Johnson, Pyry Jahkola, Tony Allevato, Joe Groff, Russ Bishop, and everyone else who contributed to this proposal
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -94,5 +94,7 @@ Chris Lattner writes, "[T]his is directly analogous to the Clang extension `__ha
 There are no alternatives considered.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

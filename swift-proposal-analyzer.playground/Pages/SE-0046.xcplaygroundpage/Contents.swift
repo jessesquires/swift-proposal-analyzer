@@ -113,5 +113,7 @@ with or without labels.
 There are no alternatives considered at this time.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

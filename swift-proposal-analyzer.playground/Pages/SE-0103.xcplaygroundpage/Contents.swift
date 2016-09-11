@@ -90,5 +90,7 @@ The `@noescape(once)` annotation proposed in [SE-0073](https://github.com/apple/
 Thanks to Chris Lattner, John McCall, and anyone else who reviewed and contributed to this proposal.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

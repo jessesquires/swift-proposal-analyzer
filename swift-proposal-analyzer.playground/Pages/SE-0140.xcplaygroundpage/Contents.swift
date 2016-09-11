@@ -204,5 +204,7 @@ sentinel used in the few places where a null-like object is expected, such as
 in collections and JSON serialization.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

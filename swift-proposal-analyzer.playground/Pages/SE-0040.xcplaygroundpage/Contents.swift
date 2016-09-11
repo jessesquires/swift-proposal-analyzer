@@ -78,5 +78,7 @@ public init(_ bounds: Range<Element>)
 There are no alternatives to put forth other than not accepting this proposal.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

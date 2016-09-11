@@ -101,5 +101,7 @@ One alternative solution might be to make `LosslessStringConvertible` a separate
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -128,5 +128,7 @@ to add this for cases in which the author doesn't want to use any of the naming
 conventions, we don't want such an API to be the only way to specify tests.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

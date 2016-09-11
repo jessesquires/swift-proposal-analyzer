@@ -128,5 +128,7 @@ it makes Swift less useful as a systems programming language.
   Originally it only included `UnsafePointer` and `UnsafeMutablePointer`.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

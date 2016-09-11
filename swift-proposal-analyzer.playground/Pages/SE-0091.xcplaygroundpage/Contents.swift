@@ -384,5 +384,7 @@ provided some incredibly valuable insight near the end of the review process
 that was significant enough that I consider him now a coäuthor of the proposal.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

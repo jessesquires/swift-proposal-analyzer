@@ -131,5 +131,7 @@ The external parameter label could be `where` instead of `by`. However, using `w
 [SE-0118]: https://github.com/apple/swift-evolution/blob/master/proposals/0118-closure-parameter-names-and-labels.md
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

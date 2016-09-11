@@ -600,5 +600,7 @@ locking dictionary storage on every access, which would be an
 unacceptable performance penalty.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

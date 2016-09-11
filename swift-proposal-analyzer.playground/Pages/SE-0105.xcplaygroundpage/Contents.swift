@@ -157,5 +157,7 @@ Code must be refactored to move the where clause into `guard` (or, for less styl
 Big thanks to Joe Groff, Brent Royal-Gordon, Xiaodi Wu
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

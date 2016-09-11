@@ -510,5 +510,7 @@ All Swift projects will have to run through a migration step to use the new name
 We considered simply dropping the prefix from all types. However, this would cause quite a few conflicts with standard library types. Also, although Foundation's framework boundary is an easy place to programmatically draw the line for the drop-prefix behavior, the reality is that Foundation has API that feels like it belongs to higher level frameworks as well. We believe this approach better identifies the best candidates for dropping the prefix.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

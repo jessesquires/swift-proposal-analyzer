@@ -480,5 +480,7 @@ When the core team makes a decision regarding this proposal,
 their rationale for the decision will be written here.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

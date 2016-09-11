@@ -96,5 +96,7 @@ the default `SubSequence` (i.e. `Slice`), should also be fine. Those having
 custom `SubSequence`s may stop conforming to the protocol.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

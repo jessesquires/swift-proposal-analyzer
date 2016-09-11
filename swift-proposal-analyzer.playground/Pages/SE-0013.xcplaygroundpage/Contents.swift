@@ -136,5 +136,7 @@ writing in Swift, I believe the proposal is a reasonable tradeoff.
 [apple/swift/remove-partial-super]: https://github.com/apple/swift/tree/remove-partial-super
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

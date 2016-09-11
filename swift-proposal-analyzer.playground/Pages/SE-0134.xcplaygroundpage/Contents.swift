@@ -48,5 +48,7 @@ Fix-its will be needed to help transition existing code.
 The alternative is not to rename the stated properties.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

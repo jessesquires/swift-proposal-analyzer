@@ -104,5 +104,7 @@ This change is additive, although we may consider suppressing the imported, glob
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

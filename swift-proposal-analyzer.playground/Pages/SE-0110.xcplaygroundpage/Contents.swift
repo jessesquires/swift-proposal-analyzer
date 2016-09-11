@@ -56,5 +56,7 @@ Minor changes to user code may be required if this proposal is accepted.
 Don't make this change.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

@@ -136,5 +136,7 @@ This would involve adding a `FilterBidirectionalCollection` to the standard libr
 This is a far-reaching, separate proposal, but it would solve the issue that this proposal seeks to solve. It's worth bearing in mind, though, that `Optional` *probably* wouldn't have a `BidirectionalIndexType`, so the bidirectional version of `flatMap` wouldn't exist on `Optional`s, anyway.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

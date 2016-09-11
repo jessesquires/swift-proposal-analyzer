@@ -196,5 +196,7 @@ core team.  That said, it is being rejected for Swift 3 two reasons:
 Overall, everyone desires the ability to produce more control-flow like functions, but Swift 3 isn’t in a place where it can make sense to tackle this work.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

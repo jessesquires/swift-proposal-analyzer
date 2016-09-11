@@ -121,5 +121,7 @@ Fix-it hints for adding `!` are already provided when optional values are passed
 The alternative is to keep these operators as they are. As discussed above, this leaves the potential for surprising results, and the fact remains that removing them after Swift 3 would break source stability (while reintroducing them later would be purely additive).
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

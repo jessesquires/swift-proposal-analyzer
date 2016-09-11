@@ -144,5 +144,7 @@ but this might break compatibility with Objective-C runtime.
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

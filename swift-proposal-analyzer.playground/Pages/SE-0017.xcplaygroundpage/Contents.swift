@@ -88,5 +88,7 @@ Code previously calling `Unmanaged` API with `COpaquePointer` will need to chang
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

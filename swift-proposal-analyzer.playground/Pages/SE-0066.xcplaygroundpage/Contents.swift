@@ -197,5 +197,7 @@ function types, we would almost certainly reject a proposal to syntax optimize
 them away.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

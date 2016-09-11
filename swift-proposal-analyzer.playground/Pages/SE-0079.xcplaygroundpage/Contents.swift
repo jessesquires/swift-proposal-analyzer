@@ -162,5 +162,7 @@ Variations on this proposal were discussed earlier in the following [swift-evolu
 - [[Last Call] Allow using optional binding to upgrade self from a weak to strong reference](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160222/010904.html)
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

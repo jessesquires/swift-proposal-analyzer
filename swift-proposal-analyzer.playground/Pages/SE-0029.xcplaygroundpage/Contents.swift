@@ -132,5 +132,7 @@ If there is serious interest in pursuing this as a concept, we should do it as a
 The final alternative is that we could leave the feature in the compiler.  However, that means living with its complexity “forever” or breaking code in the Swift 4 timeframe.  It would be preferable to tackle this breakage in the Swift 3 timeframe, since we know that migration will already be needed then.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

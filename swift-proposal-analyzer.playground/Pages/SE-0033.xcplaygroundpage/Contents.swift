@@ -172,5 +172,7 @@ The first draft of this proposal used `enum` instead of `struct` and did not con
 My original idea considered marking regions of code using something like `NS_CASE_LIST_BEGIN` and `NS_CASE_LIST_END`, then importing the constants declared inside of the markers as an enum, but Doug’s `typedef` solution allows for methods to also be annotated, giving the proposal even more type information to use in Swift.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

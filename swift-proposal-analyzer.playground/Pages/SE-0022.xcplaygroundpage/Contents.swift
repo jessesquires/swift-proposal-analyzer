@@ -161,5 +161,7 @@ syntax inside the subexpression of `#selector`, in particular disallowing
 methods calls. Originally any valid Swift expression was supported.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

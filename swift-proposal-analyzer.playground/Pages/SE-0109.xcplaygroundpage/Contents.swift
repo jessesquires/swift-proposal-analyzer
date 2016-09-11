@@ -61,5 +61,7 @@ still conforms to `BooleanLiteralConvertible`.
 
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

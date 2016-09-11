@@ -94,5 +94,7 @@ parameter:
 > language?
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */

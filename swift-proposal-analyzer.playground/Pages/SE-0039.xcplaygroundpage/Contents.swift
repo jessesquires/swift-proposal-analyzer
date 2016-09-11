@@ -88,5 +88,7 @@ protocol _FileReferenceLiteralConvertible {
 `#resourceliteral` may better describe a file resource than `#fileliteral`.
 
 
+----------
+
 [Previous](@previous) | [Next](@next)
 */
