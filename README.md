@@ -13,3 +13,8 @@ $ git submodule init
 $ git submodule update
 ```
 
+### Updating proposals
+
+```bash
+$ ./update_proposals.sh
+```
