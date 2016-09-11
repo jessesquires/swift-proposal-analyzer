@@ -11,7 +11,7 @@
 
 The [`swift-evolution`](https://github.com/apple/swift-evolution) repo is a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
 
-### Cloning
+#### Cloning
 
 ```bash
 $ git clone https://github.com/jessesquires/swift-proposal-analyzer.git
@@ -20,7 +20,7 @@ $ git submodule init
 $ ./update_proposals.sh
 ```
 
-### Updating proposals
+#### Updating proposals
 
 Pulls the latest from [`swift-evolution`](https://github.com/apple/swift-evolution) and adds them to the playground.
 
@@ -28,7 +28,7 @@ Pulls the latest from [`swift-evolution`](https://github.com/apple/swift-evoluti
 $ ./update_proposals.sh
 ```
 
-### Usage
+## Usage
 
 Open `swift-proposal-analyzer.playground`.
 
