@@ -17,14 +17,19 @@ import UIKit
 
 /*:
  # Understanding Swift Evolution
- ### What can we learn by analyzing swift-evolution proposals?
+ ### What can we learn by analyzing [swift-evolution](https://github.com/apple/swift-evolution) proposals?
+
+ **Links:**
+ - [swift-evolution repo](https://github.com/apple/swift-evolution)
+ - [Proposal Status](http://apple.github.io/swift-evolution/)
+ - [Swift Evolution Process](https://github.com/apple/swift-evolution/blob/master/process.md)
 
  **This playground includes:**
  
- * All of the Swift Evolution proposals
-    * As markdown files in `/Resources/`
-    * As playground pages in `/Pages/`
- * Code to parse and analyze the proposals
+ - All of the Swift Evolution proposals
+    - As markdown files in `/Resources/`
+    - As playground pages in `/Pages/`
+ - Code to parse and analyze the proposals
  
  --------------
  */
