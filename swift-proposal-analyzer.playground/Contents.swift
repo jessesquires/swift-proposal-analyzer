@@ -15,8 +15,8 @@
 import Foundation
 import UIKit
 
-let directory = #fileLiteral(resourceName: "proposals")
-let proposals = parseProposals(inDirectory: directory)
+let analyzer = Analyzer(directory: #fileLiteral(resourceName: "proposals"))
+let proposals = analyzer.proposals
 
 var allAuthors = NSCountedSet()
 for p in proposals {
@@ -24,6 +24,5 @@ for p in proposals {
 }
 
 for a in allAuthors {
-    print(a, ": ", allAuthors.count(for: a))
+    print(a, allAuthors.count(for: a), separator: " : ", terminator: "\n")
 }
-
