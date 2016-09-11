@@ -37,7 +37,7 @@ After parsing completes, you'll have an array of `Proposal` types.
 ```swift
 public struct Proposal {
     public let title: String
-    public let number: String
+    public let seNumber: String
     public let fileName: String
     public let authors: [String]
     public let status: String
