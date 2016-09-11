@@ -4,6 +4,7 @@
 
 ## Requirements
 
+- OSX 10.11
 - Xcode 8
 - Swift 3.0
 
