@@ -18,22 +18,24 @@ import Foundation
 public struct Proposal {
     public let title: String
     public let seNumber: String
-    public let fileName: String
     public let authors: [String]
     public let status: String
+
+    public let fileName: String
     public let wordCount: Int
 
     public init(title: String,
                 seNumber: String,
-                fileName: String,
                 authors: [String],
                 status: String,
+                fileName: String,
                 wordCount: Int) {
-        self.title = title.trimmingCharacters(in: .whitespacesAndNewlines)
-        self.seNumber = seNumber.trimmingCharacters(in: .whitespacesAndNewlines)
-        self.fileName = fileName.trimmingCharacters(in: .whitespacesAndNewlines)
+        self.title = title
+        self.seNumber = seNumber
         self.authors = authors
-        self.status = status.trimmingCharacters(in: .whitespacesAndNewlines)
+        self.status = status
+
+        self.fileName = fileName
         self.wordCount = wordCount
     }
 }
@@ -44,6 +46,7 @@ extension Proposal: CustomStringConvertible {
         return seNumber + ": " + title
             + "\nAuthor(s): " + authors.joined(separator: ", ")
             + "\nStatus: " + status
+            + "\nFilename: " + fileName
             + "\nWord count: " + "\(wordCount)"
             + "\n"
     }

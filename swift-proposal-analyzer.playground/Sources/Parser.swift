@@ -47,7 +47,7 @@ func proposalFiles(inDirectory directory: URL) -> [URL : String] {
 func proposalFromFile(contents: String, fileName: String) -> Proposal {
     let lines = proposalLines(10, fromFile: contents)
 
-    let titleLine = lines[0]
+    let titleLine = lines[0].trimmingWhitespace()
     var seNumberLine: String!
     var singleAuthorLine: String?
     var multipleAuthorLine: String?
@@ -83,10 +83,16 @@ func proposalFromFile(contents: String, fileName: String) -> Proposal {
 
     return Proposal(title: title,
                     seNumber: seNumber,
-                    fileName: fileName,
                     authors: authors,
                     status: status,
+                    fileName: fileName,
                     wordCount: words)
+}
+
+extension String {
+    func trimmingWhitespace() -> String {
+        return trimmingCharacters(in: .whitespacesAndNewlines)
+    }
 }
 
 
@@ -114,14 +120,14 @@ func proposalLines(_ numberOfLines: Int, fromFile file: String) -> [String] {
 
 
 func nameFromLine(_ line: String) -> String {
-    return line.trimmingCharacters(in: CharacterSet(["#", " "]))
+    return line.trimmingCharacters(in: CharacterSet(["#", " "])).trimmingWhitespace()
 }
 
 
 func seNumberFromLine(_ line: String) -> String {
     let start = line.index(line.startIndex, offsetBy: 13)
     let range = start..<line.index(start, offsetBy: 7)
-    return line.substring(with: range)
+    return line.substring(with: range).trimmingWhitespace()
 }
 
 
@@ -134,9 +140,9 @@ func authorsFromLine(_ line: String, multiple: Bool) -> [String] {
     for eachAuthor in authorComponents {
         let components = eachAuthor.components(separatedBy: CharacterSet(["[", "]"]))
         if components.count > 1 {
-            authorNames.append(components[1].trimmingCharacters(in: .whitespacesAndNewlines))
+            authorNames.append(components[1].trimmingWhitespace())
         } else {
-            authorNames.append(components[0].trimmingCharacters(in: .whitespacesAndNewlines))
+            authorNames.append(components[0].trimmingWhitespace())
         }
     }
 
@@ -147,5 +153,5 @@ func authorsFromLine(_ line: String, multiple: Bool) -> [String] {
 func statusStringFromLine(_ line: String) -> String {
     let range = line.index(line.startIndex, offsetBy: 10)
     let statusString = line.substring(from: range)
-    return statusString.trimmingCharacters(in: CharacterSet(["*"]))
+    return statusString.trimmingCharacters(in: CharacterSet(["*"])).trimmingWhitespace()
 }
