@@ -37,6 +37,40 @@ public enum Status {
     case deferred
     case rejected
     case withdrawn
+
+    public static let allItems = [
+        Status.inReview,
+        Status.awaitingReview,
+        Status.accepted,
+        Status.implemented(.v2_2),
+        Status.implemented(.v2_3),
+        Status.implemented(.v3_0),
+        Status.implemented(.v3_1),
+        Status.deferred,
+        Status.rejected,
+        Status.withdrawn
+    ]
+
+    public static let allImplemented = [
+        Status.implemented(.v2_2),
+        Status.implemented(.v2_3),
+        Status.implemented(.v3_0),
+        Status.implemented(.v3_1)
+    ]
+
+    public static let allAccepted = [
+        Status.accepted,
+        Status.implemented(.v2_2),
+        Status.implemented(.v2_3),
+        Status.implemented(.v3_0),
+        Status.implemented(.v3_1)
+    ]
+}
+
+extension Status: Hashable {
+    public var hashValue: Int {
+        return description.hashValue
+    }
 }
 
 extension Status: Equatable {
@@ -67,7 +101,7 @@ extension Status: CustomStringConvertible {
         switch self {
         case .inReview: return "In review"
         case .awaitingReview: return "Awaiting review"
-        case .accepted: return "Accepted"
+        case .accepted: return "Accepted (awaiting implementation)"
         case .implemented(let v): return "Implemented (\(v))"
         case .deferred: return "Deferred"
         case .rejected: return "Rejected"

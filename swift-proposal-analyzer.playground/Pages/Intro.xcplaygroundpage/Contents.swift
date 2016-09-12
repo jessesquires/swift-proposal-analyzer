@@ -38,20 +38,30 @@ let analyzer = Analyzer(directory: #fileLiteral(resourceName: "proposals"))
 let proposals = analyzer.proposals
 let authors = analyzer.authors
 
+let totalProposals = proposals.count
 let totalAuthors = authors.count
 
-for p in proposals {
-    print(p)
+let statuses = analyzer.proposalStatus()
+for s in statuses {
+    print(s)
+    print()
 }
 
-let proposalsPerAuthor = analyzer.proposalsPerAuthor
-for a in authors {
-    print(a, proposalsPerAuthor.count(for: a), separator: " : ", terminator: "\n")
-}
+let accepted = analyzer.proposalsWith(status: Status.allAccepted)
+let totalAccepted = accepted.count
+let acceptRate = Double(totalAccepted) / Double(totalProposals)
 
-let accepted = analyzer.proposalsWith(status: .implemented(.v3_1))
+let implemented = analyzer.proposalsWith(status: Status.allImplemented)
+let totalImplemented = implemented.count
+let implementationRate = Double(totalImplemented) / Double(totalProposals)
 
-accepted.count
+let deferred = analyzer.proposalsWith(status: .deferred)
+let totalDeferred = deferred.count
+
+//let proposalsPerAuthor = analyzer.proposalsPerAuthor
+//for a in authors {
+//    print(a, proposalsPerAuthor.count(for: a), separator: " : ", terminator: "\n")
+//}
 
 
 

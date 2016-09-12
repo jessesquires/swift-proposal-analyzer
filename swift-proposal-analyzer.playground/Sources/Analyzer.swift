@@ -43,9 +43,37 @@ public final class Analyzer {
         self.proposals = parseProposals(inDirectory: directory)
     }
 
-    public func proposalsWith(status: Status) -> [Proposal] {
+    public func proposalsWith(status statuses: [Status]) -> [Proposal] {
         return proposals.filter { prop -> Bool in
-            return prop.status == status
+            return statuses.contains(prop.status)
         }
+    }
+
+    public func proposalsWith(status statuses: Status...) -> [Proposal] {
+        return proposals.filter { prop -> Bool in
+            return statuses.contains(prop.status)
+        }
+    }
+
+    public func proposalsPerStatus() -> [Status : [Proposal]] {
+        var dict = [Status : [Proposal]]()
+        for status in Status.allItems {
+            let proposals = proposalsWith(status: status)
+            if proposals.count > 0 {
+                dict[status] = proposals
+            }
+        }
+        return dict
+    }
+
+    public func proposalStatus() -> [String] {
+        var stats = [String]()
+        let dict = proposalsPerStatus()
+        for (status, proposals) in dict {
+            var str = "\(status): \(proposals.count)\n"
+            str += proposals.map { $0.seNumber }.joined(separator: ", ")
+            stats.append(str)
+        }
+        return stats.sorted()
     }
 }
