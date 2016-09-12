@@ -58,6 +58,10 @@ let implementationRate = Double(totalImplemented) / Double(totalProposals)
 let deferred = analyzer.proposalsWith(status: .deferred)
 let totalDeferred = deferred.count
 
+let swift2_2 = analyzer.proposalsWith(status: .implemented(.v2_2)).count
+let swift3_0 = analyzer.proposalsWith(status: .implemented(.v3_0)).count
+let increase = percentIncrease(from: swift2_2, to: swift3_0)
+
 //let proposalsPerAuthor = analyzer.proposalsPerAuthor
 //for a in authors {
 //    print(a, proposalsPerAuthor.count(for: a), separator: " : ", terminator: "\n")
