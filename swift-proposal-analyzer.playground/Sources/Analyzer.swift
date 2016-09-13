@@ -28,14 +28,6 @@ public final class Analyzer {
         return Array<String>(allAuthors).sorted()
     }()
 
-    public lazy var proposalsPerAuthor: NSCountedSet = {
-        var allAuthors = NSCountedSet()
-        for p in self.proposals {
-            allAuthors.addObjects(from: p.authors)
-        }
-        return allAuthors
-    }()
-
     private let directory: URL
 
     public init(directory: URL) {
@@ -81,5 +73,8 @@ public final class Analyzer {
 
 public func percentIncrease(from: Int, to: Int) -> Double {
     let increase = Double(to) - Double(from)
+    if (from == 0) {
+        return increase * 100.0
+    }
     return (increase / Double(from)) * 100.0
 }
