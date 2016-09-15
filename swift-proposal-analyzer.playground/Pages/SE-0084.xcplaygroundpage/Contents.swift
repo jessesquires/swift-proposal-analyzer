@@ -84,7 +84,7 @@ Allowing cut and paste or commenting of entire parameter lines means simple chan
 
 > "We should be consistent in either accepting or rejecting trailing commas everywhere we have comma-delimited syntax. I'm in favor of accepting it, since it's popular in languages where it's supported to enable a minimal-diff style, so that changes to code don't impact neighboring lines for purely syntactic reasons.
 >
-> If you add an argument to a function, without trailing comma support, a comma has to be added to dirty the previous line In response to observations that tuples and function arguments are somehow different from collection literals because they generally have fixed arity, I'll note that we have an very prominent variadic function in the standard library, "print", and that adding or removing values to a "print" is a very common and natural thing to do
+> If you add an argument to a function, without trailing comma support, a comma has to be added to dirty the previous line In response to observations that tuples and function arguments are somehow different from collection literals because they generally have fixed arity, I'll note that we have a very prominent variadic function in the standard library, "print", and that adding or removing values to a "print" is a very common and natural thing to do
 >
 > We've generally shied away from legislating style; see our rationale behind not requiring `self.` ([example](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160104/005478.html)) In languages where trailing commas are pervasively allowed, such as Perl, Python, Ruby, and modern Javascript, I haven't seen any indication that this is a major problem. Less blood has definitely been shed over it than over bracing style and other style wars." - Joe Groff
 
@@ -97,6 +97,7 @@ The acceptance of SE-0084 will not affect existing code.
 * Chris Lattner: A narrower way to solve the same problem would be to allow a comma before the `)`, but *only* when there is a newline between them.
 
 * Vlad S suggests introducing "newlines as separators for any comma-separated list, not limited by funcs/typles but also array/dicts/generic type list etc."
+
 
 ----------
 

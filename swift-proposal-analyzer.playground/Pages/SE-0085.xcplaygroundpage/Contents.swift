@@ -6,6 +6,7 @@
 * Review Manager: [Daniel Dunbar](http://github.com/ddunbar)
 * Status: **Implemented (Swift 3)**
 * Decision Notes: [Rationale](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160516/017728.html)
+* Pull Request: [apple/swift-package-manager#364](https://github.com/apple/swift-package-manager/pull/364)
 
 ## Note
 
@@ -85,7 +86,7 @@ the new `swift package` subcommands are added, as aliases to those subcommands,
 for compatibility. They will be removed before Swift 3 is released.
 
 We acknowledge the possible need for a shorter version of the `swift package`
-command, and believe we can revisit this to add an shorter alias for this in the
+command, and believe we can revisit this to add a shorter alias for this in the
 future if necessary. See the alternatives section below.
 
 ## Impact on existing packages

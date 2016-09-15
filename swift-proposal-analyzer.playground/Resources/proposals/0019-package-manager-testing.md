@@ -5,7 +5,7 @@
 * Review Manager: [Rick Ballard](https://github.com/rballard)
 * Status: **Implemented (Swift 3)**
 * Decision Notes: [Rationale](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160118/007278.html)
-* Bugs: [SR-592](https://bugs.swift.org/browse/SR-592)
+* Bug: [SR-592](https://bugs.swift.org/browse/SR-592)
 
 ## Introduction
 
@@ -18,7 +18,7 @@ will help ensure a stable and reliable packaging ecosystem.
 ## Proposed Solution
 
 We propose to extend our conventional package directory layout
-to accomodate test modules.
+to accommodate test modules.
 Any subdirectory of the package root directory named "Tests"
 or any subdirectory of an existing module directory named "Tests"
 will comprise a test module.

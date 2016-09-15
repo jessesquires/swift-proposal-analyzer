@@ -357,6 +357,7 @@ Foundation will provide the following macro and methods annotated accordingly:
 - (void)enumerateLinesUsingBlock:(void (NS_NOESCAPE ^)(NSString *line, BOOL *stop))block NS_AVAILABLE(10_6, 4_0);
 ```
 
+
 ----------
 
 [Previous](@previous) | [Next](@next)

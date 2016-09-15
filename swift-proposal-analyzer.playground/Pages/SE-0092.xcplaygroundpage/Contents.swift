@@ -4,8 +4,9 @@
 * Proposal: [SE-0092](0092-typealiases-in-protocols.md)
 * Authors: [David Hart](https://github.com/hartbit), [Doug Gregor](https://github.com/DougGregor)
 * Review Manager: [Chris Lattner](http://github.com/lattner)
-* Status: **Implemented (Swift 3.0)**
-* Decison Notes: [Rationale](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160516/017742.html)
+* Status: **Implemented (Swift 3)**
+* Decision Notes: [Rationale](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160516/017742.html)
+* Bug: [SR-1539](https://bugs.swift.org/browse/SR-1539)
 
 ## Introduction
 
@@ -88,6 +89,7 @@ struct FooBarImpl: Foo, Bar { // error: Type ‘FooBarImpl’ does not conform t
     var inner: Float
 }
 ```
+
 
 ----------
 

@@ -6,18 +6,18 @@
 * Status: **Deferred**
 * Decision Notes: [Rationale](https://lists.swift.org/pipermail/swift-evolution-announce/2016-April/000095.html)
 
-# Introduction
+## Introduction
 
 Provide an `ObjectiveCBridgeable` protocol that allows a Swift type to control how it is represented in Objective-C by converting into and back from an entirely separate `@objc` type. This frees library authors to create truly native Swift APIs while still supporting Objective-C.
 
 Swift-evolution thread: [\[Idea\] ObjectiveCBridgeable](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20160222/011032.html)
 
 
-# Motivation
+## Motivation
 
 There is currently no good way to define a Swift-y API that makes use of generics, enums with associated values, structs, protocols with associated types, and other Swift features while still exposing that API to Objective-C.
 
-This is especially prevelant in a mixed codebase. Often an API must be dumbed-down or Swift features eschewed because rewriting the entire codebase is impractical and Objective-C code must be able to call the new Swift code. This results in a situation where new code or refactored code adopts an Objective-C compatible API which is compromised, less type safe, and isn't as nice to work with as a truly native Swift API.
+This is especially prevelent in a mixed codebase. Often an API must be dumbed-down or Swift features eschewed because rewriting the entire codebase is impractical and Objective-C code must be able to call the new Swift code. This results in a situation where new code or refactored code adopts an Objective-C compatible API which is compromised, less type safe, and isn't as nice to work with as a truly native Swift API.
 
 The cascading effect is even worse because when the last vestiges of Objective-C have been swept away, you're left with a mountain of Swift code that essentially looks like a direct port of Objective-C code and doesn't take advantage of any of Swift's modern features. 
 
@@ -31,14 +31,14 @@ Choice #1 is not practical in the real world with ship dates, resulting in most 
 
 
 
-# Proposed Solution
+## Proposed Solution
 
 Today you can adopt the private protocol `_ObjectiveCBridgeable` and when a bridged collection (like `Array` &lt;--&gt; `NSArray`) is passed between Swift and Objective-C, Swift will automatically call the appropriate functions to  control the way the type bridges. This allows a Swift type to have a completely different representation in Objective-C.
 
 The solution proposed is to expose a new protocol `ObjectiveCBridgeable` and have the compiler generate the appropriate Objective-C bridging thunks for any function or property of an `@objc` type, not just for values inside collections. 
 
 
-## ObjectiveCBridgeable Protocol
+### ObjectiveCBridgeable Protocol
 
 ```swift
 /// A type adopting `ObjectiveCBridgeable` will be exposed
@@ -121,7 +121,7 @@ public extension ObjectiveCBridgeable {
 }
 ```
 
-# Detailed Design
+## Detailed Design
 
 1. Expose the protocol `ObjectiveCBridgeable`. This protocol will replace the old private protocol `_ObjectiveCBridgeable`.
 2. When generating an Objective-C interface for an `@objc` class type:
@@ -136,7 +136,7 @@ public extension ObjectiveCBridgeable {
 5. The Swift type and `ObjectiveCType` must be defined in the same module. If the `ObjectiveCType` is defined in Objective-C then it must come from the same-named Objective-C module.
 
 
-## Ambiguity and Casting
+### Ambiguity and Casting
 
 The compiler generates automatic thunks only when there is no ambiguity, while explicit casts and bridged collection types always use the protocol implementation.
 
@@ -149,12 +149,12 @@ The compiler generates automatic thunks only when there is no ambiguity, while e
     1. The compiler should emit a diagnostic when it detects two Swift types attempting to bridge to the same `ObjectiveCType`.
 3. An exception to these rules exists for trivially convertable built-in types like `NSInteger` &lt;--&gt; `Int` when specified outside of a bridged collection type. In those cases the compiler will continue the existing behavior, bypassing the `ObjectiveCBridgeable` protocol. The effect is that types like `Int` will not bridge to `NSNumber` unless contained inside a collection type (see `BuiltInBridgeable below`).
 
-## Resiliance
+### Resiliance
 
 Adding or removing conformance to `ObjectiveCBridgeable`, or changing the `ObjectiveCType` is a fragile (breaking) change.
 
 
-## Example
+### Example
 
 Here is an enum with associated values that adopts the protocol and bridges by converting itself into an object representation.
 
@@ -210,42 +210,40 @@ class ObjCFizzer: NSObject {
 ```
 
 
-# Impact on existing code
+## Impact on existing code
 
 None. There are no breaking changes and adoption is opt-in.
 
 
-# Alternatives considered
+## Alternatives considered
 
 The main alternative, as stated above, is not to adopt Swift features that cannot be expressed in Objective-C. 
 
 The less feasible alternative is to provide bridging manually by segmenting methods and properties into `@objc` and `@nonobjc` variants, then manually converting at all the touch points. In practice I don't expect this to be very common due to the painful overhead it imposes. Developers are much more likely to avoid using Swift features (even subconsciously).
 
-## Ambiguity
+### Ambiguity
 
 The idea of allowing multiple Swift types to bridge to the same Objective-C type was discussed. It should technically be possible since the same-module rule wouldn't allow the shape of an imported API to vary based on which modules you imported. The compiler *could* skip generating the thunks in this case and the user would need to provide `@objc` equivalent members that performed casting to resolve the ambiguity.
 
 However there doesn't appear to be a convincing case to support such complex behavior so in the interests of simplicity this proposal keeps this kind of ambiguity an error. It can always be relaxed in the future if desired.
 
 
-## BuiltInBridgeable
+### BuiltInBridgeable
 
-On the mailing list the idea of a protocol to supercede `ObjectiveCBridgeable` for built-in types like `Int` was brought up but not considered essential for this proposal. (The protocol would be decorative only, not having any functions or properties).
+On the mailing list the idea of a protocol to supersede `ObjectiveCBridgeable` for built-in types like `Int` was brought up but not considered essential for this proposal. (The protocol would be decorative only, not having any functions or properties).
 
 These types are special because they bridge differently inside collections vs outside. The compiler already has *magic* knowledge of these types and I don't anticipate the list of types will ever get any longer. The only benefit of a `BuiltInBridgeable` protocol would be to explicitly declare which types have this "magic".
 
 This can always be implemented in the future if it is desired.
 
 
-# Future Directions
+## Future Directions
 
-## Conditional Conformance
+### Conditional Conformance
 
 It is intended that when and if Swift 3 adopts conditional protocol conformance that the standard library types such as `Array` and `Dictionary` will declare conditional conformance to `ObjectiveCBridgeable` if their element types are `ObjectiveCBridgeable` (with explicitly declared conformance for built-ins like `Int`).
 
--------------------------------------------------------------------------------
-
-# Rationale
+## Rationale
 
 On April 12, 2016, the core team decided to **defer** this proposal from
 Swift 3. We agree that it would be valuable to give library authors the

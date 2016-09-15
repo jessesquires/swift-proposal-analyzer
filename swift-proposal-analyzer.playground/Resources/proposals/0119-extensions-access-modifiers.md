@@ -102,7 +102,7 @@ public protocol SomeProtocol {}
 public extension A : SomeProtocol {}
 ```
 
-*Extensions* are also used for *protocol default implementations* in respect to the mentioned rules. That means that if someone would want to provide a public default implementation for a specific protocol there are three different ways to  achive this goal:
+*Extensions* are also used for *protocol default implementations* in respect to the mentioned rules. That means that if someone would want to provide a public default implementation for a specific protocol there are three different ways to  achieve this goal:
 
 ```swift
 public protocol G {
@@ -471,9 +471,3 @@ This is a source-breaking change that can be automated by a migrator.
 ## Alternatives considered
 
 * Allow *access modifier* when *type-inheritance-clause* is present and use the rules presented in [**Proposed solution**](#proposed-solution).
-
-## Rationale
-
-On [Date], the core team decided to **(TBD)** this proposal.
-When the core team makes a decision regarding this proposal,
-their rationale for the decision will be written here.

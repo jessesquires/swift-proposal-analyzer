@@ -6,6 +6,7 @@
 * Review Manager: [Chris Lattner](https://github.com/lattner)
 * Status: **Implemented (Swift 3)**
 * Decision Notes: [Rationale](https://lists.swift.org/pipermail/swift-evolution-announce/2016-May/000121.html)
+* Pull Request: [apple/swift#2453](https://github.com/apple/swift/pull/2453)
 * Previous Revision: [1](https://github.com/apple/swift-evolution/blob/fb1368a6a5474f57aa8f1846b5355d18753098f3/proposals/0067-floating-point-protocols.md)
 
 ## Introduction
@@ -188,7 +189,7 @@ public protocol FloatingPoint: Comparable, IntegerLiteralConvertible, SignedNumb
   /// This quantity, or a related quantity is sometimes called "epsilon" or
   /// "machine epsilon".  We avoid that name because it has different meanings
   /// in different languages, which can lead to confusion, and because it
-  /// suggests that it is an good tolerance to use for comparisons,
+  /// suggests that it is a good tolerance to use for comparisons,
   /// which is almost never is.
   ///
   /// (See https://en.wikipedia.org/wiki/Machine_epsilon for more detail)
@@ -449,7 +450,7 @@ public protocol FloatingPoint: Comparable, IntegerLiteralConvertible, SignedNumb
   @warn_unused_result
   func isLessThanOrEqualTo(_ other: Self) -> Bool
 
-  /// True if and only if `self` preceeds `other` in the IEEE 754 total order
+  /// True if and only if `self` precedes `other` in the IEEE 754 total order
   /// relation.
   ///
   /// This relation is a refinement of `<=` that provides a total order on all
@@ -762,7 +763,7 @@ and `isNaN`.
 ## Changes from the draft proposal
 
 1. Removed the `Arithmetic` protocol; it may be circulated again in the future
-as an independent proposal, or as part of an new model for integers.
+as an independent proposal, or as part of a new model for integers.
 
 2. Removed the `add[ing]`, `subtract[ing]`, etc methods, which were hooks for
 `Arithmetic`.  This proposal now includes only the existing operator forms.

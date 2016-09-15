@@ -5,6 +5,7 @@
 * Review Manager: [Chris Lattner](http://github.com/lattner)
 * Status: **Implemented (Swift 3)**
 * Decision Notes: [Rationale](https://lists.swift.org/pipermail/swift-evolution-announce/2016-June/000180.html)
+* Bug: [SR-2218](https://bugs.swift.org/browse/SR-2218)
 
 ## Introduction
 
@@ -37,7 +38,7 @@ At this time, this operation cannot be written as a stdlib feature and it will b
 
 ## Impact on Existing Code
 
-Adopting this proposal will break code and require migration support. The postfix property syntax must change to a operator call. 
+Adopting this proposal will break code and require migration support. The postfix property syntax must change to an operator call. 
 
 ## Alternatives Considered
 

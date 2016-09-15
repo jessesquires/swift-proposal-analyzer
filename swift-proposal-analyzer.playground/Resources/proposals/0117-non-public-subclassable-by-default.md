@@ -5,6 +5,7 @@
 * Review Manager: [Chris Lattner](http://github.com/lattner)
 * Status: **Implemented (Swift 3)**
 * Decision Notes: [Rationale](https://lists.swift.org/pipermail/swift-evolution-announce/2016-July/000268.html)
+* Pull Request: [apple/swift#3882](https://github.com/apple/swift/pull/3882)
 * Previous Revision: [1](https://github.com/apple/swift-evolution/blob/367086f18a5deaf8f9dfbe3f5a4846ef19addf38/proposals/0117-non-public-subclassable-by-default.md), [2](https://github.com/apple/swift-evolution/blob/2989538daa1640cfa6a56f80b5c7599967af0905/proposals/0117-non-public-subclassable-by-default.md), [3](https://github.com/apple/swift-evolution/blob/15c18d24adb7e701ae831b643e0803f1b6e601d9/proposals/0117-non-public-subclassable-by-default.md)
 
 ## Introduction
@@ -171,7 +172,7 @@ current module and that superclass's access level is not `open`.
 An `open` class may not also be declared `final`.
 
 The superclass of an `open` class must be `open`.  This is consistent
-with the existing access rule for superclasses.  It may be desireable
+with the existing access rule for superclasses.  It may be desirable
 to lift this restriction in a future proposal.
 
 ### `open` class members
