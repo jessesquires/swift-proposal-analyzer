@@ -89,6 +89,7 @@ print()
 print("----------------------")
 print("# authors per proposal")
 print("----------------------\n")
+print(totalAuthors, "total authors")
 var authorCountSet = Set<Int>()
 for p in proposals {
     authorCountSet.insert(p.authors.count)
@@ -99,6 +100,8 @@ for count in sortedAuthorCounts {
     let numProposals = proposals.filter { $0.authors.count == count }.count
     print(numProposals, "proposals with", count, "authors")
 }
+let avgAuthorsPerProposal = Double(totalProposals) / Double(totalAuthors)
+print("Avg:", String(format: "%.2f", avgAuthorsPerProposal))
 print()
 
 print("----------------------")
@@ -114,7 +117,6 @@ authorsRanked.sort { $0.numProposals >= $1.numProposals }
 for x in authorsRanked {
     print(x.numProposals, x.author)
 }
-
 
 /*
  # Other Stats?
