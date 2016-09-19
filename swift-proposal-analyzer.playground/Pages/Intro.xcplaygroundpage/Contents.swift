@@ -117,6 +117,23 @@ authorsRanked.sort { $0.numProposals >= $1.numProposals }
 for x in authorsRanked {
     print(x.numProposals, x.author)
 }
+print()
+
+
+print("-----------")
+print("word counts")
+print("-----------\n")
+let totalWords = proposals.map { $0.wordCount }.reduce(0, +)
+let avgWordCount = Double(totalWords) / Double(totalProposals)
+print("Avg word count:", Int(avgWordCount), "\n")
+
+let wordsPerProposal = proposals.sorted { $0.wordCount > $1.wordCount }
+print("Max:\n\(wordsPerProposal.first!)")
+print("Min:\n\(wordsPerProposal.last!)")
+print("Median\n:\(wordsPerProposal[totalProposals / 2]))")
+print()
+
+
 
 
 /*
@@ -125,10 +142,6 @@ for x in authorsRanked {
  - core team vs community proposals
  - types of proposals: bug, syntax refinement, feature refinement, new feature
  */
-
-
-
-
 
 
 
