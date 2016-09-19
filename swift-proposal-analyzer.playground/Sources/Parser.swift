@@ -99,9 +99,12 @@ func wordCount(fromFile file: String) -> Int {
     // yes, this is extremely naive and not very precise
     // but good enough to get a basic idea of word count
     // also, i'm lazy
-    return file.components(separatedBy: .whitespaces).count
-}
+    let trimmedChars = CharacterSet.punctuationCharacters.union(.symbols)
 
+    return file.components(separatedBy: .whitespacesAndNewlines)
+        .map { $0.trimmingCharacters(in: trimmedChars) }
+        .filter { $0 != "" }.count
+}
 
 func proposalLines(_ numberOfLines: Int, fromFile file: String) -> [String] {
     var lines = [String]()
