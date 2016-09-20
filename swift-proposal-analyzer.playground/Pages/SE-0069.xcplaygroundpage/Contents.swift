@@ -145,9 +145,7 @@ enum Barcode {
 // Simplified for clarity
 struct IncrementingCode {
     private var data : NSMutableData
-    init() { 
-        // Store a value of 0 in our Data
-    }
+    init() { /* Store a value of 0 in our Data */ }
     func increment() {
        // Retrieve the value, increment, and set it back
     }
