@@ -69,12 +69,3 @@ public final class Analyzer {
         return stats.sorted()
     }
 }
-
-
-public func percentIncrease(from: Int, to: Int) -> Double {
-    let increase = Double(to) - Double(from)
-    if (from == 0) {
-        return increase * 100.0
-    }
-    return (increase / Double(from)) * 100.0
-}

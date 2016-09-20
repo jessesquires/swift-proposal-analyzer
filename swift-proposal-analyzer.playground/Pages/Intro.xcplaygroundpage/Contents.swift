@@ -34,6 +34,11 @@ import UIKit
  --------------
  */
 
+
+/*:
+ ### Proposal data
+ */
+
 let analyzer = Analyzer(directory: #fileLiteral(resourceName: "proposals"))
 let proposals = analyzer.proposals
 let authors = analyzer.authors
@@ -42,9 +47,11 @@ let totalProposals = proposals.count
 let totalAuthors = authors.count
 
 
-print("---------------")
-print("Proposal Status")
-print("---------------\n")
+/*:
+ ### Proposal Status
+ */
+printTitle("Proposal Status")
+
 let statuses = analyzer.proposalStatus()
 for s in statuses {
     print(s)
@@ -52,9 +59,11 @@ for s in statuses {
 }
 
 
-print("------")
-print("Totals")
-print("------\n")
+/*:
+ ### Totals
+ */
+printTitle("Totals")
+
 let accepted = analyzer.proposalsWith(status: Status.allAccepted)
 let totalAccepted = accepted.count
 let acceptRate = Double(totalAccepted) / Double(totalProposals)
@@ -83,12 +92,13 @@ print("Withdrawn:", totalWithdrawn, ",", String(format: "%.2f%%", withdrawnRate 
 let swift2_2 = analyzer.proposalsWith(status: .implemented(.v2_2)).count
 let swift3_0 = analyzer.proposalsWith(status: .implemented(.v3_0)).count
 let increase = percentIncrease(from: swift2_2, to: swift3_0)
-print()
 
 
-print("----------------------")
-print("# authors per proposal")
-print("----------------------\n")
+/*:
+ ### Authors per proposal
+ */
+printTitle("# authors per proposal")
+
 print(totalAuthors, "total authors")
 var authorCountSet = Set<Int>()
 for p in proposals {
@@ -102,11 +112,12 @@ for count in sortedAuthorCounts {
 }
 let avgAuthorsPerProposal = Double(totalProposals) / Double(totalAuthors)
 print("Avg:", String(format: "%.2f", avgAuthorsPerProposal))
-print()
 
-print("----------------------")
-print("# proposals per author")
-print("----------------------\n")
+
+/*:
+ ### Proposals per author
+ */
+printTitle("# proposals per author")
 var authorsRanked = [(author: String, numProposals: Int)]()
 for a in authors {
     let n = proposals.filter { $0.authors.contains(a) }.count
@@ -117,12 +128,13 @@ authorsRanked.sort { $0.numProposals >= $1.numProposals }
 for x in authorsRanked {
     print(x.numProposals, x.author)
 }
-print()
 
 
-print("-----------")
-print("word counts")
-print("-----------\n")
+/*:
+ ### Word counts
+ */
+printTitle("word counts")
+
 let totalWords = proposals.map { $0.wordCount }.reduce(0, +)
 let avgWordCount = Double(totalWords) / Double(totalProposals)
 print("Avg word count:", Int(avgWordCount), "\n")
@@ -130,7 +142,7 @@ print("Avg word count:", Int(avgWordCount), "\n")
 let wordsPerProposal = proposals.sorted { $0.wordCount > $1.wordCount }
 print("Max:\n\(wordsPerProposal.first!)")
 print("Min:\n\(wordsPerProposal.last!)")
-print("Median\n:\(wordsPerProposal[totalProposals / 2]))")
+print("Median:\n\(wordsPerProposal[totalProposals / 2])")
 print()
 
 
