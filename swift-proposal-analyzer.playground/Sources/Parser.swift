@@ -20,7 +20,7 @@ public func parseProposals(inDirectory directory: URL) -> [Proposal] {
 
     var allProposals = [Proposal]()
     for (url, fileContents) in files {
-        let proposal = proposalFromFile(contents: fileContents, fileName: url.lastPathComponent)
+        let proposal = proposalFrom(fileContents: fileContents, fileName: url.lastPathComponent)
         allProposals.append(proposal)
     }
 
@@ -44,8 +44,8 @@ func proposalFiles(inDirectory directory: URL) -> [URL : String] {
 }
 
 
-func proposalFromFile(contents: String, fileName: String) -> Proposal {
-    let lines = proposalLines(10, fromFile: contents)
+func proposalFrom(fileContents: String, fileName: String) -> Proposal {
+    let lines = proposalLines(10, fromFile: fileContents)
 
     let titleLine = lines[0].trimmingWhitespace()
     var seNumberLine: String!
@@ -78,13 +78,14 @@ func proposalFromFile(contents: String, fileName: String) -> Proposal {
     let authors = authorsFromLine(authorLine, multiple: (singleAuthorLine == nil))
 
     let status = statusFromLine(statusLine)
-    let words = wordCount(fromFile: contents)
+    let words = wordCount(fromFile: fileContents)
 
     return Proposal(title: title,
                     seNumber: seNumber,
                     authors: authors,
                     status: status,
                     fileName: fileName,
+                    fileContents: fileContents,
                     wordCount: words)
 }
 

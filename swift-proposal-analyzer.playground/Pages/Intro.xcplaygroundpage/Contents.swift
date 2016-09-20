@@ -25,12 +25,12 @@ import UIKit
  - [Swift Evolution Process](https://github.com/apple/swift-evolution/blob/master/process.md)
 
  **This playground includes:**
- 
+
  - All of the Swift Evolution proposals
     - As markdown files in `/Resources/`
     - As playground pages in `/Pages/`
  - Code to parse and analyze the proposals
- 
+
  --------------
  */
 
@@ -143,7 +143,19 @@ let wordsPerProposal = proposals.sorted { $0.wordCount > $1.wordCount }
 print("Max:\n\(wordsPerProposal.first!)")
 print("Min:\n\(wordsPerProposal.last!)")
 print("Median:\n\(wordsPerProposal[totalProposals / 2])")
-print()
+
+
+/*:
+ ### Word occurences
+ */
+
+let text = "Objective-C"
+var count = 0
+for p in proposals {
+    count += p.occurences(of: text)
+}
+count
+
 
 
 
@@ -160,10 +172,8 @@ print()
 
 
 
-
-
 /*:
  ----------
- 
+
  **Continue:** [Next](@next)
  */

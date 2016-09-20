@@ -21,6 +21,7 @@ public struct Proposal {
     public let status: Status
 
     public let fileName: String
+    public let fileContents: String
     public let wordCount: Int
 
     public init(title: String,
@@ -28,6 +29,7 @@ public struct Proposal {
                 authors: [String],
                 status: Status,
                 fileName: String,
+                fileContents: String,
                 wordCount: Int) {
         self.title = title
         self.seNumber = seNumber
@@ -35,6 +37,7 @@ public struct Proposal {
         self.status = status
 
         self.fileName = fileName
+        self.fileContents = fileContents
         self.wordCount = wordCount
     }
 }
@@ -63,5 +66,28 @@ extension Proposal {
         let start = seNumber.index(seNumber.startIndex, offsetBy: 3)
         let str = seNumber.substring(from: start)
         return Int(str)!
+    }
+}
+
+extension Proposal {
+    public func occurences(of text: String) -> Int {
+        let textToFind = text.lowercased()
+        var count = 0
+        let range = Range(uncheckedBounds: (fileContents.startIndex, fileContents.endIndex))
+
+        fileContents.enumerateSubstrings(in: range, { (substring, substringRange, enclosingRange, stop) in
+
+            if let str = substring?.lowercased(), str.contains(textToFind) {
+                count += 1
+
+                let words = str.components(separatedBy: .whitespaces)
+                let numOccurences = words.filter { $0.contains(textToFind) }.count
+                if numOccurences > 1 {
+                    count += (numOccurences - 1)
+                }
+            }
+        })
+
+        return count
     }
 }
