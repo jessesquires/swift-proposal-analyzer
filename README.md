@@ -69,6 +69,10 @@ let proposalsByLattner = analyzer.proposals.filter { p -> Bool in
 }
 ```
 
+## Caveats
+
+> TODO:
+
 ## Credits
 
 Created and maintained by [**@jesse_squires**](https://twitter.com/jesse_squires).
