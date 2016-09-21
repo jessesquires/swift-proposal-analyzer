@@ -69,6 +69,12 @@ let proposalsByLattner = analyzer.proposals.filter { p -> Bool in
 }
 ```
 
+## Credits
+
+Created and maintained by [**@jesse_squires**](https://twitter.com/jesse_squires).
+
 ## License
 
 Released under an [MIT License](http://opensource.org/licenses/MIT). See `LICENSE` for details.
+
+>**Copyright &copy; 2016-present Jesse Squires.**
