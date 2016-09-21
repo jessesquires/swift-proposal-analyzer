@@ -88,7 +88,7 @@ extension Proposal {
 }
 
 extension Proposal {
-    public func occurences(of text: String) -> Int {
+    public func occurrences(of text: String) -> Int {
         let textToFind = text.lowercased()
         var count = 0
         let range = Range(uncheckedBounds: (fileContents.startIndex, fileContents.endIndex))
@@ -99,9 +99,9 @@ extension Proposal {
                 count += 1
 
                 let words = str.components(separatedBy: .whitespaces)
-                let numOccurences = words.filter { $0.contains(textToFind) }.count
-                if numOccurences > 1 {
-                    count += (numOccurences - 1)
+                let numOccurrences = words.filter { $0.contains(textToFind) }.count
+                if numOccurrences > 1 {
+                    count += (numOccurrences - 1) // - 1 because otherwise we would count this twice
                 }
             }
         })

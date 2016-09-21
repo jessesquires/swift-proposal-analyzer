@@ -34,6 +34,9 @@ public final class Analyzer {
         self.directory = directory
         self.proposals = parseProposals(inDirectory: directory)
     }
+}
+
+extension Analyzer {
 
     public func proposalsWith(status statuses: [Status]) -> [Proposal] {
         return proposals.filter { prop -> Bool in
@@ -67,5 +70,13 @@ public final class Analyzer {
             stats.append(str)
         }
         return stats.sorted()
+    }
+
+    public func occurrences(of text: String) -> Int {
+        var count = 0
+        for p in proposals {
+            count += p.occurrences(of: text)
+        }
+        return count
     }
 }
