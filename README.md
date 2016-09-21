@@ -2,6 +2,10 @@
 
 *An analysis of Swift Evolution proposals*
 
+## About
+
+> TODO:
+
 ## Requirements
 
 - OSX 10.11
@@ -18,7 +22,7 @@ The [`swift-evolution`](https://github.com/apple/swift-evolution) repo is a [git
 $ git clone https://github.com/jessesquires/swift-proposal-analyzer.git
 $ cd swift-proposal-analyzer/
 $ git submodule init
-$ ./update_proposals.sh
+$ git submodule update --remote
 ```
 
 #### Updating proposals
@@ -31,17 +35,37 @@ $ ./update_proposals.sh
 
 ## Usage
 
-Open `swift-proposal-analyzer.playground`.
+Open and run `swift-proposal-analyzer.playground`.
 
-After parsing completes, you'll have an array of `Proposal` types. 
+After parsing completes, you'll have an array of `Proposal` types:
 
 ```swift
-public struct Proposal {
+public final class Proposal {
     public let title: String
     public let seNumber: String
+
+    public let authors: [Author]
+    public let status: Status
+
     public let fileName: String
-    public let authors: [String]
-    public let status: String
+    public let fileContents: String
+    public let wordCount: Int
+}
+```
+
+You can now perform different queries or apply filters to the proposal data.
+
+## Examples
+
+```swift
+// Find proposals implemented in Swift 3.0
+let implementedInSwift3 = analyzer.proposalsWith(status: .implemented(.v3_0))
+```
+
+```swift
+// Find proposals authored or co-authored by Chris Lattner
+let proposalsByLattner = analyzer.proposals.filter { p -> Bool in
+    p.writtenBy("Chris Lattner")
 }
 ```
 
