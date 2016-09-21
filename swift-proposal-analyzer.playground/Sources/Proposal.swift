@@ -34,6 +34,7 @@ public struct Proposal {
                 wordCount: Int) {
         self.title = title
         self.seNumber = seNumber
+
         self.authors = authors
         self.status = status
 
