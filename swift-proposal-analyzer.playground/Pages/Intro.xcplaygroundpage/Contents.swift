@@ -148,7 +148,7 @@ print("Median:\n\(wordsPerProposal[totalProposals / 2])")
 
 
 /*:
- ### Word occurences
+ ### Word frequency
  */
 
 let text = "Objective-C"
