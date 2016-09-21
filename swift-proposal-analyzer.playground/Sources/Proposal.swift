@@ -46,13 +46,26 @@ public final class Proposal {
 
 extension Proposal: CustomStringConvertible {
     public var description: String {
-        let authorNames = authors.map { $0.name }.joined(separator: ", ")
         return seNumber + ": " + title
-            + "\nAuthor(s): " + authorNames
+            + "\nAuthor(s): " + authorNames.joined(separator: ", ")
             + "\nStatus: " + "\(status)"
             + "\nFilename: " + fileName
             + "\nWord count: " + "\(wordCount)"
             + "\n"
+    }
+}
+
+extension Proposal {
+    public var number: Int {
+        let start = seNumber.index(seNumber.startIndex, offsetBy: 3)
+        let str = seNumber.substring(from: start)
+        return Int(str)!
+    }
+}
+
+extension Proposal {
+    public var authorNames: [String] {
+        return authors.map { $0.name }
     }
 }
 
@@ -65,10 +78,12 @@ extension Proposal {
 }
 
 extension Proposal {
-    public var number: Int {
-        let start = seNumber.index(seNumber.startIndex, offsetBy: 3)
-        let str = seNumber.substring(from: start)
-        return Int(str)!
+    public func writtenBy(_ author: Author) -> Bool {
+        return authors.contains(author)
+    }
+
+    public func writtenBy(_ authorName: String) -> Bool {
+        return authorNames.contains(authorName)
     }
 }
 
