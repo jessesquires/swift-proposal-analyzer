@@ -134,22 +134,24 @@ func seNumberFromLine(_ line: String) -> String {
 }
 
 
-func authorsFromLine(_ line: String, multiple: Bool) -> [String] {
+func authorsFromLine(_ line: String, multiple: Bool) -> [Author] {
     let range = line.index(line.startIndex, offsetBy: multiple ? 11 : 10)
     let authorString = line.substring(from: range)
     let authorComponents = authorString.components(separatedBy: ",")
 
-    var authorNames = [String]()
+    var authors = [Author]()
     for eachAuthor in authorComponents {
         let components = eachAuthor.components(separatedBy: CharacterSet(["[", "]"]))
         if components.count > 1 {
-            authorNames.append(components[1].trimmingWhitespace())
+            let name = components[1].trimmingWhitespace()
+            authors.append(Author(name: name))
         } else {
-            authorNames.append(components[0].trimmingWhitespace())
+            let name = components[0].trimmingWhitespace()
+            authors.append(Author(name: name))
         }
     }
 
-    return authorNames
+    return authors
 }
 
 

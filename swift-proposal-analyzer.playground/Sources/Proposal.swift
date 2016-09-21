@@ -17,7 +17,8 @@ import Foundation
 public struct Proposal {
     public let title: String
     public let seNumber: String
-    public let authors: [String]
+
+    public let authors: [Author]
     public let status: Status
 
     public let fileName: String
@@ -26,7 +27,7 @@ public struct Proposal {
 
     public init(title: String,
                 seNumber: String,
-                authors: [String],
+                authors: [Author],
                 status: Status,
                 fileName: String,
                 fileContents: String,
@@ -44,8 +45,9 @@ public struct Proposal {
 
 extension Proposal: CustomStringConvertible {
     public var description: String {
+        let authorNames = authors.map { $0.name }.joined(separator: ", ")
         return seNumber + ": " + title
-            + "\nAuthor(s): " + authors.joined(separator: ", ")
+            + "\nAuthor(s): " + authorNames
             + "\nStatus: " + "\(status)"
             + "\nFilename: " + fileName
             + "\nWord count: " + "\(wordCount)"
@@ -87,7 +89,7 @@ extension Proposal {
                 }
             }
         })
-
+        
         return count
     }
 }

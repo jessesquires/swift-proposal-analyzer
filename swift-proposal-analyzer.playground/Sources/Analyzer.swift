@@ -18,14 +18,14 @@ public final class Analyzer {
 
     public let proposals: [Proposal]
 
-    public lazy var authors: [String] = {
-        var allAuthors = Set<String>()
+    public lazy var authors: [Author] = {
+        var allAuthors = Set<Author>()
         for p in self.proposals {
             for a in p.authors {
                 allAuthors.insert(a)
             }
         }
-        return Array<String>(allAuthors).sorted()
+        return Array<Author>(allAuthors).sorted()
     }()
 
     private let directory: URL

@@ -67,27 +67,27 @@ printTitle("Totals")
 let accepted = analyzer.proposalsWith(status: Status.allAccepted)
 let totalAccepted = accepted.count
 let acceptRate = Double(totalAccepted) / Double(totalProposals)
-print("Accepted:", totalAccepted, ",", String(format: "%.2f%%", acceptRate * 100))
+print("Accepted: \(totalAccepted),", String(format: "%.2f%%", acceptRate * 100))
 
 let implemented = analyzer.proposalsWith(status: Status.allImplemented)
 let totalImplemented = implemented.count
 let implementationRate = Double(totalImplemented) / Double(totalProposals)
-print("Implemented:", totalImplemented, ",", String(format: "%.2f%%", implementationRate * 100))
+print("Implemented: \(totalImplemented),", String(format: "%.2f%%", implementationRate * 100))
 
 let deferred = analyzer.proposalsWith(status: .deferred)
 let totalDeferred = deferred.count
 let deferredRate = Double(totalDeferred) / Double(totalProposals)
-print("Deferred:", totalDeferred, ",", String(format: "%.2f%%", deferredRate * 100))
+print("Deferred: \(totalDeferred),", String(format: "%.2f%%", deferredRate * 100))
 
 let rejected = analyzer.proposalsWith(status: .deferred)
 let totalRejected = rejected.count
 let rejectedRate = Double(totalRejected) / Double(totalProposals)
-print("Rejected:", totalRejected, ",", String(format: "%.2f%%", rejectedRate * 100))
+print("Rejected: \(totalRejected),", String(format: "%.2f%%", rejectedRate * 100))
 
 let withdrawn = analyzer.proposalsWith(status: .withdrawn)
 let totalWithdrawn = withdrawn.count
 let withdrawnRate = Double(totalWithdrawn) / Double(totalProposals)
-print("Withdrawn:", totalWithdrawn, ",", String(format: "%.2f%%", withdrawnRate * 100))
+print("Withdrawn: \(totalWithdrawn),", String(format: "%.2f%%", withdrawnRate * 100))
 
 let swift2_2 = analyzer.proposalsWith(status: .implemented(.v2_2)).count
 let swift3_0 = analyzer.proposalsWith(status: .implemented(.v3_0)).count
@@ -118,7 +118,7 @@ print("Avg:", String(format: "%.2f", avgAuthorsPerProposal))
  ### Proposals per author
  */
 printTitle("# proposals per author")
-var authorsRanked = [(author: String, numProposals: Int)]()
+var authorsRanked = [(author: Author, numProposals: Int)]()
 for a in authors {
     let n = proposals.filter { $0.authors.contains(a) }.count
     authorsRanked.append((a, n))
