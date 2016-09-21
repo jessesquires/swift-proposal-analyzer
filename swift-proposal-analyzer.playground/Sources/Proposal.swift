@@ -14,7 +14,7 @@
 
 import Foundation
 
-public struct Proposal {
+public final class Proposal {
     public let title: String
     public let seNumber: String
 
