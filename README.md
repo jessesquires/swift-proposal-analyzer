@@ -8,7 +8,7 @@ All of the swift-evolution proposals are publicly available [on GitHub](https://
 
 This project contains tools to analyze, query, and filter the Swift Evolution proposals based on any criteria you like. 
 
-This project accompanies my talk at [FrenchKit](http://frenchkit.fr).
+This project accompanies [my talk](https://speakerdeck.com/jessesquires/140-proposals-in-30-minutes) from [FrenchKit](http://frenchkit.fr).
 
 ## Requirements
 
