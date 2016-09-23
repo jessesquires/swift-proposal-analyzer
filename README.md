@@ -18,22 +18,26 @@ This project accompanies my talk at [FrenchKit](http://frenchkit.fr).
 
 ## Setup
 
-The [`swift-evolution`](https://github.com/apple/swift-evolution) repo is a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules).
+This repo contains a number of different components:
 
-#### Cloning
+- The [`swift-evolution`](https://github.com/apple/swift-evolution) repo is a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). This is how proposals are synced to stay updated.
+- `main.swift` is a swift script that generates playground pages for all of the proposals. You can open `proposal-page-generator.xcodeproj` to modify the script.
+- `swift-proposal-analyzer.playground` is the main playground that contains:
+    - All of the proposals as playground pages 
+    - All of the proposals as raw `Resources/`
+    - The analyzer code
+- `update_proposals.sh` is a bash script that does the following:
+    1.  Updates the `swift-evolution` submodule
+    2.  Copies the proposals from the submodule directory, into the playground `Resources/` directory
+    2.  Runs `main.swift` to generate the playground pages
+
+#### Cloning this repo
 
 ```bash
 $ git clone https://github.com/jessesquires/swift-proposal-analyzer.git
 $ cd swift-proposal-analyzer/
 $ git submodule init
 $ git submodule update --remote
-```
-
-#### Updating proposals
-
-Pulls the latest from [`swift-evolution`](https://github.com/apple/swift-evolution) and adds them to the playground.
-
-```bash
 $ ./update_proposals.sh
 ```
 
