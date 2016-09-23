@@ -57,7 +57,7 @@ public final class Proposal {
 }
 ```
 
-You can now perform different queries or apply filters to the proposal data.
+Most proposal metadata is available, as well as the raw file contents. You can now perform different queries or apply filters to the proposal data.
 
 ## Examples
 
