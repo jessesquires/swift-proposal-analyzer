@@ -4,7 +4,11 @@
 
 ## About
 
-> TODO:
+All of the swift-evolution proposals are publicly available [on GitHub](https://github.com/apple/swift-evolution), however they are just markdown files — plain text. There's no way to query or filter the proposals. For example, you can't search for *"all proposals written by Chris Lattner"* or *"all rejected proposals"* or *"all proposals that mention Objective-C"*.
+
+This project contains tools to analyze, query, and filter the Swift Evolution proposals based on any criteria you like. 
+
+This project accompanies my talk at [FrenchKit](http://frenchkit.fr).
 
 ## Requirements
 
@@ -71,7 +75,9 @@ let proposalsByLattner = analyzer.proposals.filter { p -> Bool in
 
 ## Caveats
 
-> TODO:
+Some of the code here is pretty "quicky and dirty", but it works! So `¯\_(ツ)_/¯ ` :laughing: If there's a better way to do something, please [submit a pull request](https://github.com/jessesquires/swift-proposal-analyzer/pulls)!
+
+This is a small dataset, so any conclusions should be taken with a grain of salt. :smile:
 
 ## Credits
 
