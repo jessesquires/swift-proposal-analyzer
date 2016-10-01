@@ -191,6 +191,8 @@ func versionFromString(_ versionString: String) -> SwiftVersion {
         return .v2_3
     case _ where versionString.localizedCaseInsensitiveContains("Swift 3.1"):
         return .v3_1
+    case _ where versionString.localizedCaseInsensitiveContains("Swift 3.0.1"):
+        return .v3_0_1
     case _ where versionString.localizedCaseInsensitiveContains("Swift 3.0"): fallthrough
     case _ where versionString.localizedCaseInsensitiveContains("Swift 3"):
         return .v3_0

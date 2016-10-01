@@ -32,6 +32,7 @@ extension Status {
         Status.implemented(.v2_2),
         Status.implemented(.v2_3),
         Status.implemented(.v3_0),
+        Status.implemented(.v3_0_1),
         Status.implemented(.v3_1),
         Status.deferred,
         Status.rejected,
@@ -42,6 +43,7 @@ extension Status {
         Status.implemented(.v2_2),
         Status.implemented(.v2_3),
         Status.implemented(.v3_0),
+        Status.implemented(.v3_0_1),
         Status.implemented(.v3_1)
     ]
 
@@ -50,6 +52,7 @@ extension Status {
         Status.implemented(.v2_2),
         Status.implemented(.v2_3),
         Status.implemented(.v3_0),
+        Status.implemented(.v3_0_1),
         Status.implemented(.v3_1)
     ]
 }

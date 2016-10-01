@@ -14,11 +14,12 @@
 
 import Foundation
 
-public enum SwiftVersion: Double {
-    case v2_2 = 2.2
-    case v2_3 = 2.3
-    case v3_0 = 3.0
-    case v3_1 = 3.1
+public enum SwiftVersion: String {
+    case v2_2 = "2.2"
+    case v2_3 = "2.3"
+    case v3_0 = "3.0"
+    case v3_0_1 = "3.0.1"
+    case v3_1 = "3.1"
 }
 
 extension SwiftVersion: CustomStringConvertible {
