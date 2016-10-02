@@ -34,14 +34,14 @@ extension Author: Equatable {
     }
 }
 
-extension Author: Hashable {
-    public var hashValue: Int {
-        return name.hashValue
-    }
-}
-
 extension Author: Comparable {
     public static func < (lhs: Author, rhs: Author) -> Bool {
         return lhs.name < rhs.name
+    }
+}
+
+extension Author: Hashable {
+    public var hashValue: Int {
+        return name.hashValue
     }
 }
