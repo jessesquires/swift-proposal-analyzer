@@ -14,16 +14,47 @@
 
 import Foundation
 
-public enum SwiftVersion: String {
-    case v2_2 = "2.2"
-    case v2_3 = "2.3"
-    case v3_0 = "3.0"
-    case v3_0_1 = "3.0.1"
-    case v3_1 = "3.1"
+public struct SwiftVersion {
+    public let major: Int
+    public let minor: Int
+    public let patch: Int
+
+    public static let v2_2 = SwiftVersion(major: 2, minor: 2, patch: 0)
+    public static let v2_3 = SwiftVersion(major: 2, minor: 3, patch: 0)
+
+    public static let v3_0 = SwiftVersion(major: 3, minor: 0, patch: 0)
+    public static let v3_0_1 = SwiftVersion(major: 3, minor: 0, patch: 1)
+    public static let v3_1 = SwiftVersion(major: 3, minor: 1, patch: 0)
 }
 
 extension SwiftVersion: CustomStringConvertible {
     public var description: String {
-        return "\(self.rawValue)"
+        return  "\(major).\(minor)" + ((patch != 0) ? ".\(patch)" : "")
+    }
+}
+
+extension SwiftVersion: Equatable {
+    public static func ==(lhs: SwiftVersion, rhs: SwiftVersion) -> Bool {
+        return lhs.major == rhs.major
+            && lhs.minor == rhs.minor
+            && lhs.patch == rhs.patch
+    }
+}
+
+extension SwiftVersion: Comparable {
+    public static func < (lhs: SwiftVersion, rhs: SwiftVersion) -> Bool {
+        if lhs.major == rhs.major {
+            if lhs.minor == rhs.minor {
+                return lhs.patch < rhs.patch
+            }
+            return lhs.minor < rhs.minor
+        }
+        return lhs.major < rhs.major
+    }
+}
+
+extension SwiftVersion: Hashable {
+    public var hashValue: Int {
+        return major.hashValue ^ minor.hashValue ^ patch.hashValue
     }
 }
