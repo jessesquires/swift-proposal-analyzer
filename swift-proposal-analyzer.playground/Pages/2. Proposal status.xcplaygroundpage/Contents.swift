@@ -15,7 +15,7 @@
 import Foundation
 
 /*:
- ## Totals
+ ## Proposal status
  
  Here, we look at proposals per status as a percentage of total proposals.
  */
@@ -24,6 +24,7 @@ let analyzer = Analyzer.shared
 
 let totalProposals = analyzer.proposals.count
 let totalAuthors = analyzer.authors.count
+
 
 printTitle("Totals")
 

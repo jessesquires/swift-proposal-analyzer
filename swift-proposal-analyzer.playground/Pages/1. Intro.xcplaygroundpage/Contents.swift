@@ -60,79 +60,12 @@ for s in statuses {
 
 
 
-
-/*:
- ### Authors per proposal
- */
-printTitle("# authors per proposal")
-
-print(totalAuthors, "total authors")
-var authorCountSet = Set<Int>()
-for p in proposals {
-    authorCountSet.insert(p.authors.count)
-}
-
-let sortedAuthorCounts = authorCountSet.sorted()
-for count in sortedAuthorCounts {
-    let numProposals = proposals.filter { $0.authors.count == count }.count
-    print(numProposals, "proposals with", count, "authors")
-}
-let avgAuthorsPerProposal = Double(totalProposals) / Double(totalAuthors)
-print("Avg:", String(format: "%.2f", avgAuthorsPerProposal))
-
-
-/*:
- ### Proposals per author
- */
-printTitle("# proposals per author")
-var authorsRanked = [(author: Author, numProposals: Int)]()
-for a in authors {
-    let n = proposals.filter { $0.authors.contains(a) }.count
-    authorsRanked.append((a, n))
-}
-
-authorsRanked.sort { $0.numProposals >= $1.numProposals }
-for x in authorsRanked {
-    print(x.numProposals, x.author)
-}
-
-
-/*:
- ### Word counts
- */
-printTitle("word counts")
-
-let totalWords = proposals.map { $0.wordCount }.reduce(0, +)
-let avgWordCount = Double(totalWords) / Double(totalProposals)
-print("Avg word count:", Int(avgWordCount), "\n")
-
-let wordsPerProposal = proposals.sorted { $0.wordCount > $1.wordCount }
-print("Max:\n\(wordsPerProposal.first!)")
-print("Min:\n\(wordsPerProposal.last!)")
-print("Median:\n\(wordsPerProposal[totalProposals / 2])")
-
-
-/*:
- ### Word frequency
- */
-
-let text = "Objective-C"
-var count = analyzer.occurrences(of: text)
-count
-
-
-
-
-
 /*
- # Other Stats?
+ # TODO: Other Stats?
 
  - core team vs community proposals
  - types of proposals: bug, syntax refinement, feature refinement, new feature
  */
-
-
-
 
 
 
