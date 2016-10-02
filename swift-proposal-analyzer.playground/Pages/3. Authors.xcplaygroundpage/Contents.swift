@@ -57,8 +57,10 @@ for a in authors {
 }
 
 authorsRanked.sort { $0.numProposals >= $1.numProposals }
+var i = 1
 for x in authorsRanked {
-    print(x.numProposals, x.author)
+    print("\(i). \(x.author), \(x.numProposals)")
+    i += 1
 }
 
 
