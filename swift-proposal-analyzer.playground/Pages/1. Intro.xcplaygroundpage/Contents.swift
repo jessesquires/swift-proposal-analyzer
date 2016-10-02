@@ -13,30 +13,34 @@
 //
 
 import Foundation
-import UIKit
 
 /*:
  # Understanding Swift Evolution
  ### What can we learn by analyzing [swift-evolution](https://github.com/apple/swift-evolution) proposals?
 
- **Links:**
- - [swift-evolution repo](https://github.com/apple/swift-evolution)
- - [Proposal Status](http://apple.github.io/swift-evolution/)
- - [Swift Evolution Process](https://github.com/apple/swift-evolution/blob/master/process.md)
+ This playground allows you to interact with Swift Evolution Proposals. 
+ You can query and filter the proposals based on anything you want.
 
- **This playground includes:**
+ **The playground includes:**
 
  - All of the Swift Evolution proposals
     - As markdown files in `/Resources/`
     - As playground pages in `/Pages/`
  - Code to parse and analyze the proposals
 
+ **Links:**
+ - [My talk](https://speakerdeck.com/jessesquires/140-proposals-in-30-minutes)
+ - [swift-evolution repo](https://github.com/apple/swift-evolution)
+ - [Proposal Status](http://apple.github.io/swift-evolution/)
+ - [Swift Evolution Process](https://github.com/apple/swift-evolution/blob/master/process.md)
+
  --------------
  */
 
-
 /*:
- ### Proposal data
+ ## Proposal data
+ 
+ Let's begin with some basics. First, we parse the proposals into `Proposal` objects. Then we can check the current statuses.
  */
 
 let analyzer = Analyzer(directory: #fileLiteral(resourceName: "proposals"))
@@ -46,10 +50,6 @@ let authors = analyzer.authors
 let totalProposals = proposals.count
 let totalAuthors = authors.count
 
-
-/*:
- ### Proposal Status
- */
 printTitle("Proposal Status")
 
 let statuses = analyzer.proposalStatus()
@@ -59,42 +59,7 @@ for s in statuses {
 }
 
 
-/*:
- ### Totals
- */
-printTitle("Totals")
 
-let accepted = analyzer.proposalsWith(status: Status.allAccepted)
-let acceptedNotImplemented = analyzer.proposalsWith(status: .accepted)
-let totalAccepted = accepted.count
-let acceptRate = Double(totalAccepted) / Double(totalProposals)
-print("Accepted: \(totalAccepted), " + String(format: "%.2f%%", acceptRate * 100) + ", (not implemented: \(acceptedNotImplemented.count))")
-
-let implemented = analyzer.proposalsWith(status: Status.allImplemented)
-let totalImplemented = implemented.count
-let implementationRate = Double(totalImplemented) / Double(totalProposals)
-print("Implemented: \(totalImplemented),", String(format: "%.2f%%", implementationRate * 100))
-
-let deferred = analyzer.proposalsWith(status: .deferred)
-let totalDeferred = deferred.count
-let deferredRate = Double(totalDeferred) / Double(totalProposals)
-print("Deferred: \(totalDeferred),", String(format: "%.2f%%", deferredRate * 100))
-
-let rejected = analyzer.proposalsWith(status: .rejected)
-let totalRejected = rejected.count
-let rejectedRate = Double(totalRejected) / Double(totalProposals)
-print("Rejected: \(totalRejected),", String(format: "%.2f%%", rejectedRate * 100))
-
-let withdrawn = analyzer.proposalsWith(status: .withdrawn)
-let totalWithdrawn = withdrawn.count
-let withdrawnRate = Double(totalWithdrawn) / Double(totalProposals)
-print("Withdrawn: \(totalWithdrawn),", String(format: "%.2f%%", withdrawnRate * 100))
-
-let swift2_2 = analyzer.proposalsWith(status: .implemented(.v2_2)).count
-let swift3_0 = analyzer.proposalsWith(status: .implemented(.v3_0)).count
-let increase = percentIncrease(from: swift2_2, to: swift3_0)
-
-let implementedInSwift3 = analyzer.proposalsWith(status: .implemented(.v3_0))
 
 /*:
  ### Authors per proposal

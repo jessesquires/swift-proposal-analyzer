@@ -16,6 +16,8 @@ import Foundation
 
 public final class Analyzer {
 
+    public static let shared = Analyzer(directory: #fileLiteral(resourceName: "proposals"))
+
     public let proposals: [Proposal]
 
     public lazy var authors: [Author] = {
