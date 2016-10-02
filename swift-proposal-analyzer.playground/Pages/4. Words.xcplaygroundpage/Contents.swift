@@ -41,7 +41,7 @@ print("Median:\n\(wordsPerProposal[totalProposals / 2])")
  */
 
 let text = "Objective-C"
-var count = analyzer.occurrences(of: text)
+let count = analyzer.occurrences(of: text)
 count
 
 

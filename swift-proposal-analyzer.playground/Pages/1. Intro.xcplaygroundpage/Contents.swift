@@ -70,6 +70,25 @@ for s in statuses {
 
 
 /*:
+ ## Examples
+
+ ```
+ // Find proposals implemented in Swift 3.0
+ let implementedInSwift3 = analyzer.proposalsWith(status: .implemented(.v3_0))
+ ```
+
+ ```
+ // Find proposals authored or co-authored by Chris Lattner
+ let proposalsByLattner = analyzer.proposals.filter { p -> Bool in
+    p.writtenBy("Chris Lattner")
+ }
+ ```
+
+ ```
+ // Find total mentions of "Objective-C" across all proposals
+ let count = analyzer.occurrences(of: "Objective-C")
+ ```
+
  ----------
 
  **Continue:** [Next](@next)

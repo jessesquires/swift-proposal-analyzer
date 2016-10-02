@@ -6,7 +6,7 @@
 
 All of the swift-evolution proposals are publicly available [on GitHub](https://github.com/apple/swift-evolution), however they are just markdown files — plain text. There's no way to query or filter the proposals. For example, you can't search for *"all proposals written by Chris Lattner"* or *"all rejected proposals"* or *"all proposals that mention Objective-C"*.
 
-This project contains tools to analyze, query, and filter the Swift Evolution proposals based on any criteria you like. 
+This project contains tools to analyze, query, and filter the Swift Evolution proposals based on any criteria you like.
 
 This project accompanies [my talk](https://speakerdeck.com/jessesquires/140-proposals-in-30-minutes) from [FrenchKit](http://frenchkit.fr).
 
@@ -23,7 +23,7 @@ This repo contains a number of different components:
 - The [`swift-evolution`](https://github.com/apple/swift-evolution) repo is a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). This is how proposals are synced to stay updated.
 - `main.swift` is a swift script that generates playground pages for all of the proposals. You can open `proposal-page-generator.xcodeproj` to modify the script.
 - `swift-proposal-analyzer.playground` is the main playground that contains:
-    - All of the proposals as playground pages 
+    - All of the proposals as playground pages
     - All of the proposals as raw `Resources/`
     - The analyzer code
 - `update_proposals.sh` is a bash script that does the following:
@@ -75,6 +75,11 @@ let implementedInSwift3 = analyzer.proposalsWith(status: .implemented(.v3_0))
 let proposalsByLattner = analyzer.proposals.filter { p -> Bool in
     p.writtenBy("Chris Lattner")
 }
+```
+
+```swift
+// Find total mentions of "Objective-C" across all proposals
+let count = analyzer.occurrences(of: "Objective-C")
 ```
 
 ## Caveats
