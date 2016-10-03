@@ -12,7 +12,7 @@ This project accompanies [my talk](https://speakerdeck.com/jessesquires/140-prop
 
 ## Requirements
 
-- OSX 10.11
+- macOS 10.11+
 - Xcode 8
 - Swift 3.0
 
