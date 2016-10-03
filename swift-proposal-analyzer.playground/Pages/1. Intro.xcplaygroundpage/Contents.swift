@@ -59,16 +59,6 @@ for s in statuses {
 }
 
 
-
-/*
- # TODO: Other Stats?
-
- - core team vs community proposals
- - types of proposals: bug, syntax refinement, feature refinement, new feature
- */
-
-
-
 /*:
  ## Examples
 
