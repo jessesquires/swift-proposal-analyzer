@@ -15,10 +15,7 @@
 import Foundation
 
 public func printTitle(_ title: String) {
-    var line = ""
-    for _ in 0..<title.characters.count {
-        line += "-"
-    }
+    let line = String(repeating: "-", count: title.characters.count)
     print()
     print(line)
     print(title)
