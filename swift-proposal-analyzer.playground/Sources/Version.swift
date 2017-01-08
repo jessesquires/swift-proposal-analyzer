@@ -25,6 +25,14 @@ public struct SwiftVersion {
     public static let v3_0 = SwiftVersion(major: 3, minor: 0, patch: 0)
     public static let v3_0_1 = SwiftVersion(major: 3, minor: 0, patch: 1)
     public static let v3_1 = SwiftVersion(major: 3, minor: 1, patch: 0)
+
+    public static let v4_0 = SwiftVersion(major: 4, minor: 0, patch: 0)
+}
+
+extension SwiftVersion {
+    public static let all: [SwiftVersion] = [.v2_2, .v2_3,
+                                             .v3_0, .v3_0_1, .v3_1,
+                                             .v4_0]
 }
 
 extension SwiftVersion: CustomStringConvertible {

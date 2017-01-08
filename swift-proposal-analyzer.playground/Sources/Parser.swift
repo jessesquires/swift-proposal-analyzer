@@ -196,8 +196,9 @@ func versionFromString(_ versionString: String) -> SwiftVersion {
     case _ where versionString.localizedCaseInsensitiveContains("Swift 3.0"): fallthrough
     case _ where versionString.localizedCaseInsensitiveContains("Swift 3"):
         return .v3_0
+    case _ where versionString.localizedCaseInsensitiveContains("Swift 4"):
+        return .v4_0
     default:
         fatalError("** Error: unknown version number found: " + versionString)
     }
 }
-

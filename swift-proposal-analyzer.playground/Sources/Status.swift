@@ -25,36 +25,17 @@ public enum Status {
 }
 
 extension Status {
-    public static let allItems = [
-        Status.inReview,
-        Status.awaitingReview,
-        Status.accepted,
-        Status.implemented(.v2_2),
-        Status.implemented(.v2_3),
-        Status.implemented(.v3_0),
-        Status.implemented(.v3_0_1),
-        Status.implemented(.v3_1),
-        Status.deferred,
-        Status.rejected,
-        Status.withdrawn
-    ]
+    public static var allItems: [Status] {
+        return [.inReview, .awaitingReview] + Status.allAccepted + [.deferred, .rejected, .withdrawn]
+    }
 
-    public static let allImplemented = [
-        Status.implemented(.v2_2),
-        Status.implemented(.v2_3),
-        Status.implemented(.v3_0),
-        Status.implemented(.v3_0_1),
-        Status.implemented(.v3_1)
-    ]
+    public static var allAccepted: [Status] {
+        return [Status.accepted] + Status.allImplemented
+    }
 
-    public static let allAccepted = [
-        Status.accepted,
-        Status.implemented(.v2_2),
-        Status.implemented(.v2_3),
-        Status.implemented(.v3_0),
-        Status.implemented(.v3_0_1),
-        Status.implemented(.v3_1)
-    ]
+    public static var allImplemented: [Status]  {
+        return SwiftVersion.all.map { Status.implemented($0) }
+    }
 }
 
 extension Status: Hashable {
