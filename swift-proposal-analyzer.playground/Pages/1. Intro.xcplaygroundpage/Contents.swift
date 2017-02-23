@@ -13,6 +13,8 @@
 //
 
 import Foundation
+import UIKit
+import PlaygroundSupport
 
 /*:
  # Understanding Swift Evolution
@@ -44,19 +46,84 @@ import Foundation
  */
 
 let analyzer = Analyzer(directory: #fileLiteral(resourceName: "proposals"))
-let proposals = analyzer.proposals
-let authors = analyzer.authors
+//let proposals = analyzer.proposals
+//let authors = analyzer.authors
+//
+//let totalProposals = proposals.count
+//let totalAuthors = authors.count
+//
+//printTitle("Proposal Status")
+//
+//let statuses = analyzer.proposalStatus()
+//for s in statuses {
+//    print(s)
+//    print()
+//}
 
-let totalProposals = proposals.count
-let totalAuthors = authors.count
+let view = UIView(frame: CGRect(x: 0, y: 0, width: 400, height: 600))
+view.backgroundColor = .lightGray
 
-printTitle("Proposal Status")
+let textField = UITextField(frame: CGRect(x: 10, y: 10, width: 350, height: 40))
+textField.placeholder = "Search"
+textField.backgroundColor = .white
+textField.borderStyle = .bezel
+textField.autocorrectionType = .no
+view.addSubview(textField)
 
-let statuses = analyzer.proposalStatus()
-for s in statuses {
-    print(s)
-    print()
+let spinner = UIActivityIndicatorView(frame: CGRect(x: 370, y: 15, width: 20, height: 20))
+spinner.color = .white
+spinner.hidesWhenStopped = true
+view.addSubview(spinner)
+
+let textView = UITextView(frame: CGRect(x: 10, y: 60, width: 380, height: 500))
+textView.backgroundColor = .white
+textView.dataDetectorTypes = .link
+textView.isEditable = false
+textView.isSelectable = true
+view.addSubview(textView)
+
+class Delegate: NSObject, UITextFieldDelegate {
+
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        spinner.startAnimating()
+        textView.text = ""
+    }
+
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        defer { spinner.stopAnimating() }
+
+        guard let text = textField.text else {
+            textView.text = "Not found!"
+            return true
+        }
+
+        for p in analyzer.proposals {
+            let n = p.occurrences(of: text)
+            print(n)
+            if (n > 0) {
+                textView.text.append(p.seNumber + ": " + p.title + "\n")
+                textView.text.append(p.githubURL.absoluteString + "\n\n")
+            }
+        }
+
+        textView.text.append("\nDone!")
+        return true
+    }
 }
+
+
+let delegate = Delegate()
+textField.delegate = delegate
+
+
+
+
+
+
+
+
+
+PlaygroundPage.current.liveView = view
 
 
 /*:
