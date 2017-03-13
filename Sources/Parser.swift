@@ -54,21 +54,25 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
     var statusLine: String!
 
     for eachLine in lines {
-        if eachLine.hasPrefix("* Proposal:") {
+        if eachLine.hasPrefix("* Proposal:") || eachLine.hasPrefix("- Proposal:") {
             seNumberLine = eachLine
         }
 
-        if eachLine.hasPrefix("* Author:") {
+        if eachLine.hasPrefix("* Author:") || eachLine.hasPrefix("- Author:") {
             singleAuthorLine = eachLine
         }
 
-        if eachLine.hasPrefix("* Authors:") {
+        if eachLine.hasPrefix("* Authors:") || eachLine.hasPrefix("- Authors:") {
             multipleAuthorLine = eachLine
         }
 
-        if eachLine.hasPrefix("* Status: ") {
+        if eachLine.hasPrefix("* Status: ") || eachLine.hasPrefix("- Status: ") {
             statusLine = eachLine
         }
+    }
+
+    if seNumberLine == nil || statusLine == nil {
+        assertionFailure("*** Error processing file: " + fileName)
     }
 
     let title = nameFromLine(titleLine)
@@ -164,7 +168,8 @@ func statusFromLine(_ line: String) -> Status {
     switch statusString {
     case _ where statusString.localizedCaseInsensitiveContains("Active Review"):
         return .inReview
-    case _ where statusString.localizedCaseInsensitiveContains("Awaiting Review"):
+    case _ where statusString.localizedCaseInsensitiveContains("Awaiting Review"): fallthrough
+    case _ where statusString.localizedCaseInsensitiveContains("Returned for revision"):
         return .awaitingReview
     case _ where statusString.localizedCaseInsensitiveContains("Accepted"):
         return .accepted
