@@ -13,6 +13,7 @@
 //
 
 import Foundation
+import ProposalAnalyzer
 
 /*:
  ## Word counts

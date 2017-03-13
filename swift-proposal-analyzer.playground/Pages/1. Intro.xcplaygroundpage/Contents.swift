@@ -13,7 +13,7 @@
 //
 
 import Foundation
-
+import ProposalAnalyzer
 /*:
  # Understanding Swift Evolution
  ### What can we learn by analyzing [swift-evolution](https://github.com/apple/swift-evolution) proposals?

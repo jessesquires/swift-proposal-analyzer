@@ -13,6 +13,7 @@
 //
 
 import Foundation
+import ProposalAnalyzer
 
 /*:
  ## Proposal status
