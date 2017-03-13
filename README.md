@@ -83,6 +83,10 @@ let proposalsByLattner = analyzer.proposals.filter { p -> Bool in
 let count = analyzer.occurrences(of: "Objective-C")
 ```
 
+## Documentation
+
+You can find the (unfinished) [docs here](http://www.jessesquires.com/swift-proposal-analyzer/).
+
 ## Caveats
 
 Some of the code here is pretty "quicky and dirty", but it works! So `¯\_(ツ)_/¯ ` :laughing: If there's a better way to do something, please [submit a pull request](https://github.com/jessesquires/swift-proposal-analyzer/pulls)!
