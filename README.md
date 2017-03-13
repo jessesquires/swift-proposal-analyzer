@@ -13,8 +13,8 @@ This project accompanies [my talk](https://speakerdeck.com/jessesquires/140-prop
 ## Requirements
 
 - macOS 10.11+
-- Xcode 8
-- Swift 3.0
+- Xcode 8+
+- Swift 3.0+
 
 ## Setup
 
@@ -22,10 +22,11 @@ This repo contains a number of different components:
 
 - The [`swift-evolution`](https://github.com/apple/swift-evolution) repo is a [git submodule](https://git-scm.com/book/en/v2/Git-Tools-Submodules). This is how proposals are synced to stay updated.
 - `main.swift` is a swift script that generates playground pages for all of the proposals. You can open `proposal-page-generator.xcodeproj` to modify the script.
-- `swift-proposal-analyzer.playground` is the main playground that contains:
+- `ProposalAnalyzer.xcodeproj` is a CocoaTouch framework that includes all the source code and the playground. This framework is imported in the playground.
+- `swift-proposal-analyzer.playground` is the playground (part of the `.xcodeproj`) that contains:
     - All of the proposals as playground pages
     - All of the proposals as raw `Resources/`
-    - The analyzer code
+    - Examples
 - `update_proposals.sh` is a bash script that does the following:
     1.  Updates the `swift-evolution` submodule
     2.  Copies the proposals from the submodule directory, into the playground `Resources/` directory
@@ -43,7 +44,7 @@ $ ./update_proposals.sh
 
 ## Usage
 
-Open and run `swift-proposal-analyzer.playground`.
+Open and build `ProposalAnalyzer.xcodeproj`, then select the `swift-proposal-analyzer.playground` and run it like a normal playground.
 
 After parsing completes, you'll have an array of `Proposal` types:
 
