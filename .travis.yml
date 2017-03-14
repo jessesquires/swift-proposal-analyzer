@@ -1,0 +1,40 @@
+language: objective-c
+osx_image: xcode8.2
+
+env:
+    global:
+    - LANG=en_US.UTF-8
+
+    - IOS_PROJECT="ProposalAnalyzer.xcodeproj"
+    - IOS_SCHEME="ProposalAnalyzer"
+    - IOS_SDK=iphonesimulator10.2
+
+    - OSX_PROJECT="page-generator/proposal-page-generator.xcodeproj"
+    - OSX_SCHEME="proposal-page-generator"
+    - OSX_SDK=macosx10.12
+
+    matrix:
+    - DESTINATION="OS=9.0,name=iPhone 6" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
+
+    - DESTINATION="OS=10.0,name=iPhone 6" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
+
+    - DESTINATION="arch=x86_64" SDK="$OSX_SDK" SCHEME="$OSX_SCHEME" RUN_TESTS="NO"
+
+script:
+- set -o pipefail
+
+- if [ $SDK == $IOS_SDK ]; then
+    if [ $RUN_TESTS == "YES" ]; then
+        xcodebuild analyze test -project "$IOS_PROJECT" -scheme "$IOS_SCHEME" -sdk "$IOS_SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c;
+    else
+        xcodebuild build analyze -project "$IOS_PROJECT" -scheme "$IOS_SCHEME" -sdk "$IOS_SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c;
+    fi
+  fi
+
+- if [ $SDK == $OSX_SDK ]; then
+    if [ $RUN_TESTS == "YES" ]; then
+        xcodebuild analyze test -project "$OSX_PROJECT" -scheme "$OSX_SCHEME" -sdk "$OSX_SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c;
+    else
+        xcodebuild build analyze -project "$OSX_PROJECT" -scheme "$OSX_SCHEME" -sdk "$OSX_SDK" -destination "$DESTINATION" -configuration Debug ONLY_ACTIVE_ARCH=NO CODE_SIGNING_REQUIRED=NO | xcpretty -c;
+    fi
+  fi
