@@ -1,4 +1,4 @@
-# swift-proposal-analyzer
+# swift-proposal-analyzer [![Build Status](https://travis-ci.org/jessesquires/swift-proposal-analyzer.svg?branch=master)](https://travis-ci.org/jessesquires/swift-proposal-analyzer)
 
 *An analysis of Swift Evolution proposals*
 
