@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode8.2
+osx_image: xcode8.1
 
 env:
     global:
@@ -7,16 +7,16 @@ env:
 
     - IOS_PROJECT="ProposalAnalyzer.xcodeproj"
     - IOS_SCHEME="ProposalAnalyzer"
-    - IOS_SDK=iphonesimulator10.2
+    - IOS_SDK=iphonesimulator10.1
 
     - OSX_PROJECT="page-generator/proposal-page-generator.xcodeproj"
     - OSX_SCHEME="proposal-page-generator"
     - OSX_SDK=macosx10.12
 
     matrix:
-    - DESTINATION="OS=9.0,name=iPhone 6 Plus" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="NO"
+    - DESTINATION="OS=9.0,name=iPhone 6" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="NO"
 
-    - DESTINATION="OS=10.2,name=iPad Air 2" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
+    - DESTINATION="OS=10.0,name=iPhone 6" SDK="$IOS_SDK" SCHEME="$IOS_SCHEME" RUN_TESTS="YES"
 
     - DESTINATION="arch=x86_64" SDK="$OSX_SDK" SCHEME="$OSX_SCHEME" RUN_TESTS="NO"
 
