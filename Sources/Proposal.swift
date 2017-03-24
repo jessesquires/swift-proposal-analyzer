@@ -95,11 +95,11 @@ extension Proposal {
 }
 
 extension Proposal {
-    public func reviewBy(_ reviewer: ReviewManager) -> Bool {
+    public func reviewedBy(_ reviewer: ReviewManager) -> Bool {
         return reviewManagers.contains(reviewer)
     }
     
-    public func reviewBy(_ reviewerName: String) -> Bool {
+    public func reviewedBy(_ reviewerName: String) -> Bool {
         return reviewerNames.contains(reviewerName)
     }
 }

@@ -90,15 +90,7 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
     let words = wordCount(fromFile: fileContents)
     
     let reviewManagers = reviewManagerFromString(reviewManagerLine)
-    dump(Proposal(title: title,
-                  seNumber: seNumber,
-                  authors: authors,
-                  reviewManagers: reviewManagers,
-                  status: status,
-                  fileName: fileName,
-                  fileContents: fileContents,
-                  wordCount: words
-    ))
+    
     return Proposal(title: title,
                     seNumber: seNumber,
                     authors: authors,
@@ -106,8 +98,7 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
                     status: status,
                     fileName: fileName,
                     fileContents: fileContents,
-                    wordCount: words
-                    )
+                    wordCount: words)
 }
 
 extension String {

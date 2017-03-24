@@ -1,6 +1,6 @@
 //
-//  Created by Rodrigo Reis
-//  http://github.com/digoreis
+//  Created by Jesse Squires
+//  http://www.jessesquires.com
 //
 //
 //  GitHub
