@@ -64,3 +64,4 @@ fastlane/screenshots
 # https://github.com/johnno1962/injectionforxcode
 
 iOSInjectionProject/
+swift-proposal-analyzer.playground/Resources/proposals/
