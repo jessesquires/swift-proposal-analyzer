@@ -20,6 +20,7 @@ public final class Proposal {
 
     public let authors: [Author]
     public let status: Status
+    public let reviewManagers: [ReviewManager]
 
     public let fileName: String
     public let fileContents: String
@@ -28,6 +29,7 @@ public final class Proposal {
     public init(title: String,
                 seNumber: String,
                 authors: [Author],
+                reviewManagers: [ReviewManager],
                 status: Status,
                 fileName: String,
                 fileContents: String,
@@ -41,6 +43,7 @@ public final class Proposal {
         self.fileName = fileName
         self.fileContents = fileContents
         self.wordCount = wordCount
+        self.reviewManagers = reviewManagers
     }
 }
 
@@ -67,6 +70,10 @@ extension Proposal {
     public var authorNames: [String] {
         return authors.map { $0.name }
     }
+    
+    public var reviewerNames: [String] {
+        return reviewManagers.map { $0.name }
+    }
 }
 
 extension Proposal {
@@ -86,6 +93,17 @@ extension Proposal {
         return authorNames.contains(authorName)
     }
 }
+
+extension Proposal {
+    public func reviewBy(_ reviewer: ReviewManager) -> Bool {
+        return reviewManagers.contains(reviewer)
+    }
+    
+    public func reviewBy(_ reviewerName: String) -> Bool {
+        return reviewerNames.contains(reviewerName)
+    }
+}
+
 
 extension Proposal {
     public func occurrences(of text: String) -> Int {
