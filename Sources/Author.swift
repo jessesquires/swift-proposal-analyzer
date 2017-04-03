@@ -14,6 +14,7 @@
 
 import Foundation
 
+/// Represents a proposal author.
 public struct Author {
     public let name: String
 

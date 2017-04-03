@@ -14,6 +14,7 @@
 
 import Foundation
 
+/// Represents the Swift language version.
 public struct SwiftVersion {
     public let major: Int
     public let minor: Int

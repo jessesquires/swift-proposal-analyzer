@@ -14,6 +14,8 @@
 
 import Foundation
 
+
+/// Represents the status of a proposal.
 public enum Status {
     case inReview
     case awaitingReview

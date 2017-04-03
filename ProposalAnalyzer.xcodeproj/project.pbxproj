@@ -95,10 +95,10 @@
 				88D8908D1E76450F00F0975C /* Parser.swift */,
 				88D8908E1E76450F00F0975C /* Proposal.swift */,
 				88D890831E76447600F0975C /* ProposalAnalyzer.h */,
+				9E1082751E9270A300C1FD53 /* ReviewManager.swift */,
 				88D8908F1E76450F00F0975C /* Status.swift */,
 				88D890901E76450F00F0975C /* Utils.swift */,
 				88D890911E76450F00F0975C /* Version.swift */,
-				9E1082751E9270A300C1FD53 /* ReviewManager.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";

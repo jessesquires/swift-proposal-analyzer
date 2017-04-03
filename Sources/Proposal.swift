@@ -14,6 +14,7 @@
 
 import Foundation
 
+/// Represents a proposal.
 public final class Proposal {
     public let title: String
     public let seNumber: String

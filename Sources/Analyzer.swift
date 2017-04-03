@@ -14,6 +14,8 @@
 
 import Foundation
 
+
+/// An `Analyzer` parses and processes proposals from a given directory and provides APIs for searching and filtering.
 public final class Analyzer {
 
     public static let shared = Analyzer(directory: #fileLiteral(resourceName: "proposals"))

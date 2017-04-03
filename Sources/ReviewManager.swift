@@ -14,6 +14,7 @@
 
 import Foundation
 
+/// Represents a review manager for a proposal.
 public struct ReviewManager {
     public let name: String
     public let url: String
