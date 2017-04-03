@@ -1,5 +1,5 @@
 language: objective-c
-osx_image: xcode8.1
+osx_image: xcode8.3
 
 env:
     global:
@@ -7,7 +7,7 @@ env:
 
     - IOS_PROJECT="ProposalAnalyzer.xcodeproj"
     - IOS_SCHEME="ProposalAnalyzer"
-    - IOS_SDK=iphonesimulator10.1
+    - IOS_SDK=iphonesimulator10.3
 
     - OSX_PROJECT="page-generator/proposal-page-generator.xcodeproj"
     - OSX_SCHEME="proposal-page-generator"
