@@ -52,6 +52,7 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
     var singleAuthorLine: String?
     var multipleAuthorLine: String?
     var statusLine: String!
+    var reviewManagerLine: String?
 
     for eachLine in lines {
         if eachLine.hasPrefix("* Proposal:") || eachLine.hasPrefix("- Proposal:") {
@@ -69,6 +70,10 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
         if eachLine.hasPrefix("* Status: ") || eachLine.hasPrefix("- Status: ") {
             statusLine = eachLine
         }
+        
+        if eachLine.hasPrefix("* Review Manager:") || eachLine.hasPrefix("- Review Manager:") {
+            reviewManagerLine = eachLine
+        }
     }
 
     if seNumberLine == nil || statusLine == nil {
@@ -83,10 +88,13 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
 
     let status = statusFromLine(statusLine)
     let words = wordCount(fromFile: fileContents)
+    
+    let reviewManagers = reviewManagerFromString(reviewManagerLine)
 
     return Proposal(title: title,
                     seNumber: seNumber,
                     authors: authors,
+                    reviewManagers: reviewManagers,
                     status: status,
                     fileName: fileName,
                     fileContents: fileContents,
@@ -206,4 +214,29 @@ func versionFromString(_ versionString: String) -> SwiftVersion {
     default:
         fatalError("** Error: unknown version number found: " + versionString)
     }
+}
+
+func reviewManagerFromString(_ line: String?) -> [ReviewManager] {
+    var reviewers = [ReviewManager]()
+    
+    guard let line = line else { return reviewers }
+    
+    let range = line.index(line.startIndex, offsetBy: 18)
+    let reviewManagerString = line.substring(from: range)
+    let reviewManagerStringComponents = reviewManagerString.components(separatedBy: ",")
+    
+    for eachReviewer in reviewManagerStringComponents {
+        let componentsName = eachReviewer.components(separatedBy: CharacterSet(["[", "]"]))
+        let componentsUrl = eachReviewer.components(separatedBy: CharacterSet(["(", ")"]))
+        if componentsName.count > 1 {
+            let name = componentsName[1].trimmingWhitespace()
+            let url = (componentsUrl.count > 1) ? componentsUrl[1].trimmingWhitespace() : ""
+            reviewers.append(ReviewManager(name: name, url: url))
+        } else {
+            let name = componentsName[0].trimmingWhitespace()
+            let url = (componentsUrl.count > 0) ? componentsUrl[0].trimmingWhitespace() : ""
+            reviewers.append(ReviewManager(name: name, url: url))
+        }
+    }
+    return reviewers
 }
