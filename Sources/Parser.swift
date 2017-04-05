@@ -53,6 +53,7 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
     var multipleAuthorLine: String?
     var statusLine: String!
     var reviewManagerLine: String?
+    var bugLine: String?
 
     for eachLine in lines {
         if eachLine.hasPrefix("* Proposal:") || eachLine.hasPrefix("- Proposal:") {
@@ -74,6 +75,10 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
         if eachLine.hasPrefix("* Review Manager:") || eachLine.hasPrefix("- Review Manager:") {
             reviewManagerLine = eachLine
         }
+        
+        if eachLine.hasPrefix("* Bug:") || eachLine.hasPrefix("- Bug:") {
+            bugLine = eachLine
+        }
     }
 
     if seNumberLine == nil || statusLine == nil {
@@ -90,11 +95,23 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
     let words = wordCount(fromFile: fileContents)
     
     let reviewManagers = reviewManagerFromString(reviewManagerLine)
+    let bugs = bugsFromString(bugLine)
 
+    dump(Proposal(title: title,
+                  seNumber: seNumber,
+                  authors: authors,
+                  reviewManagers: reviewManagers,
+                  bugs: bugs,
+                  status: status,
+                  fileName: fileName,
+                  fileContents: fileContents,
+                  wordCount: words))
+    
     return Proposal(title: title,
                     seNumber: seNumber,
                     authors: authors,
                     reviewManagers: reviewManagers,
+                    bugs: bugs,
                     status: status,
                     fileName: fileName,
                     fileContents: fileContents,
@@ -239,4 +256,29 @@ func reviewManagerFromString(_ line: String?) -> [ReviewManager] {
         }
     }
     return reviewers
+}
+
+func bugsFromString(_ line: String?) -> [Bug] {
+    var bugs = [Bug]()
+    
+    guard let line = line else { return bugs }
+    
+    let range = line.index(line.startIndex, offsetBy: 7)
+    let bugString = line.substring(from: range)
+    let bugStringComponents = bugString.components(separatedBy: ",")
+    
+    for eachBug in bugStringComponents {
+        let componentsName = eachBug.components(separatedBy: CharacterSet(["[", "]"]))
+        let componentsUrl = eachBug.components(separatedBy: CharacterSet(["(", ")"]))
+        if componentsName.count > 1 {
+            let code = componentsName[1].trimmingWhitespace()
+            let url = (componentsUrl.count > 1) ? componentsUrl[1].trimmingWhitespace() : ""
+            bugs.append(Bug(code: code, url: url))
+        } else {
+            let code = componentsName[0].trimmingWhitespace()
+            let url = (componentsUrl.count > 0) ? componentsUrl[0].trimmingWhitespace() : ""
+            bugs.append(Bug(code: code, url: url))
+        }
+    }
+    return bugs
 }

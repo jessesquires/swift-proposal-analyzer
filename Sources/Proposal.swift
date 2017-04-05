@@ -27,11 +27,13 @@ public final class Proposal {
     public let wordCount: Int
     
     public let reviewManagers: [ReviewManager]
+    public let bugs: [Bug]
 
     public init(title: String,
                 seNumber: String,
                 authors: [Author],
                 reviewManagers: [ReviewManager],
+                bugs: [Bug],
                 status: Status,
                 fileName: String,
                 fileContents: String,
@@ -46,6 +48,7 @@ public final class Proposal {
         self.fileContents = fileContents
         self.wordCount = wordCount
         self.reviewManagers = reviewManagers
+        self.bugs = bugs
     }
 }
 
@@ -76,6 +79,10 @@ extension Proposal {
     public var reviewerNames: [String] {
         return reviewManagers.map { $0.name }
     }
+    
+    public var bugsCodes: [String] {
+        return bugs.map { $0.code }
+    }
 }
 
 extension Proposal {
@@ -103,6 +110,16 @@ extension Proposal {
     
     public func reviewedBy(_ reviewerName: String) -> Bool {
         return reviewerNames.contains(reviewerName)
+    }
+}
+
+extension Proposal {
+    public func containsBug(_ bug: Bug) -> Bool {
+        return bugs.contains(bug)
+    }
+    
+    public func containsBug(_ bugCode: String) -> Bool {
+        return bugsCodes.contains(bugCode)
     }
 }
 
