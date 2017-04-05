@@ -96,16 +96,6 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
     
     let reviewManagers = reviewManagerFromString(reviewManagerLine)
     let bugs = bugsFromString(bugLine)
-
-    dump(Proposal(title: title,
-                  seNumber: seNumber,
-                  authors: authors,
-                  reviewManagers: reviewManagers,
-                  bugs: bugs,
-                  status: status,
-                  fileName: fileName,
-                  fileContents: fileContents,
-                  wordCount: words))
     
     return Proposal(title: title,
                     seNumber: seNumber,
