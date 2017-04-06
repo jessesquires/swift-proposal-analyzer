@@ -53,6 +53,7 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
     var multipleAuthorLine: String?
     var statusLine: String!
     var reviewManagerLine: String?
+    var decisionNotesLine: String?
 
     for eachLine in lines {
         if eachLine.hasPrefix("* Proposal:") || eachLine.hasPrefix("- Proposal:") {
@@ -74,6 +75,10 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
         if eachLine.hasPrefix("* Review Manager:") || eachLine.hasPrefix("- Review Manager:") {
             reviewManagerLine = eachLine
         }
+        
+        if eachLine.hasPrefix("* Decision Notes:") || eachLine.hasPrefix("- Decision Notes:") {
+            decisionNotesLine = eachLine
+        }
     }
 
     if seNumberLine == nil || statusLine == nil {
@@ -91,10 +96,13 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
     
     let reviewManagers = reviewManagerFromString(reviewManagerLine)
 
+    let decisionNotes = decisionNoteFromLine(decisionNotesLine)
+    
     return Proposal(title: title,
                     seNumber: seNumber,
                     authors: authors,
                     reviewManagers: reviewManagers,
+                    decisionNotes: decisionNotes,
                     status: status,
                     fileName: fileName,
                     fileContents: fileContents,
@@ -239,4 +247,19 @@ func reviewManagerFromString(_ line: String?) -> [ReviewManager] {
         }
     }
     return reviewers
+}
+
+func decisionNoteFromLine(_ line: String?) -> DecisionNote? {
+    var decisionNote : DecisionNote?
+    guard let line = line else { return nil }
+    let range = line.index(line.startIndex, offsetBy: 18)
+    let string = line.substring(from: range)
+    let componentsTitle = string.components(separatedBy: CharacterSet(["[", "]"]))
+    let componentsUrl = string.components(separatedBy: CharacterSet(["(", ")"]))
+    let title = componentsTitle[1].trimmingWhitespace()
+    let url = (componentsUrl.count > 0) ? componentsUrl[1].trimmingWhitespace() : ""
+    if title != "" && url != "" {
+        decisionNote = DecisionNote(title: title, url: url)
+    }
+    return decisionNote
 }
