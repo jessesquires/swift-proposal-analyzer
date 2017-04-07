@@ -261,13 +261,13 @@ func bugsFromString(_ line: String?) -> [Bug] {
         let componentsName = eachBug.components(separatedBy: CharacterSet(["[", "]"]))
         let componentsUrl = eachBug.components(separatedBy: CharacterSet(["(", ")"]))
         if componentsName.count > 1 {
-            let code = componentsName[1].trimmingWhitespace()
+            let srNumber = componentsName[1].trimmingWhitespace()
             let url = (componentsUrl.count > 1) ? componentsUrl[1].trimmingWhitespace() : ""
-            bugs.append(Bug(code: code, url: url))
+            bugs.append(Bug(srNumber: srNumber, url: url))
         } else {
-            let code = componentsName[0].trimmingWhitespace()
+            let srNumber = componentsName[0].trimmingWhitespace()
             let url = (componentsUrl.count > 0) ? componentsUrl[0].trimmingWhitespace() : ""
-            bugs.append(Bug(code: code, url: url))
+            bugs.append(Bug(srNumber: srNumber, url: url))
         }
     }
     return bugs

@@ -14,37 +14,37 @@
 
 import Foundation
 
-/// Represents a review manager for a proposal.
+/// Represents Bugs for a proposal.
 public struct Bug {
-    public let code: String
+    public let srNumber: String
     public let url: String
     
-    public init(code: String, url : String) {
-        self.code = code
+    public init(srNumber: String, url : String) {
+        self.srNumber = srNumber
         self.url = url
     }
 }
 
 extension Bug: CustomStringConvertible {
     public var description: String {
-        return code
+        return srNumber
     }
 }
 
 extension Bug: Equatable {
     public static func ==(lhs: Bug, rhs: Bug) -> Bool {
-        return lhs.code == rhs.code
+        return lhs.srNumber == rhs.srNumber
     }
 }
 
 extension Bug: Comparable {
     public static func < (lhs: Bug, rhs: Bug) -> Bool {
-        return lhs.code < rhs.code
+        return lhs.srNumber < rhs.srNumber
     }
 }
 
 extension Bug: Hashable {
     public var hashValue: Int {
-        return code.hashValue
+        return srNumber.hashValue
     }
 }

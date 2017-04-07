@@ -80,8 +80,8 @@ extension Proposal {
         return reviewManagers.map { $0.name }
     }
     
-    public var bugsCodes: [String] {
-        return bugs.map { $0.code }
+    public var srNumbers: [String] {
+        return bugs.map { $0.srNumber }
     }
 }
 
@@ -119,7 +119,7 @@ extension Proposal {
     }
     
     public func containsBug(_ bugCode: String) -> Bool {
-        return bugsCodes.contains(bugCode)
+        return srNumbers.contains(bugCode)
     }
 }
 
