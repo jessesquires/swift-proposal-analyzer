@@ -18,7 +18,7 @@
 		88D890981E76450F00F0975C /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D890911E76450F00F0975C /* Version.swift */; };
 		88D8909D1E76453D00F0975C /* ProposalAnalyzerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88D8909B1E76453D00F0975C /* ProposalAnalyzerTests.swift */; };
 		9E1082761E9270A300C1FD53 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E1082751E9270A300C1FD53 /* ReviewManager.swift */; };
-		9E2CD22E1E95B8BF003BE222 /* DecisionNote.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CD22D1E95B8BF003BE222 /* DecisionNote.swift */; };
+		9E2CD22E1E95B8BF003BE222 /* DecisionNotes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9E2CD22D1E95B8BF003BE222 /* DecisionNotes.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,7 +47,7 @@
 		88D8909B1E76453D00F0975C /* ProposalAnalyzerTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProposalAnalyzerTests.swift; sourceTree = "<group>"; };
 		88D8909F1E7645C800F0975C /* swift-proposal-analyzer.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; path = "swift-proposal-analyzer.playground"; sourceTree = "<group>"; };
 		9E1082751E9270A300C1FD53 /* ReviewManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
-		9E2CD22D1E95B8BF003BE222 /* DecisionNote.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionNote.swift; sourceTree = "<group>"; };
+		9E2CD22D1E95B8BF003BE222 /* DecisionNotes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DecisionNotes.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,7 +101,7 @@
 				88D8908F1E76450F00F0975C /* Status.swift */,
 				88D890901E76450F00F0975C /* Utils.swift */,
 				88D890911E76450F00F0975C /* Version.swift */,
-				9E2CD22D1E95B8BF003BE222 /* DecisionNote.swift */,
+				9E2CD22D1E95B8BF003BE222 /* DecisionNotes.swift */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -235,7 +235,7 @@
 				88D890921E76450F00F0975C /* Analyzer.swift in Sources */,
 				88D890981E76450F00F0975C /* Version.swift in Sources */,
 				88D890941E76450F00F0975C /* Parser.swift in Sources */,
-				9E2CD22E1E95B8BF003BE222 /* DecisionNote.swift in Sources */,
+				9E2CD22E1E95B8BF003BE222 /* DecisionNotes.swift in Sources */,
 				88D890971E76450F00F0975C /* Utils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

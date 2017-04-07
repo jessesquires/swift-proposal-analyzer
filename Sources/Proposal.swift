@@ -28,13 +28,13 @@ public final class Proposal {
     
     public let reviewManagers: [ReviewManager]
     
-    public let decisionNotes : DecisionNote?
+    public let decisionNotes : DecisionNotes?
 
     public init(title: String,
                 seNumber: String,
                 authors: [Author],
                 reviewManagers: [ReviewManager],
-                decisionNotes : DecisionNote?,
+                decisionNotes : DecisionNotes?,
                 status: Status,
                 fileName: String,
                 fileContents: String,

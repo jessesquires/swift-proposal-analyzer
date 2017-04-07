@@ -249,17 +249,17 @@ func reviewManagerFromString(_ line: String?) -> [ReviewManager] {
     return reviewers
 }
 
-func decisionNoteFromLine(_ line: String?) -> DecisionNote? {
-    var decisionNote : DecisionNote?
+func decisionNoteFromLine(_ line: String?) -> DecisionNotes? {
+    var decisionNotes : DecisionNotes?
     guard let line = line else { return nil }
     let range = line.index(line.startIndex, offsetBy: 18)
     let string = line.substring(from: range)
     let componentsTitle = string.components(separatedBy: CharacterSet(["[", "]"]))
     let componentsUrl = string.components(separatedBy: CharacterSet(["(", ")"]))
-    let title = componentsTitle[1].trimmingWhitespace()
+    let text = componentsTitle[1].trimmingWhitespace()
     let url = (componentsUrl.count > 0) ? componentsUrl[1].trimmingWhitespace() : ""
-    if title != "" && url != "" {
-        decisionNote = DecisionNote(title: title, url: url)
+    if text != "" && url != "" {
+        decisionNotes = DecisionNotes(text: text, url: url)
     }
-    return decisionNote
+    return decisionNotes
 }
