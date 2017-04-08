@@ -29,12 +29,14 @@ public final class Proposal {
     public let reviewManagers: [ReviewManager]
     
     public let decisionNotes : DecisionNotes?
+    public let bugs: [Bug]
 
     public init(title: String,
                 seNumber: String,
                 authors: [Author],
                 reviewManagers: [ReviewManager],
                 decisionNotes : DecisionNotes?,
+                bugs: [Bug],
                 status: Status,
                 fileName: String,
                 fileContents: String,
@@ -51,6 +53,7 @@ public final class Proposal {
         
         self.reviewManagers = reviewManagers
         self.decisionNotes = decisionNotes
+        self.bugs = bugs
     }
 }
 
@@ -81,6 +84,10 @@ extension Proposal {
     public var reviewerNames: [String] {
         return reviewManagers.map { $0.name }
     }
+    
+    public var srNumbers: [String] {
+        return bugs.map { $0.srNumber }
+    }
 }
 
 extension Proposal {
@@ -108,6 +115,16 @@ extension Proposal {
     
     public func reviewedBy(_ reviewerName: String) -> Bool {
         return reviewerNames.contains(reviewerName)
+    }
+}
+
+extension Proposal {
+    public func containsBug(_ bug: Bug) -> Bool {
+        return bugs.contains(bug)
+    }
+    
+    public func containsBug(_ bugCode: String) -> Bool {
+        return srNumbers.contains(bugCode)
     }
 }
 

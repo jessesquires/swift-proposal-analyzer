@@ -54,6 +54,7 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
     var statusLine: String!
     var reviewManagerLine: String?
     var decisionNotesLine: String?
+    var bugLine: String?
 
     for eachLine in lines {
         if eachLine.hasPrefix("* Proposal:") || eachLine.hasPrefix("- Proposal:") {
@@ -79,6 +80,10 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
         if eachLine.hasPrefix("* Decision Notes:") || eachLine.hasPrefix("- Decision Notes:") {
             decisionNotesLine = eachLine
         }
+
+        if eachLine.hasPrefix("* Bug:") || eachLine.hasPrefix("- Bug:") {
+            bugLine = eachLine
+        }
     }
 
     if seNumberLine == nil || statusLine == nil {
@@ -95,14 +100,15 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
     let words = wordCount(fromFile: fileContents)
     
     let reviewManagers = reviewManagerFromString(reviewManagerLine)
-
     let decisionNotes = decisionNoteFromLine(decisionNotesLine)
+    let bugs = bugsFromString(bugLine)
     
     return Proposal(title: title,
                     seNumber: seNumber,
                     authors: authors,
                     reviewManagers: reviewManagers,
                     decisionNotes: decisionNotes,
+                    bugs: bugs,
                     status: status,
                     fileName: fileName,
                     fileContents: fileContents,
@@ -262,4 +268,29 @@ func decisionNoteFromLine(_ line: String?) -> DecisionNotes? {
         decisionNotes = DecisionNotes(text: text, url: url)
     }
     return decisionNotes
+}
+
+func bugsFromString(_ line: String?) -> [Bug] {
+    var bugs = [Bug]()
+    
+    guard let line = line else { return bugs }
+    
+    let range = line.index(line.startIndex, offsetBy: 7)
+    let bugString = line.substring(from: range)
+    let bugStringComponents = bugString.components(separatedBy: ",")
+    
+    for eachBug in bugStringComponents {
+        let componentsName = eachBug.components(separatedBy: CharacterSet(["[", "]"]))
+        let componentsUrl = eachBug.components(separatedBy: CharacterSet(["(", ")"]))
+        if componentsName.count > 1 {
+            let srNumber = componentsName[1].trimmingWhitespace()
+            let url = (componentsUrl.count > 1) ? componentsUrl[1].trimmingWhitespace() : ""
+            bugs.append(Bug(srNumber: srNumber, url: url))
+        } else {
+            let srNumber = componentsName[0].trimmingWhitespace()
+            let url = (componentsUrl.count > 0) ? componentsUrl[0].trimmingWhitespace() : ""
+            bugs.append(Bug(srNumber: srNumber, url: url))
+        }
+    }
+    return bugs
 }
