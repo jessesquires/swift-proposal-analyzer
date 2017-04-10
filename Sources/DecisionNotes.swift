@@ -12,7 +12,7 @@
 
 import Foundation
 
-/// Represents a Decision Notes for a proposal.
+/// Represents the decision notes for a proposal.
 public struct DecisionNotes {
     public let text: String
     public let url: String
