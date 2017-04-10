@@ -53,6 +53,7 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
     var multipleAuthorLine: String?
     var statusLine: String!
     var reviewManagerLine: String?
+    var decisionNotesLine: String?
     var bugLine: String?
 
     for eachLine in lines {
@@ -76,6 +77,10 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
             reviewManagerLine = eachLine
         }
         
+        if eachLine.hasPrefix("* Decision Notes:") || eachLine.hasPrefix("- Decision Notes:") {
+            decisionNotesLine = eachLine
+        }
+
         if eachLine.hasPrefix("* Bug:") || eachLine.hasPrefix("- Bug:") {
             bugLine = eachLine
         }
@@ -95,12 +100,14 @@ func proposalFrom(fileContents: String, fileName: String) -> Proposal {
     let words = wordCount(fromFile: fileContents)
     
     let reviewManagers = reviewManagerFromString(reviewManagerLine)
+    let decisionNotes = decisionNoteFromLine(decisionNotesLine)
     let bugs = bugsFromString(bugLine)
     
     return Proposal(title: title,
                     seNumber: seNumber,
                     authors: authors,
                     reviewManagers: reviewManagers,
+                    decisionNotes: decisionNotes,
                     bugs: bugs,
                     status: status,
                     fileName: fileName,
@@ -246,6 +253,21 @@ func reviewManagerFromString(_ line: String?) -> [ReviewManager] {
         }
     }
     return reviewers
+}
+
+func decisionNoteFromLine(_ line: String?) -> DecisionNotes? {
+    var decisionNotes : DecisionNotes?
+    guard let line = line else { return nil }
+    let range = line.index(line.startIndex, offsetBy: 18)
+    let string = line.substring(from: range)
+    let componentsTitle = string.components(separatedBy: CharacterSet(["[", "]"]))
+    let componentsUrl = string.components(separatedBy: CharacterSet(["(", ")"]))
+    let text = componentsTitle[1].trimmingWhitespace()
+    let url = (componentsUrl.count > 0) ? componentsUrl[1].trimmingWhitespace() : ""
+    if text != "" && url != "" {
+        decisionNotes = DecisionNotes(text: text, url: url)
+    }
+    return decisionNotes
 }
 
 func bugsFromString(_ line: String?) -> [Bug] {

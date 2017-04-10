@@ -27,12 +27,15 @@ public final class Proposal {
     public let wordCount: Int
     
     public let reviewManagers: [ReviewManager]
+    
+    public let decisionNotes : DecisionNotes?
     public let bugs: [Bug]
 
     public init(title: String,
                 seNumber: String,
                 authors: [Author],
                 reviewManagers: [ReviewManager],
+                decisionNotes : DecisionNotes?,
                 bugs: [Bug],
                 status: Status,
                 fileName: String,
@@ -47,7 +50,9 @@ public final class Proposal {
         self.fileName = fileName
         self.fileContents = fileContents
         self.wordCount = wordCount
+        
         self.reviewManagers = reviewManagers
+        self.decisionNotes = decisionNotes
         self.bugs = bugs
     }
 }
