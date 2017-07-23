@@ -85,7 +85,7 @@ let count = analyzer.occurrences(of: "Objective-C")
 
 ## Documentation
 
-You can find the (unfinished) [docs here](http://www.jessesquires.com/swift-proposal-analyzer/).
+You can find the (unfinished) [docs here](http://jessesquires.github.io/swift-proposal-analyzer/).
 
 ## Caveats
 
