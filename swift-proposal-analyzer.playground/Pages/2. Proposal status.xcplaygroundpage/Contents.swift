@@ -66,6 +66,7 @@ let increase = percentIncrease(from: swift2_2, to: swift3_0)
 
 let implementedInSwift3 = analyzer.proposalsWith(status: .implemented(.v3_0))
 
+let implementedInSwift4_1 = analyzer.proposalsWith(status: .implemented(.v4_1))
 
 /*:
  ----------

@@ -71,7 +71,7 @@ extension Proposal: CustomStringConvertible {
 extension Proposal {
     public var number: Int {
         let start = seNumber.index(seNumber.startIndex, offsetBy: 3)
-        let str = seNumber.substring(from: start)
+        let str = seNumber[start...]
         return Int(str)!
     }
 }

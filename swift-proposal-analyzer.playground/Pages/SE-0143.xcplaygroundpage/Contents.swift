@@ -179,14 +179,14 @@ protocol HasIdentity {
 }
 
 extension SomeWrapper: Equatable where Wrapped: Equatable {
-  static func ==(lhs: SomeWrapper<Wrapped>, rhs: SomeWrapper<Wrapper>) -> Bool {
+  static func ==(lhs: SomeWrapper<Wrapped>, rhs: SomeWrapper<Wrapped>) -> Bool {
     return lhs.wrapped == rhs.wrapped
   }
 }
 
 // error: SomeWrapper already stated conformance to Equatable
 extension SomeWrapper: Equatable where Wrapped: HasIdentity {
-  static func ==(lhs: SomeWrapper<Wrapped>, rhs: SomeWrapper<Wrapper>) -> Bool {
+  static func ==(lhs: SomeWrapper<Wrapped>, rhs: SomeWrapper<Wrapped>) -> Bool {
     return lhs.wrapped === rhs.wrapped
   }
 }
@@ -223,7 +223,7 @@ that are orthogonal to conditional conformances.
 ### Implied conditional conformances 
 
 Stating conformance to a protocol implicitly states conformances to
-any of the protocols that it the protocol inherits. This is already
+any of the protocols that the protocol inherits. This is already
 the case in Swift today: one can declare conformance to the
 `Collection` protocol, and it implies conformance to `Sequence` as
 well.
@@ -292,6 +292,57 @@ general) than the constraints `T: S`, because every `S` is also an
 extension Y: P where T: R { }
 ```
 
+## Standard library adoption
+
+Adopt conditional conformances to make various standard library types
+that already have a suitable `==` conform to `Equatable`. Specifically:
+
+```swift
+extension Optional: Equatable where Wrapped: Equatable { /*== already exists */ }
+extension Array: Equatable where Element: Equatable { /*== already exists */ }
+extension ArraySlice: Equatable where Element: Equatable { /*== already exists */ }
+extension ContiguousArray: Equatable where Element: Equatable { /*== already exists */ }
+extension Dictionary: Equatable where Value: Equatable { /*== already exists */ }
+```
+
+Note that `Set` is already (unconditionally) `Equatable`.
+
+In addition, it is intended that the standard library adopt conditional conformance
+to collapse a number of "variants" of base types where other generic parameters
+enable conformance to further protocols.
+
+For example, there is a type:
+
+```swift
+ReversedCollection<Base: BidirectionalCollection>: BidirectionalCollection
+```
+
+that provides a low-cost lazy reversal of any bidirecitonal collection.
+There is a variation on that type,
+
+```swift
+ReversedRandomAccessCollection<Base: RandomAccessCollection>: RandomAccessCollection
+```
+
+ that additionaly conforms to `RandomAccessCollection` when its base does.
+Users create these types via the `reversed()` extension method on
+`BidirectionalCollection` and `RandomAccessCollection` respectively.
+
+With conditional conformance, the `ReversedRandomAccessCollection` variant can
+be replaced with a conditional extension:
+
+```swift
+extension ReversedCollection: RandomAccessCollection where Base: RandomAccessCollection { }
+
+@available(*, deprecated, renamed: "ReversedCollection")
+public typealias ReversedRandomAccessCollection<T: RandomAccessCollection> = ReversedCollection<T>
+```
+
+Similar techniques can be used for variants of `Slice`, `LazySequence`,
+`DefaultIndices`, `Range` and others. These refactorings are considered an
+implementation detail of the existing functionality standard library and should
+be applied accross the board where applicable.
+
 ## Source compatibility
 
 From the language perspective, conditional conformances are purely additive. They introduce no new syntax, but instead provide semantics for existing syntax---an extension that both declares a protocol conformance and has a `where` clause---whose use currently results in a type checker failure. That said, this is a feature that is expected to be widely adopted within the Swift standard library, which may indirectly affect source compatibility.
@@ -345,13 +396,13 @@ protocol HasIdentity {
 }
 
 extension SomeWrapper: Equatable where Wrapped: Equatable {
-  static func ==(lhs: SomeWrapper<Wrapped>, rhs: SomeWrapper<Wrapper>) -> Bool {
+  static func ==(lhs: SomeWrapper<Wrapped>, rhs: SomeWrapper<Wrapped>) -> Bool {
     return lhs.wrapped == rhs.wrapped
   }
 }
 
 extension SomeWrapper: Equatable where Wrapped: HasIdentity {
-  static func ==(lhs: SomeWrapper<Wrapped>, rhs: SomeWrapper<Wrapper>) -> Bool {
+  static func ==(lhs: SomeWrapper<Wrapped>, rhs: SomeWrapper<Wrapped>) -> Bool {
     return lhs.wrapped === rhs.wrapped
   }
 }
@@ -374,7 +425,7 @@ It is due to the possibility of #4 occurring that we refer to the two conditiona
 ```swift
 // Possible tie-breaker conformance
 extension SomeWrapper: Equatable where Wrapped: Equatable & HasIdentity, {
-  static func ==(lhs: SomeWrapper<Wrapped>, rhs: SomeWrapper<Wrapper>) -> Bool {
+  static func ==(lhs: SomeWrapper<Wrapped>, rhs: SomeWrapper<Wrapped>) -> Bool {
     return lhs.wrapped == rhs.wrapped
   }
 }

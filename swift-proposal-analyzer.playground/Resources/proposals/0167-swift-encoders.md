@@ -3,9 +3,9 @@
 * Proposal: [SE-0167](0167-swift-encoders.md)
 * Authors: [Itai Ferber](https://github.com/itaiferber), [Michael LeHew](https://github.com/mlehew), [Tony Parker](https://github.com/parkera)
 * Review Manager: [Doug Gregor](https://github.com/DougGregor)
-* Status: **Active review (April 6...12, 2017)**
-* Associated PRs:
-  * [#8124](https://github.com/apple/swift/pull/8124)
+* Status: **Implemented (Swift 4)**
+* Decision Notes: [Rationale](https://lists.swift.org/pipermail/swift-evolution-announce/2017-April/000368.html)
+* Implementation: [apple/swift#9005](https://github.com/apple/swift/pull/9005)
 
 ## Introduction
 

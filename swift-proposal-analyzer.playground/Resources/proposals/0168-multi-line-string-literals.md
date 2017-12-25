@@ -3,7 +3,8 @@
 * Proposal: [SE-0168](0168-multi-line-string-literals.md)
 * Authors: [John Holdsworth](https://github.com/johnno1962), [Brent Royal-Gordon](https://github.com/brentdax), [Tyler Cloutier](https://github.com/TheArtOfEngineering)
 * Review Manager: [Joe Groff](https://github.com/jckarter)
-* Status: **Active review (April 6...12, 2017)**
+* Status: **Implemented (Swift 4)**
+* Decision Notes: [Rationale](https://lists.swift.org/pipermail/swift-evolution/Week-of-Mon-20170417/035923.html)
 * Bug: [SR-170](https://bugs.swift.org/browse/SR-170)
 
 ## Introduction
@@ -25,7 +26,7 @@ break lines using string concatenation. Concatenation is ungainly and may result
 ## Proposed solution
 
 After consideration this proposal puts forward a single simple syntax for inclusion: `"""long strings"""`.
-This has the advantage that it is well supported by the syntax highlighters on github and existing editors
+This has the advantage that it is well supported by the syntax highlighters on GitHub and existing editors
 and is a relatively minor change to the Swift Lexer. Interpolation would work as before.
 
 ### Long strings

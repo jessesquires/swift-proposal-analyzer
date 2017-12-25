@@ -156,13 +156,13 @@ func nameFromLine(_ line: String) -> String {
 func seNumberFromLine(_ line: String) -> String {
     let start = line.index(line.startIndex, offsetBy: 13)
     let range = start..<line.index(start, offsetBy: 7)
-    return line.substring(with: range).trimmingWhitespace()
+    return String(line[range]).trimmingWhitespace()
 }
 
 
 func authorsFromLine(_ line: String, multiple: Bool) -> [Author] {
     let range = line.index(line.startIndex, offsetBy: multiple ? 11 : 10)
-    let authorString = line.substring(from: range)
+    let authorString = String(line[range])
     let authorComponents = authorString.components(separatedBy: ",")
 
     var authors = [Author]()
@@ -182,10 +182,10 @@ func authorsFromLine(_ line: String, multiple: Bool) -> [Author] {
 
 
 func statusFromLine(_ line: String) -> Status {
-    let range = line.index(line.startIndex, offsetBy: 10)
-    let string = line.substring(from: range)
-    let characters = CharacterSet.whitespacesAndNewlines.union(CharacterSet(["*"]))
-    let statusString = string.trimmingCharacters(in: characters)
+//    let range = line.index(line.startIndex, offsetBy: 10)
+//    let string = String(line[range])
+//    let characters = CharacterSet.whitespacesAndNewlines.union(CharacterSet(["*"]))
+    let statusString = line //string.trimmingCharacters(in: characters)
 
     switch statusString {
     case _ where statusString.localizedCaseInsensitiveContains("Active Review"):
@@ -223,6 +223,8 @@ func versionFromString(_ versionString: String) -> SwiftVersion {
     case _ where versionString.localizedCaseInsensitiveContains("Swift 3.0"): fallthrough
     case _ where versionString.localizedCaseInsensitiveContains("Swift 3"):
         return .v3_0
+    case _ where versionString.localizedCaseInsensitiveContains("Swift 4.1"):
+        return .v4_1
     case _ where versionString.localizedCaseInsensitiveContains("Swift 4"):
         return .v4_0
     default:
@@ -236,7 +238,7 @@ func reviewManagerFromString(_ line: String?) -> [ReviewManager] {
     guard let line = line else { return reviewers }
     
     let range = line.index(line.startIndex, offsetBy: 18)
-    let reviewManagerString = line.substring(from: range)
+    let reviewManagerString = String(line[range])
     let reviewManagerStringComponents = reviewManagerString.components(separatedBy: ",")
     
     for eachReviewer in reviewManagerStringComponents {
@@ -258,12 +260,10 @@ func reviewManagerFromString(_ line: String?) -> [ReviewManager] {
 func decisionNoteFromLine(_ line: String?) -> DecisionNotes? {
     var decisionNotes : DecisionNotes?
     guard let line = line else { return nil }
-    let range = line.index(line.startIndex, offsetBy: 18)
-    let string = line.substring(from: range)
-    let componentsTitle = string.components(separatedBy: CharacterSet(["[", "]"]))
-    let componentsUrl = string.components(separatedBy: CharacterSet(["(", ")"]))
+    let componentsTitle = line.components(separatedBy: CharacterSet(["[", "]"]))
+    let componentsUrl = line.components(separatedBy: CharacterSet(["(", ")"]))
     let text = componentsTitle[1].trimmingWhitespace()
-    let url = (componentsUrl.count > 0) ? componentsUrl[1].trimmingWhitespace() : ""
+    let url = (componentsUrl.count > 1) ? componentsUrl[1].trimmingWhitespace() : ""
     if text != "" && url != "" {
         decisionNotes = DecisionNotes(text: text, url: url)
     }
@@ -276,7 +276,7 @@ func bugsFromString(_ line: String?) -> [Bug] {
     guard let line = line else { return bugs }
     
     let range = line.index(line.startIndex, offsetBy: 7)
-    let bugString = line.substring(from: range)
+    let bugString = String(line[range])
     let bugStringComponents = bugString.components(separatedBy: ",")
     
     for eachBug in bugStringComponents {

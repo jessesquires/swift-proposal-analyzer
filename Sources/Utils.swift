@@ -15,7 +15,7 @@
 import Foundation
 
 public func printTitle(_ title: String) {
-    let line = String(repeating: "-", count: title.characters.count)
+    let line = String(repeating: "-", count: title.count)
     print()
     print(line)
     print(title)

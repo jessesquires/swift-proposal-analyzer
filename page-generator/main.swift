@@ -50,7 +50,7 @@ if #available(OSX 10.11, *) {
     for (url, contents) in proposals {
         let path = url.lastPathComponent
         let range = path.index(path.startIndex, offsetBy: 4)
-        let seNumber = "SE-" + path.substring(to: range)
+        let seNumber = "SE-" + path[..<range]
 
         let pageDir = basePlaygroundDir
             .appendingPathComponent(seNumber + ".xcplaygroundpage", isDirectory: true)
