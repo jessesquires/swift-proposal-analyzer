@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Analyzer Class Reference</title>
+    <title>Bug Structure Reference</title>
     <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
     <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
     <meta charset='utf-8'>
@@ -10,8 +10,8 @@
     
   </head>
   <body>
-    <a name="//apple_ref/swift/Class/Analyzer" class="dashAnchor"></a>
-    <a title="Analyzer Class Reference"></a>
+    <a name="//apple_ref/swift/Struct/Bug" class="dashAnchor"></a>
+    <a title="Bug Structure Reference"></a>
     <header>
       <div class="content-wrapper">
         <p><a href="../index.html">ProposalAnalyzer Docs</a> (49% documented)</p>
@@ -22,7 +22,7 @@
       <p id="breadcrumbs">
         <a href="../index.html">ProposalAnalyzer Reference</a>
         <img id="carat" src="../img/carat.png" />
-        Analyzer Class Reference
+        Bug Structure Reference
       </p>
     </div>
     <div class="content-wrapper">
@@ -86,14 +86,14 @@
       <article class="main-content">
         <section>
           <section class="section">
-            <h1>Analyzer</h1>
+            <h1>Bug</h1>
               <div class="declaration">
                 <div class="language">
-                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Analyzer</span></code></pre>
+                  <pre class="highlight"><code><span class="kd">public</span> <span class="kd">struct</span> <span class="kt">Bug</span></code></pre>
 
                 </div>
               </div>
-            <p>An <code>Analyzer</code> parses and processes proposals from a given directory and provides APIs for searching and filtering.</p>
+            <p>Represents Bugs for a proposal.</p>
 
           </section>
           <section class="section task-group-section">
@@ -102,9 +102,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:16ProposalAnalyzer0B0C6sharedACvZ"></a>
-                    <a name="//apple_ref/swift/Variable/shared" class="dashAnchor"></a>
-                    <a class="token" href="#/s:16ProposalAnalyzer0B0C6sharedACvZ">shared</a>
+                    <a name="/s:16ProposalAnalyzer3BugV8srNumberSSv"></a>
+                    <a name="//apple_ref/swift/Property/srNumber" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16ProposalAnalyzer3BugV8srNumberSSv">srNumber</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -119,7 +119,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">shared</span> <span class="o">=</span> <span class="kt">Analyzer</span><span class="p">(</span><span class="nv">directory</span><span class="p">:</span> <span class="err">#</span><span class="nf">fileLiteral</span><span class="p">(</span><span class="nv">resourceName</span><span class="p">:</span> <span class="s">"proposals"</span><span class="p">))</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">srNumber</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -129,9 +129,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:16ProposalAnalyzer0B0C9proposalsSayAA0A0CGv"></a>
-                    <a name="//apple_ref/swift/Property/proposals" class="dashAnchor"></a>
-                    <a class="token" href="#/s:16ProposalAnalyzer0B0C9proposalsSayAA0A0CGv">proposals</a>
+                    <a name="/s:16ProposalAnalyzer3BugV3urlSSv"></a>
+                    <a name="//apple_ref/swift/Property/url" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16ProposalAnalyzer3BugV3urlSSv">url</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -146,7 +146,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">proposals</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Proposal.html">Proposal</a></span><span class="p">]</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">url</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
@@ -156,9 +156,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:16ProposalAnalyzer0B0C7authorsSayAA6AuthorVGv"></a>
-                    <a name="//apple_ref/swift/Property/authors" class="dashAnchor"></a>
-                    <a class="token" href="#/s:16ProposalAnalyzer0B0C7authorsSayAA6AuthorVGv">authors</a>
+                    <a name="/s:16ProposalAnalyzer3BugVACSS8srNumber_SS3urltcfc"></a>
+                    <a name="//apple_ref/swift/Method/init(srNumber:url:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:16ProposalAnalyzer3BugVACSS8srNumber_SS3urltcfc">init(srNumber:url:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -173,34 +173,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">authors</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Author.html">Author</a></span><span class="p">]</span> <span class="o">=</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:16ProposalAnalyzer0B0CAC10Foundation3URLV9directory_tcfc"></a>
-                    <a name="//apple_ref/swift/Method/init(directory:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:16ProposalAnalyzer0B0CAC10Foundation3URLV9directory_tcfc">init(directory:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">directory</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">srNumber</span><span class="p">:</span> <span class="kt">String</span><span class="p">,</span> <span class="nv">url</span> <span class="p">:</span> <span class="kt">String</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -214,9 +187,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:16ProposalAnalyzer0B0C13proposalsWithSayAA0A0CGSayAA6StatusOG6status_tF"></a>
-                    <a name="//apple_ref/swift/Method/proposalsWith(status:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:16ProposalAnalyzer0B0C13proposalsWithSayAA0A0CGSayAA6StatusOG6status_tF">proposalsWith(status:)</a>
+                    <a name="/s:s23CustomStringConvertibleP11descriptionSSv"></a>
+                    <a name="//apple_ref/swift/Property/description" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s23CustomStringConvertibleP11descriptionSSv">description</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -224,26 +197,29 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">proposalsWith</span><span class="p">(</span><span class="n">status</span> <span class="nv">statuses</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/Status.html">Status</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/Proposal.html">Proposal</a></span><span class="p">]</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">description</span><span class="p">:</span> <span class="kt">String</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:16ProposalAnalyzer0B0C13proposalsWithSayAA0A0CGSayAA6StatusOG6statusd_tF"></a>
-                    <a name="//apple_ref/swift/Method/proposalsWith(status:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:16ProposalAnalyzer0B0C13proposalsWithSayAA0A0CGSayAA6StatusOG6statusd_tF">proposalsWith(status:)</a>
+                    <a name="/s:s9EquatableP2eeoiSbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/==(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s9EquatableP2eeoiSbx_xtFZ">==(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -251,26 +227,29 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">proposalsWith</span><span class="p">(</span><span class="n">status</span> <span class="nv">statuses</span><span class="p">:</span> <span class="kt"><a href="../Enums/Status.html">Status</a></span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/Proposal.html">Proposal</a></span><span class="p">]</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">==</span><span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Bug</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Bug</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:16ProposalAnalyzer0B0C18proposalsPerStatuss10DictionaryVyAA0E0OSayAA0A0CGGyF"></a>
-                    <a name="//apple_ref/swift/Method/proposalsPerStatus()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:16ProposalAnalyzer0B0C18proposalsPerStatuss10DictionaryVyAA0E0OSayAA0A0CGGyF">proposalsPerStatus()</a>
+                    <a name="/s:s10ComparableP1loiSbx_xtFZ"></a>
+                    <a name="//apple_ref/swift/Method/&lt;(_:_:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s10ComparableP1loiSbx_xtFZ">&lt;(_:_:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -278,26 +257,29 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">proposalsPerStatus</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Enums/Status.html">Status</a></span> <span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Proposal.html">Proposal</a></span><span class="p">]]</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="kd">func</span> <span class="o">&lt;</span> <span class="p">(</span><span class="nv">lhs</span><span class="p">:</span> <span class="kt">Bug</span><span class="p">,</span> <span class="nv">rhs</span><span class="p">:</span> <span class="kt">Bug</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Bool</span></code></pre>
 
                         </div>
                       </div>
                     </section>
                   </div>
                 </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <ul>
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:16ProposalAnalyzer0B0C14proposalStatusSaySSGyF"></a>
-                    <a name="//apple_ref/swift/Method/proposalStatus()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:16ProposalAnalyzer0B0C14proposalStatusSaySSGyF">proposalStatus()</a>
+                    <a name="/s:s8HashableP9hashValueSiv"></a>
+                    <a name="//apple_ref/swift/Property/hashValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:s8HashableP9hashValueSiv">hashValue</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -305,41 +287,13 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Undocumented</p>
-
+                        
                       </div>
                       <div class="declaration">
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">proposalStatus</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/s:16ProposalAnalyzer0B0C11occurrencesSiSS2of_tF"></a>
-                    <a name="//apple_ref/swift/Method/occurrences(of:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:16ProposalAnalyzer0B0C11occurrencesSiSS2of_tF">occurrences(of:)</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">occurrences</span><span class="p">(</span><span class="n">of</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">var</span> <span class="nv">hashValue</span><span class="p">:</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>

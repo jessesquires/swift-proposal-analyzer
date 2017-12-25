@@ -13,7 +13,7 @@
     <a title="ProposalAnalyzer  Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="index.html">ProposalAnalyzer Docs</a> (46% documented)</p>
+        <p><a href="index.html">ProposalAnalyzer Docs</a> (49% documented)</p>
         <p class="header-right"><a href="https://github.com/jessesquires/swift-proposal-analyzer"><img src="img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -39,7 +39,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Enums.html">Enums</a>
+            <a href="Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Enums/Status.html">Status</a>
@@ -50,21 +50,27 @@
             <a href="Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F16ProposalAnalyzer14parseProposalsFT11inDirectoryV10Foundation3URL_GSaCS_8Proposal_">parseProposals(inDirectory:)</a>
+                <a href="Functions.html#/s:16ProposalAnalyzer14parseProposalsSayAA0A0CG10Foundation3URLV11inDirectory_tF">parseProposals(inDirectory:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F16ProposalAnalyzer15percentIncreaseFT4fromSi2toSi_Sd">percentIncrease(from:to:)</a>
+                <a href="Functions.html#/s:16ProposalAnalyzer15percentIncreaseSdSi4from_Si2totF">percentIncrease(from:to:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="Functions.html#/s:F16ProposalAnalyzer10printTitleFSST_">printTitle(_:)</a>
+                <a href="Functions.html#/s:16ProposalAnalyzer10printTitleySSF">printTitle(_:)</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="Structs.html">Structs</a>
+            <a href="Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="Structs/Author.html">Author</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/Bug.html">Bug</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Structs/DecisionNotes.html">DecisionNotes</a>
               </li>
               <li class="nav-group-task">
                 <a href="Structs/ReviewManager.html">ReviewManager</a>
@@ -80,24 +86,24 @@
         <section>
           <section class="section">
             
-            <a href='#swift-proposal-analyzer-a-href-https-travis-ci-org-jessesquires-swift-proposal-analyzer-img-src-https-travis-ci-org-jessesquires-swift-proposal-analyzer-svg-branch-master-alt-build-status-a' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h1 id='swift-proposal-analyzer-a-href-https-travis-ci-org-jessesquires-swift-proposal-analyzer-img-src-https-travis-ci-org-jessesquires-swift-proposal-analyzer-svg-branch-master-alt-build-status-a'>swift-proposal-analyzer <a href="https://travis-ci.org/jessesquires/swift-proposal-analyzer"><img src="https://travis-ci.org/jessesquires/swift-proposal-analyzer.svg?branch=master" alt="Build Status"></a></h1>
+            <h1 id='swift-proposal-analyzer-a-href-https-travis-ci-org-jessesquires-swift-proposal-analyzer-img-src-https-travis-ci-org-jessesquires-swift-proposal-analyzer-svg-branch-master-alt-build-status-a' class='heading'>swift-proposal-analyzer <a href="https://travis-ci.org/jessesquires/swift-proposal-analyzer"><img src="https://travis-ci.org/jessesquires/swift-proposal-analyzer.svg?branch=master" alt="Build Status"></a></h1>
 
 <p><em>An analysis of Swift Evolution proposals</em></p>
-<a href='#about' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='about'>About</h2>
+<h2 id='about' class='heading'>About</h2>
 
 <p>All of the swift-evolution proposals are publicly available <a href="https://github.com/apple/swift-evolution">on GitHub</a>, however they are just markdown files — plain text. There&rsquo;s no way to query or filter the proposals. For example, you can&rsquo;t search for <em><q>all proposals written by Chris Lattner</q></em> or <em><q>all rejected proposals</q></em> or <em><q>all proposals that mention Objective-C</q></em>.</p>
 
 <p>This project contains tools to analyze, query, and filter the Swift Evolution proposals based on any criteria you like.</p>
 
 <p>This project accompanies <a href="https://speakerdeck.com/jessesquires/140-proposals-in-30-minutes">my talk</a> from <a href="http://frenchkit.fr">FrenchKit</a>.</p>
-<a href='#requirements' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='requirements'>Requirements</h2>
+<h2 id='requirements' class='heading'>Requirements</h2>
 
 <ul>
 <li>macOS 10.11+</li>
 <li>Xcode 8+</li>
 <li>Swift 3.0+</li>
 </ul>
-<a href='#setup' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='setup'>Setup</h2>
+<h2 id='setup' class='heading'>Setup</h2>
 
 <p>This repo contains a number of different components:</p>
 
@@ -120,18 +126,18 @@
 <li>Runs <code>main.swift</code> to generate the playground pages</li>
 </ol></li>
 </ul>
-<a href='#cloning-this-repo' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h4 id='cloning-this-repo'>Cloning this repo</h4>
+<h4 id='cloning-this-repo' class='heading'>Cloning this repo</h4>
 <pre class="highlight shell"><code><span class="gp">$ </span>git clone https://github.com/jessesquires/swift-proposal-analyzer.git
 <span class="gp">$ </span><span class="nb">cd </span>swift-proposal-analyzer/
 <span class="gp">$ </span>git submodule init
 <span class="gp">$ </span>git submodule update --remote
 <span class="gp">$ </span>./update_proposals.sh
 </code></pre>
-<a href='#usage' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='usage'>Usage</h2>
+<h2 id='usage' class='heading'>Usage</h2>
 
 <p>Open and build <code>ProposalAnalyzer.xcodeproj</code>, then select the <code>swift-proposal-analyzer.playground</code> and run it like a normal playground.</p>
 
-<p>After parsing completes, you&rsquo;ll have an array of <code>Proposal</code> types:</p>
+<p>After parsing completes, you&rsquo;ll have an array of <code><a href="Classes/Proposal.html">Proposal</a></code> types:</p>
 <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Proposal</span> <span class="p">{</span>
     <span class="kd">public</span> <span class="k">let</span> <span class="nv">title</span><span class="p">:</span> <span class="kt">String</span>
     <span class="kd">public</span> <span class="k">let</span> <span class="nv">seNumber</span><span class="p">:</span> <span class="kt">String</span>
@@ -146,7 +152,7 @@
 </code></pre>
 
 <p>Most proposal metadata is available, as well as the raw file contents. You can now perform different queries or apply filters to the proposal data.</p>
-<a href='#examples' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='examples'>Examples</h2>
+<h2 id='examples' class='heading'>Examples</h2>
 <pre class="highlight swift"><code><span class="c1">// Find proposals implemented in Swift 3.0</span>
 <span class="k">let</span> <span class="nv">implementedInSwift3</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="nf">proposalsWith</span><span class="p">(</span><span class="nv">status</span><span class="p">:</span> <span class="o">.</span><span class="nf">implemented</span><span class="p">(</span><span class="o">.</span><span class="n">v3_0</span><span class="p">))</span>
 </code></pre>
@@ -158,18 +164,18 @@
 <pre class="highlight swift"><code><span class="c1">// Find total mentions of "Objective-C" across all proposals</span>
 <span class="k">let</span> <span class="nv">count</span> <span class="o">=</span> <span class="n">analyzer</span><span class="o">.</span><span class="nf">occurrences</span><span class="p">(</span><span class="nv">of</span><span class="p">:</span> <span class="s">"Objective-C"</span><span class="p">)</span>
 </code></pre>
-<a href='#documentation' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='documentation'>Documentation</h2>
+<h2 id='documentation' class='heading'>Documentation</h2>
 
-<p>You can find the (unfinished) <a href="http://www.jessesquires.com/swift-proposal-analyzer/">docs here</a>.</p>
-<a href='#caveats' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='caveats'>Caveats</h2>
+<p>You can find the (unfinished) <a href="http://jessesquires.github.io/swift-proposal-analyzer/">docs here</a>.</p>
+<h2 id='caveats' class='heading'>Caveats</h2>
 
 <p>Some of the code here is pretty <q>quicky and dirty</q>, but it works! So <code>¯\_(ツ)_/¯</code> :laughing: If there&rsquo;s a better way to do something, please <a href="https://github.com/jessesquires/swift-proposal-analyzer/pulls">submit a pull request</a>!</p>
 
 <p>This is a small dataset, so any conclusions should be taken with a grain of salt. :smile:</p>
-<a href='#credits' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='credits'>Credits</h2>
+<h2 id='credits' class='heading'>Credits</h2>
 
 <p>Created and maintained by <a href="https://twitter.com/jesse_squires"><strong>@jesse_squires</strong></a>.</p>
-<a href='#license' class='anchor' aria-hidden=true><span class="header-anchor"></span></a><h2 id='license'>License</h2>
+<h2 id='license' class='heading'>License</h2>
 
 <p>Released under an <a href="http://opensource.org/licenses/MIT">MIT License</a>. See <code>LICENSE</code> for details.</p>
 
@@ -180,8 +186,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2017-04-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2017-12-25)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

@@ -14,7 +14,7 @@
     <a title="Analyzer Class Reference"></a>
     <header>
       <div class="content-wrapper">
-        <p><a href="../index.html">ProposalAnalyzer Docs</a> (46% documented)</p>
+        <p><a href="../index.html">ProposalAnalyzer Docs</a> (49% documented)</p>
         <p class="header-right"><a href="https://github.com/jessesquires/swift-proposal-analyzer"><img src="../img/gh.png"/>View on GitHub</a></p>
       </div>
     </header>
@@ -40,7 +40,7 @@
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Enums.html">Enums</a>
+            <a href="../Enums.html">Enumerations</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Enums/Status.html">Status</a>
@@ -51,21 +51,27 @@
             <a href="../Functions.html">Functions</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:F16ProposalAnalyzer14parseProposalsFT11inDirectoryV10Foundation3URL_GSaCS_8Proposal_">parseProposals(inDirectory:)</a>
+                <a href="../Functions.html#/s:16ProposalAnalyzer14parseProposalsSayAA0A0CG10Foundation3URLV11inDirectory_tF">parseProposals(inDirectory:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:F16ProposalAnalyzer15percentIncreaseFT4fromSi2toSi_Sd">percentIncrease(from:to:)</a>
+                <a href="../Functions.html#/s:16ProposalAnalyzer15percentIncreaseSdSi4from_Si2totF">percentIncrease(from:to:)</a>
               </li>
               <li class="nav-group-task">
-                <a href="../Functions.html#/s:F16ProposalAnalyzer10printTitleFSST_">printTitle(_:)</a>
+                <a href="../Functions.html#/s:16ProposalAnalyzer10printTitleySSF">printTitle(_:)</a>
               </li>
             </ul>
           </li>
           <li class="nav-group-name">
-            <a href="../Structs.html">Structs</a>
+            <a href="../Structs.html">Structures</a>
             <ul class="nav-group-tasks">
               <li class="nav-group-task">
                 <a href="../Structs/Author.html">Author</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Bug.html">Bug</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/DecisionNotes.html">DecisionNotes</a>
               </li>
               <li class="nav-group-task">
                 <a href="../Structs/ReviewManager.html">ReviewManager</a>
@@ -96,9 +102,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:ZvC16ProposalAnalyzer8Analyzer6sharedS0_"></a>
+                    <a name="/s:16ProposalAnalyzer0B0C6sharedACvZ"></a>
                     <a name="//apple_ref/swift/Variable/shared" class="dashAnchor"></a>
-                    <a class="token" href="#/s:ZvC16ProposalAnalyzer8Analyzer6sharedS0_">shared</a>
+                    <a class="token" href="#/s:16ProposalAnalyzer0B0C6sharedACvZ">shared</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -113,7 +119,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Analyzer</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">static</span> <span class="k">let</span> <span class="nv">shared</span> <span class="o">=</span> <span class="kt">Analyzer</span><span class="p">(</span><span class="nv">directory</span><span class="p">:</span> <span class="err">#</span><span class="nf">fileLiteral</span><span class="p">(</span><span class="nv">resourceName</span><span class="p">:</span> <span class="s">"proposals"</span><span class="p">))</span></code></pre>
 
                         </div>
                       </div>
@@ -123,9 +129,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC16ProposalAnalyzer8Analyzer9proposalsGSaCS_8Proposal_"></a>
+                    <a name="/s:16ProposalAnalyzer0B0C9proposalsSayAA0A0CGv"></a>
                     <a name="//apple_ref/swift/Property/proposals" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC16ProposalAnalyzer8Analyzer9proposalsGSaCS_8Proposal_">proposals</a>
+                    <a class="token" href="#/s:16ProposalAnalyzer0B0C9proposalsSayAA0A0CGv">proposals</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -140,7 +146,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Analyzer</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="k">let</span> <span class="nv">proposals</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Proposal.html">Proposal</a></span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -150,9 +156,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:vC16ProposalAnalyzer8Analyzer7authorsGSaVS_6Author_"></a>
+                    <a name="/s:16ProposalAnalyzer0B0C7authorsSayAA6AuthorVGv"></a>
                     <a name="//apple_ref/swift/Property/authors" class="dashAnchor"></a>
-                    <a class="token" href="#/s:vC16ProposalAnalyzer8Analyzer7authorsGSaVS_6Author_">authors</a>
+                    <a class="token" href="#/s:16ProposalAnalyzer0B0C7authorsSayAA6AuthorVGv">authors</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -167,7 +173,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Analyzer</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">lazy</span> <span class="k">var</span> <span class="nv">authors</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs/Author.html">Author</a></span><span class="p">]</span> <span class="o">=</span></code></pre>
 
                         </div>
                       </div>
@@ -177,9 +183,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC16ProposalAnalyzer8AnalyzercFT9directoryV10Foundation3URL_S0_"></a>
+                    <a name="/s:16ProposalAnalyzer0B0CAC10Foundation3URLV9directory_tcfc"></a>
                     <a name="//apple_ref/swift/Method/init(directory:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC16ProposalAnalyzer8AnalyzercFT9directoryV10Foundation3URL_S0_">init(directory:)</a>
+                    <a class="token" href="#/s:16ProposalAnalyzer0B0CAC10Foundation3URLV9directory_tcfc">init(directory:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -194,7 +200,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Analyzer</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="nf">init</span><span class="p">(</span><span class="nv">directory</span><span class="p">:</span> <span class="kt">URL</span><span class="p">)</span></code></pre>
 
                         </div>
                       </div>
@@ -208,9 +214,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC16ProposalAnalyzer8Analyzer13proposalsWithFT6statusGSaOS_6Status__GSaCS_8Proposal_"></a>
+                    <a name="/s:16ProposalAnalyzer0B0C13proposalsWithSayAA0A0CGSayAA6StatusOG6status_tF"></a>
                     <a name="//apple_ref/swift/Method/proposalsWith(status:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC16ProposalAnalyzer8Analyzer13proposalsWithFT6statusGSaOS_6Status__GSaCS_8Proposal_">proposalsWith(status:)</a>
+                    <a class="token" href="#/s:16ProposalAnalyzer0B0C13proposalsWithSayAA0A0CGSayAA6StatusOG6status_tF">proposalsWith(status:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -225,7 +231,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Analyzer</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">proposalsWith</span><span class="p">(</span><span class="n">status</span> <span class="nv">statuses</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Enums/Status.html">Status</a></span><span class="p">])</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/Proposal.html">Proposal</a></span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -235,9 +241,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC16ProposalAnalyzer8Analyzer13proposalsWithFt6statusGSaOS_6Status__GSaCS_8Proposal_"></a>
+                    <a name="/s:16ProposalAnalyzer0B0C13proposalsWithSayAA0A0CGSayAA6StatusOG6statusd_tF"></a>
                     <a name="//apple_ref/swift/Method/proposalsWith(status:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC16ProposalAnalyzer8Analyzer13proposalsWithFt6statusGSaOS_6Status__GSaCS_8Proposal_">proposalsWith(status:)</a>
+                    <a class="token" href="#/s:16ProposalAnalyzer0B0C13proposalsWithSayAA0A0CGSayAA6StatusOG6statusd_tF">proposalsWith(status:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -252,7 +258,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Analyzer</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">proposalsWith</span><span class="p">(</span><span class="n">status</span> <span class="nv">statuses</span><span class="p">:</span> <span class="kt"><a href="../Enums/Status.html">Status</a></span><span class="o">...</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Classes/Proposal.html">Proposal</a></span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -262,9 +268,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC16ProposalAnalyzer8Analyzer18proposalsPerStatusFT_GVs10DictionaryOS_6StatusGSaCS_8Proposal__"></a>
+                    <a name="/s:16ProposalAnalyzer0B0C18proposalsPerStatuss10DictionaryVyAA0E0OSayAA0A0CGGyF"></a>
                     <a name="//apple_ref/swift/Method/proposalsPerStatus()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC16ProposalAnalyzer8Analyzer18proposalsPerStatusFT_GVs10DictionaryOS_6StatusGSaCS_8Proposal__">proposalsPerStatus()</a>
+                    <a class="token" href="#/s:16ProposalAnalyzer0B0C18proposalsPerStatuss10DictionaryVyAA0E0OSayAA0A0CGGyF">proposalsPerStatus()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -279,7 +285,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Analyzer</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">proposalsPerStatus</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt"><a href="../Enums/Status.html">Status</a></span> <span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Classes/Proposal.html">Proposal</a></span><span class="p">]]</span></code></pre>
 
                         </div>
                       </div>
@@ -289,9 +295,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC16ProposalAnalyzer8Analyzer14proposalStatusFT_GSaSS_"></a>
+                    <a name="/s:16ProposalAnalyzer0B0C14proposalStatusSaySSGyF"></a>
                     <a name="//apple_ref/swift/Method/proposalStatus()" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC16ProposalAnalyzer8Analyzer14proposalStatusFT_GSaSS_">proposalStatus()</a>
+                    <a class="token" href="#/s:16ProposalAnalyzer0B0C14proposalStatusSaySSGyF">proposalStatus()</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -306,7 +312,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Analyzer</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">proposalStatus</span><span class="p">()</span> <span class="o">-&gt;</span> <span class="p">[</span><span class="kt">String</span><span class="p">]</span></code></pre>
 
                         </div>
                       </div>
@@ -316,9 +322,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/s:FC16ProposalAnalyzer8Analyzer11occurrencesFT2ofSS_Si"></a>
+                    <a name="/s:16ProposalAnalyzer0B0C11occurrencesSiSS2of_tF"></a>
                     <a name="//apple_ref/swift/Method/occurrences(of:)" class="dashAnchor"></a>
-                    <a class="token" href="#/s:FC16ProposalAnalyzer8Analyzer11occurrencesFT2ofSS_Si">occurrences(of:)</a>
+                    <a class="token" href="#/s:16ProposalAnalyzer0B0C11occurrencesSiSS2of_tF">occurrences(of:)</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -333,7 +339,7 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">final</span> <span class="kd">class</span> <span class="kt">Analyzer</span></code></pre>
+                          <pre class="highlight"><code><span class="kd">public</span> <span class="kd">func</span> <span class="nf">occurrences</span><span class="p">(</span><span class="n">of</span> <span class="nv">text</span><span class="p">:</span> <span class="kt">String</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Int</span></code></pre>
 
                         </div>
                       </div>
@@ -345,8 +351,8 @@
           </section>
         </section>
         <section id="footer">
-          <p>&copy; 2017 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2017-04-03)</p>
-          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.7.5</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+          <p>&copy; 2017 <a class="link" href="https://twitter.com/jesse_squires" target="_blank" rel="external">Jesse Squires</a>. All rights reserved. (Last updated: 2017-12-25)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.9.0</a>, a <a class="link" href="http://realm.io" target="_blank" rel="external">Realm</a> project.</p>
         </section>
       </article>
     </div>

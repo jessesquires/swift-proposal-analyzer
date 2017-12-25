@@ -78,6 +78,48 @@
       "warning": "undocumented"
     },
     {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Bug.swift",
+      "line": 19,
+      "symbol": "Bug.srNumber",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Bug.swift",
+      "line": 20,
+      "symbol": "Bug.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Bug.swift",
+      "line": 22,
+      "symbol": "Bug.init(srNumber:url:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/DecisionNotes.swift",
+      "line": 17,
+      "symbol": "DecisionNotes.text",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/DecisionNotes.swift",
+      "line": 18,
+      "symbol": "DecisionNotes.url",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/DecisionNotes.swift",
+      "line": 20,
+      "symbol": "DecisionNotes.init(text:url:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Parser.swift",
       "line": 18,
       "symbol": "parseProposals(inDirectory:)",
@@ -143,69 +185,104 @@
     {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
       "line": 31,
-      "symbol": "Proposal.init(title:seNumber:authors:reviewManagers:status:fileName:fileContents:wordCount:)",
+      "symbol": "Proposal.decisionNotes",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
+      "line": 32,
+      "symbol": "Proposal.bugs",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
+      "line": 34,
+      "symbol": "Proposal.init(title:seNumber:authors:reviewManagers:decisionNotes:bugs:status:fileName:fileContents:wordCount:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
-      "line": 64,
+      "line": 72,
       "symbol": "Proposal.number",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
-      "line": 72,
+      "line": 80,
       "symbol": "Proposal.authorNames",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
-      "line": 76,
+      "line": 84,
       "symbol": "Proposal.reviewerNames",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
-      "line": 84,
+      "line": 88,
+      "symbol": "Proposal.srNumbers",
+      "symbol_kind": "source.lang.swift.decl.var.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
+      "line": 96,
       "symbol": "Proposal.githubURL",
       "symbol_kind": "source.lang.swift.decl.var.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
-      "line": 90,
+      "line": 102,
       "symbol": "Proposal.writtenBy(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
-      "line": 94,
+      "line": 106,
       "symbol": "Proposal.writtenBy(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
-      "line": 100,
+      "line": 112,
       "symbol": "Proposal.reviewedBy(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
-      "line": 104,
+      "line": 116,
       "symbol": "Proposal.reviewedBy(_:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
-      "line": 110,
+      "line": 122,
+      "symbol": "Proposal.containsBug(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
+      "line": 126,
+      "symbol": "Proposal.containsBug(_:)",
+      "symbol_kind": "source.lang.swift.decl.function.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Proposal.swift",
+      "line": 132,
       "symbol": "Proposal.occurrences(of:)",
       "symbol_kind": "source.lang.swift.decl.function.method.instance",
       "warning": "undocumented"
@@ -380,7 +457,14 @@
     },
     {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Version.swift",
-      "line": 34,
+      "line": 32,
+      "symbol": "SwiftVersion.v4_1",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Version.swift",
+      "line": 36,
       "symbol": "SwiftVersion.all",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
