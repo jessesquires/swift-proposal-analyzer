@@ -464,7 +464,14 @@
     },
     {
       "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Version.swift",
-      "line": 36,
+      "line": 34,
+      "symbol": "SwiftVersion.v5_0",
+      "symbol_kind": "source.lang.swift.decl.var.static",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/jesse/GitHub/swift-proposal-analyzer/Sources/Version.swift",
+      "line": 38,
       "symbol": "SwiftVersion.all",
       "symbol_kind": "source.lang.swift.decl.var.static",
       "warning": "undocumented"
