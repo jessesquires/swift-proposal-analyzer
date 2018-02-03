@@ -20,6 +20,7 @@ public func parseProposals(inDirectory directory: URL) -> [Proposal] {
 
     var allProposals = [Proposal]()
     for (url, fileContents) in files {
+        print("Processing: \(url.lastPathComponent)")
         let proposal = proposalFrom(fileContents: fileContents, fileName: url.lastPathComponent)
         allProposals.append(proposal)
     }
@@ -227,6 +228,8 @@ func versionFromString(_ versionString: String) -> SwiftVersion {
         return .v4_1
     case _ where versionString.localizedCaseInsensitiveContains("Swift 4"):
         return .v4_0
+    case _ where versionString.localizedCaseInsensitiveContains("Swift 5"):
+        return .v5_0
     default:
         fatalError("** Error: unknown version number found: " + versionString)
     }
@@ -262,6 +265,8 @@ func decisionNoteFromLine(_ line: String?) -> DecisionNotes? {
     guard let line = line else { return nil }
     let componentsTitle = line.components(separatedBy: CharacterSet(["[", "]"]))
     let componentsUrl = line.components(separatedBy: CharacterSet(["(", ")"]))
+
+    guard componentsTitle.count >= 2 else { return nil }
     let text = componentsTitle[1].trimmingWhitespace()
     let url = (componentsUrl.count > 1) ? componentsUrl[1].trimmingWhitespace() : ""
     if text != "" && url != "" {
